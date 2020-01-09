@@ -1,0 +1,133 @@
+.search-container {
+  height: 71px;
+  background-color: #f8fcfc;
+}
+
+.input-group {
+  padding: 0 2px 0 6px;
+  height: 36px;
+  width: auto;
+  border-radius: 17.8px;
+  border: solid 3px #d7d7d7;
+}
+
+.separator {
+  width: 2px;
+  height: 26px;
+  border-radius: 1px;
+  background-color: #d7d7d7;
+}
+
+.text-l1 {
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: left;
+  color: #5a5a5a;
+}
+
+.text-l2 {
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #5a5a5a;
+}
+
+.selected {
+  padding: 6px .5rem 0 .5rem;
+  text-transform: uppercase;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #f47c4c;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.button-m1 {
+  width: 90px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #f47c4c;
+  border: none;
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #f8fcfc;
+}
+
+.button-m1:focus {
+  outline: none
+}
+
+.input-field {
+  padding: 0 .5rem 0 .5rem;
+  width: 65px;
+  height: 26px;
+  border-radius: 8px;
+  border: solid 2px #d7d7d7;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+.place-select {
+  top: -13px;
+}
+
+::ng-deep.mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep.mat-primary .mat-pseudo-checkbox-checked {
+  background: #f47c4c;
+}
+
+::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #5a5a5a;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+}
+
+::ng-deep.mat-select-panel .mat-option {
+  line-height: 3em;
+  height: 3em;
+  color: #5a5a5a;
+  font-family: Roboto;
+  font-size: 12px !important;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+}

@@ -1,0 +1,29 @@
+<div class="navbar d-flex justify-content-around align-items-center">
+  <div class="nav-tile d-flex flex-row">
+    <a routerLink="/home">
+      <img src="assets/img/logo.png" alt="IMOBEES">
+    </a>
+  </div>
+  <div class="nav-tile d-flex flex-row">
+    <div class="profile mx-2">
+      <div class="profile-avatar">
+        <img src="" alt="">
+      </div>
+      <div class="profile-label">
+        <!-- <p>{{loggedInUser.userName}}</p> -->
+      </div>
+      <div class="profile-notifications"></div>
+    </div>
+    <div class="menu mx-2">
+      <button [matMenuTriggerFor]="profileMenu" class="im-orange-bg button-m1">{{'NAV.PROFILE' | translate }}</button>
+      <mat-menu #profileMenu="matMenu" xPosition="before" yPosition="below">
+        <button mat-menu-item>Akikkel laknék</button>
+        <button mat-menu-item>Profil megtekintése</button>
+        <button mat-menu-item>Profil szerkesztése</button>
+        <button mat-menu-item>Beállítások</button>
+        <button mat-menu-item>Üzenetek</button>
+        <button mat-menu-item>Kijelentkezés</button>
+      </mat-menu>
+    </div>
+  </div>
+</div>
