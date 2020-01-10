@@ -5,10 +5,11 @@
 .shortcut-group {
   cursor: pointer;
   max-width: 330px;
+  min-width: 0;
 }
 
 .img img {
-  max-width: 330px;
+  width: 100%;
 }
 
 .title {

@@ -1,8 +1,10 @@
 .footer-container {
-  height: 116px;
+  min-height: 116px;
   background-color: #f8fcfc;
   display: flex;
+  padding: 22px;
 }
+
 
 .copyright {
   font-family: Roboto;

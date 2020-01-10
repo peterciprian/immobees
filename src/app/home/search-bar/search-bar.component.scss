@@ -1,14 +1,30 @@
 .search-container {
-  height: 71px;
+  height: auto;
+  min-height: 71px;
   background-color: #f8fcfc;
 }
 
 .input-group {
   padding: 0 2px 0 6px;
   height: 36px;
-  width: auto;
   border-radius: 17.8px;
   border: solid 3px #d7d7d7;
+
+  &.room {
+    width: 179px;
+  }
+
+  &.place {
+    width: 200px;
+  }
+
+  &.sex {
+    width: 198px;
+  }
+
+  &.budget {
+    width: 260px;
+  }
 }
 
 .separator {

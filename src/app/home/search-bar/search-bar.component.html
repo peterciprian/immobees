@@ -1,42 +1,53 @@
-<div class="search-container d-flex justify-content-around align-items-center">
-  <div class="input-group d-flex flex-row">
-    <div class="input-group-label text-l1 align-self-center">szobát</div>
-    <div class="separator align-self-center mx-2"></div>
-    <div class="input-group-option text-l2 align-self-center mr-2">keres</div>
-    <div class="input-group-option text-l2 selected align-self-center">kínál</div>
+<div class="search-container d-flex justify-content-around align-items-center row mx-0">
+  <div class="col-lg-2 col-md-4 col-sm-12">
+    <div class="input-group room d-flex flex-row my-1">
+      <div class="input-group-label text-l1 align-self-center">szobát</div>
+      <div class="separator align-self-center mx-2"></div>
+      <div class="input-group-option text-l2 align-self-center mr-2">keres</div>
+      <div class="input-group-option text-l2 selected align-self-center">kínál</div>
+    </div>
   </div>
 
-
-  <div class="input-group d-flex flex-row">
-    <mat-form-field [floatLabel]="'never'" class="place-select">
-      <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
-        <mat-select-trigger>
-          {{toppings.value ? toppings.value[0] : ''}}
-          <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-            (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'további' : 'további'}})
-          </span>
-        </mat-select-trigger>
-        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+  <div class="col-lg-2 col-md-4 col-sm-12">
+    <div class="input-group place d-flex flex-row my-1">
+      <mat-form-field [floatLabel]="'never'" class="place-select">
+        <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
+          <mat-select-trigger>
+            {{toppings.value ? toppings.value[0] : ''}}
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+              (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'további' : 'további'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
 
-  <div class="input-group d-flex flex-row">
-    <div class="input-group-label text-l1 align-self-center">nem</div>
-    <div class="separator align-self-center mx-2"></div>
-    <div class="input-group-option text-l2 align-self-center mr-2">fiú</div>
-    <div class="input-group-option text-l2 align-self-center mr-2">lány</div>
-    <div class="input-group-option text-l2 selected align-self-center">mindegy</div>
+  <div class="col-lg-3 col-md-4 col-sm-12">
+    <div class="input-group sex d-flex flex-row my-1">
+      <div class="input-group-label text-l1 align-self-center">nem</div>
+      <div class="separator align-self-center mx-2"></div>
+      <div class="input-group-option text-l2 align-self-center mr-2">fiú</div>
+      <div class="input-group-option text-l2 align-self-center mr-2">lány</div>
+      <div class="input-group-option text-l2 selected align-self-center">mindegy</div>
+    </div>
   </div>
 
-  <div class="input-group d-flex flex-row">
-    <div class="input-group-label text-l1 align-self-center mr-2">büdzsé</div>
-    <input type="number" class="input-group-option input-field align-self-center mr-2" placeholder="min">
-    <div class="input-group-label text-l1 align-self-center mr-2">-</div>
-    <input type="number" class="input-group-option input-field align-self-center mr-2" placeholder="max">
+  <div class="col-lg-3 col-md-5 col-sm-12">
+    <div class="input-group budget d-flex flex-row my-1">
+      <div class="input-group-label text-l1 align-self-center mr-2">büdzsé</div>
+      <input type="number" class="input-group-option input-field align-self-center mr-2" placeholder="min">
+      <div class="input-group-label text-l1 align-self-center mr-2">-</div>
+      <input type="number" class="input-group-option input-field align-self-center mr-2" placeholder="max">
 
-    <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+    </div>
+
   </div>
 
-  <button class="im-orange-bg button-m1">keresés</button>
+  <div class="col-lg-1 search col-md-4 col-sm-12 my-1">
+    <button class="im-orange-bg button-m1">keresés</button>
+  </div>
+
 </div>
