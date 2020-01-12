@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExternalUrlDirective } from './external-url/external-url.directive';
 import { HexagonComponent } from './hexagon/hexagon.component';
+import { ImmoCardComponent } from './immo-card/immo-card.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 
@@ -9,7 +11,8 @@ import { HexagonComponent } from './hexagon/hexagon.component';
  * Components
  */
 const sharedComponents: any[] = [
-  HexagonComponent
+  HexagonComponent,
+  ImmoCardComponent
 ];
 
 /**
@@ -31,10 +34,12 @@ const sharedDirectives: any[] = [
     sharedDirectives
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CarouselModule.forRoot()
   ],
   exports: [
     CommonModule,
+    CarouselModule,
     sharedComponents,
     sharedDirectives
   ],

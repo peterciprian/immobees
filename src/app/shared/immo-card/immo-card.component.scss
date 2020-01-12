@@ -1,0 +1,135 @@
+.immo-avatar {
+  position: relative;
+  top: 140px;
+  left: 20px;
+}
+
+.immo-card {
+  padding: 150px 15px 20px 15px;
+  width: 210px;
+  height: 348px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 18px 0 rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.name {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f47c4c;
+}
+
+.top-divider {
+  margin-bottom: 12px;
+  margin-top: 12px
+}
+
+.top-side-divider {
+  margin: 7px;
+  width: 40px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #dfdfdf;
+}
+
+.nationality,
+.school {
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-align: left;
+  color: #5a5a5a;
+}
+
+.location {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #7a75ba;
+}
+
+.props {
+  margin-top: 10px;
+}
+
+.immotype {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5a5a5a;
+}
+
+.moving-date {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5a5a5a;
+}
+
+.bottom-divider {
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.roomtype {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 57px;
+  height: 17px;
+  border-radius: 7.5px;
+  background-color: #7a75ba;
+}
+
+.bottom-side-divider {
+  margin: 7px;
+  width: 50px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #dfdfdf;
+}
+
+.price {
+  font-family: Roboto;
+  font-size: 23px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #f47c4c;
+}

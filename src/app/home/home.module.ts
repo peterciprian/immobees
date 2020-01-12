@@ -12,6 +12,7 @@ import { FrequentsComponent } from './frequents/frequents.component';
 import { ShortcutsComponent } from './shortcuts/shortcuts.component';
 import { NewFeaturesComponent } from './new-features/new-features.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     HomeRoutingModule,
-    MatSelectModule
+    MatSelectModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

@@ -7,12 +7,12 @@
 .hexagon {
   /*this smushes a square into a 60deg/120deg rhombus*/
   position: relative;
-  width: 300px;
-  height: 173.20508px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  // background-image: url("/assets/img/blank-profile-picture-973460_960_720.webp");
-  background-size: 473.20508px auto;
+  width: 170px;
+  height: 98.14955px;
+  margin-top: 56.66667px;
+  margin-bottom: 56.66667px;
+  background: url(http://placekitten.com/g/650);
+  background-size: 268.14955px auto;
   background-position: center center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   border-left: solid 3px #fff;
@@ -24,9 +24,9 @@
 .hexagon .hex2 {
   position: absolute;
   overflow: hidden;
-  width: 212.13203px;
-  height: 212.13203px;
-  left: 41.30127px;
+  width: 120.20815px;
+  height: 120.20815px;
+  left: 22.53739px;
   /*for some reason this 1px correction is needed */
   background: inherit;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
@@ -41,10 +41,10 @@
   /*counter rotate and un-scale the bg image*/
   content: "";
   position: absolute;
-  left: -44.30127px;
+  left: -25.53739px;
   /*same correction as up above */
-  width: 300px;
-  height: 212.13203px;
+  width: 170px;
+  height: 120.20815px;
   top: 0;
   background: inherit;
   -moz-transform: rotate(45deg) scaleY(1.73205);
@@ -54,7 +54,7 @@
 }
 
 .hexagon .hex1 {
-  top: -106.06602px;
+  top: -60.10408px;
   border-top: solid 5.19615px #fff;
   border-right: solid 5.19615px #fff;
 }
@@ -65,7 +65,7 @@
 }
 
 .hexagon .hex2 {
-  bottom: -106.06602px;
+  bottom: -60.10408px;
   border-left: solid 5.19615px #fff;
   border-bottom: solid 5.19615px #fff;
 }
@@ -83,6 +83,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 168.96244px;
+  height: 93.90691px;
   background: inherit;
 }
