@@ -1,8 +1,20 @@
 <div class="showroom-container">
 
-  <carousel [itemsPerSlide]="4" [singleSlideOffset]="singleSlideOffset" [startFromIndex]="0" [interval]="false">
-    <slide *ngFor="let account of accounts; let index=index">
+  <!--   <carousel [itemsPerSlide]="2" [singleSlideOffset]="true" [startFromIndex]="0" [interval]="false">
+    <slide *ngFor="let account of accounts">
+      <div class="carousel-caption"></div>
       <app-immo-card [account]="account"></app-immo-card>
+    </slide>
+  </carousel> -->
+  <carousel>
+    <slide>
+      asd
+    </slide>
+    <slide>
+      sdf
+    </slide>
+    <slide>
+      dfg
     </slide>
   </carousel>
 </div>

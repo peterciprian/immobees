@@ -13,7 +13,7 @@ export class ShowroomComponent implements OnInit {
     this.accounts = [
       {
         name: 'Réka',
-        age: 23,
+        age: 11,
         spokenLanguages: ['hun', 'eng'],
         school: 'bge',
         subject: {
@@ -31,7 +31,7 @@ export class ShowroomComponent implements OnInit {
       },
       {
         name: 'Réka',
-        age: 23,
+        age: 22,
         spokenLanguages: ['hun', 'eng'],
         school: 'bge',
         subject: {
@@ -49,7 +49,7 @@ export class ShowroomComponent implements OnInit {
       },
       {
         name: 'Réka',
-        age: 23,
+        age: 33,
         spokenLanguages: ['hun', 'eng'],
         school: 'bge',
         subject: {
@@ -67,7 +67,7 @@ export class ShowroomComponent implements OnInit {
       },
       {
         name: 'Réka',
-        age: 23,
+        age: 44,
         spokenLanguages: ['hun', 'eng'],
         school: 'bge',
         subject: {
@@ -85,7 +85,7 @@ export class ShowroomComponent implements OnInit {
       },
       {
         name: 'Réka',
-        age: 23,
+        age: 55,
         spokenLanguages: ['hun', 'eng'],
         school: 'bge',
         subject: {
