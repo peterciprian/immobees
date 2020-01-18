@@ -4,6 +4,7 @@ import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
   auth0Client$ = (from(
     createAuth0Client({
       domain: 'immobees-dev.auth0.com',
-      client_id: 'CqNt87HuCMBsu8jGK_4wqAZxh6yAowTX',
+      client_id: environment.client_id,
       redirect_uri: `${window.location.origin}`
     })
   ) as Observable<Auth0Client>).pipe(
@@ -117,7 +118,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
       client.logout({
-        client_id: 'CqNt87HuCMBsu8jGK_4wqAZxh6yAowTX',
+        client_id: environment.client_id,
         returnTo: `${window.location.origin}`
       });
     });
