@@ -1,0 +1,24 @@
+.result-list {
+  min-height: calc(100vh - 177px);
+  box-shadow: inset 2px 0 8.3px 0.7px rgba(0, 0, 0, 0.22);
+  background-color: #f0f0f0;
+}
+
+.sum {
+  font-family: Roboto;
+  font-size: 13px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.52px;
+  text-align: left;
+  color: #5a5a5a;
+
+  .sum-label {
+    font-weight: bold;
+  }
+
+  .sum-value {
+    font-weight: normal;
+  }
+}

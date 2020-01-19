@@ -5,13 +5,11 @@
     </a>
   </div>
   <div class="nav-tile d-flex flex-row">
-    <div *ngIf="auth.userProfile$ | async as profile" class="profile mx-2">
+    <div *ngIf="auth.userProfile$ | async as profile" class="profile mx-2 d-flex flex-row">
       <div class="profile-avatar">
         <img src="" alt="">
       </div>
-      <div class="profile-label">
-        <span>{{ profile.nickname }}</span>
-      </div>
+      <div class="profile-label">{{ profile.nickname }}</div>
       <div class="profile-notifications"></div>
     </div>
     <div class="menu mx-2">

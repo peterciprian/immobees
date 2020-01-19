@@ -1,0 +1,73 @@
+.headline-filters {
+  padding-top: 15%;
+  height: 168px;
+  background-color: #f47c4c;
+}
+
+.custom-filters {
+  height: 100%;
+  box-shadow: inset 2px 0 8.3px 0.7px rgba(0, 0, 0, 0.22);
+  background-color: #ffffff;
+}
+
+.input-group {
+  width: 220px;
+  margin: 0 auto;
+  padding: 0 2px 0 11px;
+  height: 36px;
+  border-radius: 17.8px;
+  background-color: #ffffff;
+  border: solid 3px #d7d7d7;
+  margin-bottom: 10px;
+}
+
+.separator {
+  width: 2px;
+  height: 26px;
+  border-radius: 1px;
+  background-color: #d7d7d7;
+}
+
+
+.text-l1 {
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: left;
+  color: #5a5a5a;
+}
+
+.text-l2 {
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #5a5a5a;
+}
+
+.selected {
+  padding: 6px .5rem 0 .5rem;
+  text-transform: uppercase;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #7a75ba;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,1 +1,17 @@
-<p>result-list works!</p>
+<div class="result-list">
+  <div class="result-list-paginator" class="d-flex flex-row justify-content-around">
+    <div class="sum d-flex flex-row">
+      <div class="sum-label">összesen:&nbsp;&nbsp;</div>
+      <div class="sum-value">{{length}} találat</div>
+    </div>
+    <div class="paginator">
+      <- első 1 2 3 4 utolsó ->
+    </div>
+    <div class="sort">rendezés</div>
+  </div>
+  <div class="result-list-conatiner d-flex flex-row justify-content-around flex-wrap">
+    <div *ngFor="let account of accounts" class="result mx-5">
+      <app-immo-card [account]="account"></app-immo-card>
+    </div>
+  </div>
+</div>

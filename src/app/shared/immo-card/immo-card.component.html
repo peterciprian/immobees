@@ -12,7 +12,7 @@
   <div class="location mx-auto">{{account.subject.address.display}}</div>
   <div class="props d-flex flex-row">
     <div class="immotype mx-auto">{{account.roomType}}</div>
-    <div class="moving-date m-auto">{{account.moveIntoAt.toLocaleDateString()}}</div>
+    <div class="moving-date m-auto">{{account.moveIntoAt | date: 'yyyy.MM.dd.'}}</div>
   </div>
   <div class="bottom-divider d-flex flex-row">
     <div class="bottom-side-divider mr-auto"></div>
