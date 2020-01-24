@@ -1,15 +1,32 @@
 <div class="result-list">
-  <div class="result-list-paginator" class="d-flex flex-row justify-content-around">
+  <div
+    class="result-list-paginator"
+    class="d-flex flex-row justify-content-around"
+  >
     <div class="sum d-flex flex-row">
       <div class="sum-label">összesen:&nbsp;&nbsp;</div>
-      <div class="sum-value">{{length}} találat</div>
+      <div class="sum-value">{{ length }} találat</div>
     </div>
     <div class="paginator">
-      <- első 1 2 3 4 utolsó ->
+      <pagination
+        [boundaryLinks]="true"
+        [directionLinks]="true"
+        [totalItems]="77"
+        [maxSize]="5"
+        [rotate]="true"
+        (pageChanged)="pageChanged($event)"
+        previousText="&lsaquo;"
+        nextText="&rsaquo;"
+        firstText="&laquo;"
+        lastText="&raquo;"
+      >
+      </pagination>
     </div>
     <div class="sort">rendezés</div>
   </div>
-  <div class="result-list-conatiner d-flex flex-row justify-content-around flex-wrap">
+  <div
+    class="result-list-conatiner d-flex flex-row justify-content-around flex-wrap"
+  >
     <div *ngFor="let account of accounts" class="result mx-5">
       <app-immo-card [account]="account"></app-immo-card>
     </div>
