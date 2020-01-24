@@ -6,6 +6,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { NotFoundModule } from './not-found';
+import { QueryService } from './query.service';
 
 ///////////////////////////////////
 // Declare tree-shakeable tokens //
@@ -28,7 +29,7 @@ const coreServices: any[] = [
       const externalUrl = route.paramMap.get('externalUrl');
       window.open(externalUrl, '_self');
     }
-  }
+  }, QueryService
 ];
 
 @NgModule({

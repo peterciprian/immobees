@@ -3,13 +3,21 @@
     <div class="input-group room d-flex flex-row">
       <div class="input-group-label text-l1 align-self-center">szobát</div>
       <div class="separator align-self-center ml-2 mr-auto"></div>
-      <div class="input-group-option text-l2 align-self-center mr-2">keresők</div>
-      <div class="input-group-option text-l2 selected align-self-center">kínálók</div>
+      <div class="input-group-option text-l2 align-self-center mr-2"
+      [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 1 }"
+      (click)="switchRoomType()">keresők</div>
+      <div class="input-group-option text-l2 selected align-self-center"
+      [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 0 }"
+      (click)="switchRoomType()">kínálók</div>
     </div>
 
     <div class="input-group immo d-flex flex-row">
-      <div class="input-group-option text-l2 align-self-center mr-2">külön szobát</div>
-      <div class="input-group-option text-l2 selected align-self-center">szobatársat</div>
+      <div class="input-group-option text-l2 align-self-center mr-2"
+      [ngClass]="{ 'selected': queryService.homeSearchQueryFields.immo == 0 }"
+      (click)="switchImmoType()">külön szobát</div>
+      <div class="input-group-option text-l2 selected align-self-center"
+      [ngClass]="{ 'selected': queryService.homeSearchQueryFields.immo == 1 }"
+      (click)="switchImmoType()">szobatársat</div>
     </div>
   </div>
 </div>

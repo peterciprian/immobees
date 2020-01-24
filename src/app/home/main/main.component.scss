@@ -1,12 +1,11 @@
 .main-container {
-  height: 398px;
+  height: auto;
+  min-height: 398px;
   background-image: linear-gradient(to right, #f16e47, #fd9e56);
   padding: 50px;
 }
 
 .headline {
-  width: 532px;
-  height: 109px;
   font-family: Roboto;
   font-size: 56px;
   font-weight: 100;

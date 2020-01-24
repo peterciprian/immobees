@@ -19,12 +19,16 @@
   }
 
   &.sex {
-    width: 198px;
+    width: 200px;
   }
 
   &.budget {
     width: 260px;
   }
+}
+
+.input-group-option {
+  cursor: pointer;
 }
 
 .separator {
