@@ -1,4 +1,4 @@
-<div class="showroom-container row">
+<div class="showroom-container row mx-0">
 
   <!--   <carousel [itemsPerSlide]="2" [singleSlideOffset]="true" [startFromIndex]="0" [interval]="false">
     <slide *ngFor="let account of accounts">
@@ -6,7 +6,7 @@
       <app-immo-card [account]="account"></app-immo-card>
     </slide>
   </carousel> -->
-  <div *ngFor="let account of accounts" class="col">
+  <div *ngFor="let account of accounts" class="col pt-5">
     <app-immo-card [account]="account"></app-immo-card>
   </div>
 </div>

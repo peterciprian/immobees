@@ -4,6 +4,10 @@
   background-color: #f0f0f0;
 }
 
+.result-list-paginator {
+  padding: 45px 0;
+}
+
 .sum {
   font-family: Roboto;
   font-size: 13px;
@@ -21,4 +25,98 @@
   .sum-value {
     font-weight: normal;
   }
+}
+
+::ng-deep.page-item.disabled .page-link,
+::ng-deep.page-item .page-link {
+  position: relative;
+  display: block;
+  padding: 0.2rem 0.4rem;
+  margin-left: 3px;
+  line-height: 1.25;
+  color: #f47c4c;
+  background-color: #fff;
+  border: none;
+  border-radius: 25%;
+  width: 21px;
+  height: 20px;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.52px;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  color: #5a5a5a;
+}
+
+::ng-deep.page-item:hover .page-link {
+  background-color: #d7d7d7;
+}
+
+::ng-deep.page-item.active .page-link {
+  background-color: #f47c4c;
+  border-color: #f47c4c;
+  color: #fffdfd;
+}
+
+::ng-deep.page-item.disabled:hover .page-link {
+  background-color: transparent;
+}
+
+::ng-deep.page-item:last-child .page-link,
+::ng-deep.page-item:first-child .page-link {
+  border-radius: 10px;
+}
+
+::ng-deep ul.pagination {
+  margin: 0;
+}
+
+.input-group {
+  padding: 0 2px 0 6px;
+  height: 36px;
+  width: 200px;
+  border-radius: 17.8px;
+  border: solid 3px #d7d7d7;
+}
+
+.sort-select {
+  top: -13px;
+}
+
+::ng-deep.mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep.mat-primary .mat-pseudo-checkbox-checked {
+  background: #f47c4c;
+}
+
+::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #5a5a5a;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+}
+
+::ng-deep.mat-select-panel .mat-option {
+  line-height: 3em;
+  height: 3em;
+  color: #5a5a5a;
+  font-family: Roboto;
+  font-size: 12px !important;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
 }

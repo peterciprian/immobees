@@ -4,6 +4,7 @@ import { ExternalUrlDirective } from './external-url/external-url.directive';
 import { HexagonComponent } from './hexagon/hexagon.component';
 import { ImmoCardComponent } from './immo-card/immo-card.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -35,10 +36,12 @@ const sharedDirectives: any[] = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     CarouselModule.forRoot()
   ],
   exports: [
     CommonModule,
+    FormsModule,
     CarouselModule,
     sharedComponents,
     sharedDirectives

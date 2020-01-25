@@ -13,6 +13,7 @@ import { ShortcutsComponent } from './shortcuts/shortcuts.component';
 import { NewFeaturesComponent } from './new-features/new-features.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared';
+import { HighLightComponent } from './main/high-light/high-light.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SharedModule } from '../shared';
     ShowroomComponent,
     FrequentsComponent,
     ShortcutsComponent,
-    NewFeaturesComponent
+    NewFeaturesComponent,
+    HighLightComponent
   ],
   imports: [
     CommonModule,

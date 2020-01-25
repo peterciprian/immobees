@@ -8,6 +8,7 @@ import { ResultListComponent } from './result-list/result-list.component';
 import { SharedModule } from '../shared';
 
 import { PaginationModule } from 'ngx-bootstrap';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { PaginationModule } from 'ngx-bootstrap';
     SearchRoutingModule,
     SharedModule,
     PaginationModule.forRoot(),
+    MatSelectModule
   ]
 })
 export class SearchModule { }
