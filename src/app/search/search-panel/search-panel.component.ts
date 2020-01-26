@@ -21,4 +21,8 @@ export class SearchPanelComponent implements OnInit {
     this.queryService.homeSearchQueryFields.immo = this.queryService.homeSearchQueryFields.immo === 0 ? 1 : 0;
   }
 
+  changeSex(param: number) {
+    this.queryService.homeSearchQueryFields.sex = param;
+  }
+
 }

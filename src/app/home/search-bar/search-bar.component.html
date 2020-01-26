@@ -1,22 +1,14 @@
-<div
-  class="search-container d-flex justify-content-around align-items-center row mx-0"
->
+<div class="search-container d-flex justify-content-around align-items-center row mx-0">
   <div class="col-lg-2 col-md-4 col-sm-12">
     <div class="input-group room d-flex flex-row my-1">
       <div class="input-group-label text-l1 align-self-center">szobát</div>
-      <div class="separator align-self-center mx-2"></div>
-      <div
-        class="input-group-option text-l2 align-self-center mr-2"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 0 }"
-        (click)="switchRoomType()"
-      >
+      <div class="separator align-self-center mx-auto"></div>
+      <div class="input-group-option text-l2 align-self-center mr-2"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 0 }" (click)="switchRoomType()">
         keres
       </div>
-      <div
-        class="input-group-option text-l2 selected align-self-center"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 1 }"
-        (click)="switchRoomType()"
-      >
+      <div class="input-group-option text-l2 align-self-center"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 1 }" (click)="switchRoomType()">
         kínál
       </div>
     </div>
@@ -28,10 +20,7 @@
         <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
           <mat-select-trigger>
             {{ toppings.value ? toppings.value[0] : "" }}
-            <span
-              *ngIf="toppings.value?.length > 1"
-              class="example-additional-selection"
-            >
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
               (+{{ toppings.value.length - 1 }}
               {{ toppings.value?.length === 2 ? "további" : "további" }})
             </span>
@@ -47,26 +36,17 @@
   <div class="col-lg-3 col-md-4 col-sm-12">
     <div class="input-group sex d-flex flex-row my-1">
       <div class="input-group-label text-l1 align-self-center">nem</div>
-      <div class="separator align-self-center mx-2"></div>
-      <div
-        class="input-group-option text-l2 align-self-center mr-2"
-        (click)="changeSex(1)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 1 }"
-      >
+      <div class="separator align-self-center mx-auto"></div>
+      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeSex(1)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 1 }">
         fiú
       </div>
-      <div
-        class="input-group-option text-l2 align-self-center mr-2"
-        (click)="changeSex(0)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 0 }"
-      >
+      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeSex(0)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 0 }">
         lány
       </div>
-      <div
-        class="input-group-option text-l2 selected align-self-center"
-        (click)="changeSex(2)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 2 }"
-      >
+      <div class="input-group-option text-l2 align-self-center" (click)="changeSex(2)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 2 }">
         mindegy
       </div>
     </div>
@@ -75,20 +55,11 @@
   <div class="col-lg-3 col-md-5 col-sm-12">
     <div class="input-group budget d-flex flex-row my-1">
       <div class="input-group-label text-l1 align-self-center mr-2">büdzsé</div>
-      <input
-      [(ngModel)]="queryService.homeSearchQueryFields.budget.min"
-        type="number"
-        class="input-group-option input-field align-self-center mr-2"
-        placeholder="min"
-        
-      />
+      <input [(ngModel)]="queryService.homeSearchQueryFields.budget.min" type="number"
+        class="input-group-option input-field align-self-center mr-2" placeholder="min" />
       <div class="input-group-label text-l1 align-self-center mr-2">-</div>
-      <input
-      [(ngModel)]="queryService.homeSearchQueryFields.budget.max"
-        type="number"
-        class="input-group-option input-field align-self-center mr-2"
-        placeholder="max"
-      />
+      <input [(ngModel)]="queryService.homeSearchQueryFields.budget.max" type="number"
+        class="input-group-option input-field align-self-center mr-2" placeholder="max" />
 
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
