@@ -1,0 +1,88 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.hexagon {
+  /*this smushes a square into a 60deg/120deg rhombus*/
+  position: relative;
+  width: 170px;
+  height: 98.14955px;
+  margin-top: 56.66667px;
+  margin-bottom: 56.66667px;
+  background: url(http://placekitten.com/g/650);
+  background-size: 268.14955px auto;
+  background-position: center center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  border-left: solid 3px #fff;
+  border-right: solid 3px #fff;
+  /*cover up the box shadows */
+}
+
+.hexagon .hex1,
+.hexagon .hex2 {
+  position: absolute;
+  overflow: hidden;
+  width: 120.20815px;
+  height: 120.20815px;
+  left: 22.53739px;
+  /*for some reason this 1px correction is needed */
+  background: inherit;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  -moz-transform: scaleY(0.57735) rotate(-45deg);
+  -ms-transform: scaleY(0.57735) rotate(-45deg);
+  -webkit-transform: scaleY(0.57735) rotate(-45deg);
+  transform: scaleY(0.57735) rotate(-45deg);
+}
+
+.hexagon .hex1:after,
+.hexagon .hex2:after {
+  /*counter rotate and un-scale the bg image*/
+  content: "";
+  position: absolute;
+  left: -25.53739px;
+  /*same correction as up above */
+  width: 170px;
+  height: 120.20815px;
+  top: 0;
+  background: inherit;
+  -moz-transform: rotate(45deg) scaleY(1.73205);
+  -ms-transform: rotate(45deg) scaleY(1.73205);
+  -webkit-transform: rotate(45deg) scaleY(1.73205);
+  transform: rotate(45deg) scaleY(1.73205);
+}
+
+.hexagon .hex1 {
+  top: -60.10408px;
+  border-top: solid 5.19615px #fff;
+  border-right: solid 5.19615px #fff;
+}
+
+.hexagon .hex1:after {
+  background-position: center 17%;
+  margin-top: -5.19615px;
+}
+
+.hexagon .hex2 {
+  bottom: -60.10408px;
+  border-left: solid 5.19615px #fff;
+  border-bottom: solid 5.19615px #fff;
+}
+
+.hexagon .hex2:after {
+  background-position: center 83%;
+  margin-left: -4.19615px;
+  /*that pesky single pixel correction again*/
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 2.12132px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 93.90691px;
+  background: inherit;
+}

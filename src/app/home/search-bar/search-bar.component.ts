@@ -8,7 +8,7 @@ export enum roomType {
   keres,
   kinal
 }
-export enum sex {
+export enum gender {
   female,
   male,
   dnm
@@ -38,8 +38,8 @@ export class SearchBarComponent implements OnInit {
     this.queryService.homeSearchQueryFields.room = this.queryService.homeSearchQueryFields.room === 0 ? 1 : 0;
   }
 
-  changeSex(param: number) {
-    this.queryService.homeSearchQueryFields.sex = param;
+  changeGender(param: number) {
+    this.queryService.homeSearchQueryFields.gender = param;
     }
 
 }

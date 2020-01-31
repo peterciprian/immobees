@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QueryService } from 'src/app/core/query.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-panel',
@@ -7,22 +8,31 @@ import { QueryService } from 'src/app/core/query.service';
   styleUrls: ['./search-panel.component.scss']
 })
 export class SearchPanelComponent implements OnInit {
+  toppings = new FormControl();
+  toppingList: string[] = [
+    'Extra cheese',
+    'Mushroom',
+    'Onion',
+    'Pepperoni',
+    'Sausage',
+    'Tomato'
+  ];
+  constructor(public queryService: QueryService) {}
 
-  constructor(public queryService: QueryService) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   switchRoomType() {
-    this.queryService.homeSearchQueryFields.room = this.queryService.homeSearchQueryFields.room === 0 ? 1 : 0;
+    this.queryService.homeSearchQueryFields.room =
+      this.queryService.homeSearchQueryFields.room === 0 ? 1 : 0;
   }
 
   switchImmoType() {
-    this.queryService.homeSearchQueryFields.immo = this.queryService.homeSearchQueryFields.immo === 0 ? 1 : 0;
+    this.queryService.homeSearchQueryFields.immo =
+      this.queryService.homeSearchQueryFields.immo === 0 ? 1 : 0;
   }
 
-  changeSex(param: number) {
-    this.queryService.homeSearchQueryFields.sex = param;
+  changeGender(param: number) {
+    this.queryService.homeSearchQueryFields.gender = param;
   }
 
 }

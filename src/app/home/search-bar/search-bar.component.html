@@ -2,7 +2,7 @@
   <div class="col-lg-2 col-md-4 col-sm-12">
     <div class="input-group room d-flex flex-row my-1">
       <div class="input-group-label text-l1 align-self-center">szobát</div>
-      <div class="separator align-self-center mx-auto"></div>
+      <div class="separator align-self-center ml-2 mr-auto"></div>
       <div class="input-group-option text-l2 align-self-center mr-2"
         [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 0 }" (click)="switchRoomType()">
         keres
@@ -34,19 +34,19 @@
   </div>
 
   <div class="col-lg-3 col-md-4 col-sm-12">
-    <div class="input-group sex d-flex flex-row my-1">
+    <div class="input-group gender d-flex flex-row my-1">
       <div class="input-group-label text-l1 align-self-center">nem</div>
-      <div class="separator align-self-center mx-auto"></div>
-      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeSex(1)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 1 }">
+      <div class="separator align-self-center ml-2 mr-auto"></div>
+      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeGender(1)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 1 }">
         fiú
       </div>
-      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeSex(0)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 0 }">
+      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeGender(0)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 0 }">
         lány
       </div>
-      <div class="input-group-option text-l2 align-self-center" (click)="changeSex(2)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 2 }">
+      <div class="input-group-option text-l2 align-self-center" (click)="changeGender(2)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 2 }">
         mindegy
       </div>
     </div>

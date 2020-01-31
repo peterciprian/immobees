@@ -2,5 +2,5 @@
 <app-search-bar></app-search-bar>
 <app-showroom></app-showroom>
 <app-frequents></app-frequents>
-<app-shortcuts></app-shortcuts>
-<app-new-features></app-new-features>
+<app-shortcuts *ngIf="!mobile"></app-shortcuts>
+<app-new-features *ngIf="!mobile"></app-new-features>

@@ -4,7 +4,7 @@ export enum roomType {
   keres,
   kinal
 }
-export enum sex {
+export enum gender {
   female,
   male,
   dnm
@@ -18,10 +18,10 @@ export class QueryParams {
   immotype: string;
   room: string;
   location: string;
-  sex: string;
-  budget: { min: number, max: number, currency: string };
+  gender: string;
+  budget: { min: number; max: number; currency: string };
   nationality: string;
-  age: { min: number, max: number };
+  age: { min: number; max: number };
   languages: string[];
   school: string;
   profession: string;
@@ -39,10 +39,12 @@ export class QueryService {
   public homeSearchQueryFields = {
     room: roomType.keres,
     location: [],
-    sex: sex.female,
+    gender: gender.female,
     budget: { min: 0, max: 0 },
-    immo: immoType.szoba
+    immo: immoType.szoba,
+    flatSize: { min: 0, max: 0 },
+    roomSize: { min: 0, max: 0 }
   };
 
-  constructor() { }
+  constructor() {}
 }

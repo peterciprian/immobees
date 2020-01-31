@@ -1,8 +1,9 @@
 <div class="custom-filters">
   <div class="headline-filters d-flex flex-column">
+
     <div class="input-group room d-flex flex-row">
       <div class="input-group-label text-l1 align-self-center">szobát</div>
-      <div class="separator align-self-center mx-auto"></div>
+      <div class="separator align-self-center ml-2 mr-auto"></div>
       <div class="input-group-option text-l2 align-self-center mr-2"
         [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 1 }" (click)="switchRoomType()">keresők
       </div>
@@ -20,23 +21,341 @@
       </div>
     </div>
   </div>
+
   <div class="further-filters d-flex flex-column align-items-center justify-content-around">
+
     <h2 class="search-personal-title">SZEMÉLYES INFORMÁCIÓK</h2>
-    <div class="input-group sex d-flex flex-row my-1">
+
+    <div class="input-group gender d-flex flex-row my-1">
+      <img src="assets/img/gender.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center">nem</div>
-      <div class="separator align-self-center mx-auto"></div>
-      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeSex(1)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 1 }">
+      <div class="separator align-self-center ml-2 mr-auto"></div>
+      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeGender(1)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 1 }">
         fiú
       </div>
-      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeSex(0)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 0 }">
+      <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeGender(0)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 0 }">
         lány
       </div>
-      <div class="input-group-option text-l2 align-self-center" (click)="changeSex(2)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.sex == 2 }">
+      <div class="input-group-option text-l2 align-self-center" (click)="changeGender(2)"
+        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 2 }">
         mindegy
       </div>
     </div>
+
+    <div class="input-group nationality d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="nationality-select">
+        <mat-select placeholder="Nemzetiség" [formControl]="toppings">
+    <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 0" class="input-group budget d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Büdzsé</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.budget.min" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="min" />
+      <div class="input-group-label text-l1 align-self-center mr-2">-</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.budget.max" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="max" />
+      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+    </div>
+
+    <div class="input-group age d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="age-select">
+        <mat-select placeholder="Életkor" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 0" class="input-group place d-flex flex-row my-1">
+      <img src="assets/img/15_helyszin.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="place-select">
+        <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
+          <mat-select-trigger>
+            {{ toppings.value ? toppings.value[0] : "" }}
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+              (+{{ toppings.value.length - 1 }}
+              {{ toppings.value?.length === 2 ? "további" : "további" }})
+            </span>
+          </mat-select-trigger>
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group erasmus d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="erasmus-select">
+        <mat-select placeholder="Erasmus" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group language d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="language-select">
+        <mat-select placeholder="Beszélt nyelvek" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group school d-flex flex-row my-1">
+      <img src="assets/img/07_iskola.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="school-select">
+        <mat-select placeholder="Iskola" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group profession d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="profession-select">
+        <mat-select placeholder="Foglalkozás" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group children d-flex flex-row my-1">
+      <img src="assets/img/09_gyermek.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="children-select">
+        <mat-select placeholder="Gyerek" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group pet d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="pet-select">
+        <mat-select placeholder="Kisállat" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group smoking d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="smoking-select">
+        <mat-select placeholder="Dohányzás" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group goesHome d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="goesHome-select">
+        <mat-select placeholder="Hétvégén hazautazik" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group personality d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="personality-select">
+        <mat-select placeholder="Személyiség" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <h2 *ngIf="queryService.homeSearchQueryFields.immo == 1" class="search-personal-title">LAKÁS INFORMÁCIÓK</h2>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group place d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="place-select">
+        <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
+          <mat-select-trigger>
+            {{ toppings.value ? toppings.value[0] : "" }}
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+              (+{{ toppings.value.length - 1 }}
+              {{ toppings.value?.length === 2 ? "további" : "további" }})
+            </span>
+          </mat-select-trigger>
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="nationality-select">
+        <mat-select placeholder="asd" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="asd-select">
+        <mat-select placeholder="asd" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="asd-select">
+        <mat-select placeholder="asd" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group bail d-flex flex-row my-1">
+      <img src="assets/img/18_kaucio.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="bail-select">
+        <mat-select placeholder="Kaució" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group furniture d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="furniture-select">
+        <mat-select placeholder="Bútorozottság" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatType d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="flatType-select">
+        <mat-select placeholder="Lakás típusa" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatCondition d-flex flex-row my-1">
+      <img src="assets/img/12_lakasallapot.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="flatCondition-select">
+        <mat-select placeholder="Lakás állapota" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatSize d-flex flex-row my-1">
+      <img src="assets/img/22_lakasalapterulet.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Lakás alapt.</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.flat.min" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="min" />
+      <div class="input-group-label text-l1 align-self-center mr-2">-</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.flat.max" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="max" />
+      <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group roomSize d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Szoba alapt.</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.roomSize.min" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="min" />
+      <div class="input-group-label text-l1 align-self-center mr-2">-</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.roomSize.max" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="max" />
+      <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group residents d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="residents-select">
+        <mat-select placeholder="Lakók száma" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group floor d-flex flex-row my-1">
+      <img src="assets/img/25_emelet.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="floor-select">
+        <mat-select placeholder="Emelet" [formControl]="toppings">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+            topping
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
   </div>
 </div>

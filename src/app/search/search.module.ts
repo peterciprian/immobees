@@ -9,12 +9,15 @@ import { SharedModule } from '../shared';
 
 import { PaginationModule } from 'ngx-bootstrap';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [SearchComponent, SearchPanelComponent, ResultListComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     SearchRoutingModule,
     SharedModule,
     PaginationModule.forRoot(),
