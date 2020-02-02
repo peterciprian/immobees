@@ -48,7 +48,7 @@
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
         <mat-select placeholder="Nemzetiség" [formControl]="toppings">
-    <mat-option>X</mat-option>
+          <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
           }}</mat-option>
@@ -78,7 +78,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-  
+
     <div *ngIf="queryService.homeSearchQueryFields.immo == 0" class="input-group place d-flex flex-row my-1">
       <img src="assets/img/15_helyszin.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="place-select">
@@ -262,7 +262,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    
+
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group bail d-flex flex-row my-1">
       <img src="assets/img/18_kaucio.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="bail-select">
@@ -300,7 +300,7 @@
     </div>
 
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatCondition d-flex flex-row my-1">
-      <img src="assets/img/12_lakasallapot.svg" class="icon">
+      <img src="assets/img/21_lakasallapot.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatCondition-select">
         <mat-select placeholder="Lakás állapota" [formControl]="toppings">
           <mat-option>X</mat-option>
@@ -310,14 +310,14 @@
         </mat-select>
       </mat-form-field>
     </div>
-    
+
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatSize d-flex flex-row my-1">
       <img src="assets/img/22_lakasalapterulet.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Lakás alapt.</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.flat.min" type="number" min="0"
+      <input [(ngModel)]="queryService.homeSearchQueryFields.flatSize.min" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="min" />
       <div class="input-group-label text-l1 align-self-center mr-2">-</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.flat.max" type="number" min="0"
+      <input [(ngModel)]="queryService.homeSearchQueryFields.flatSize.max" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="max" />
       <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
     </div>

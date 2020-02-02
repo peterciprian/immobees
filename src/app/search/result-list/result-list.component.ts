@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Account } from 'src/app/core/models/accounts';
 import { Observable } from 'rxjs';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
@@ -31,6 +31,7 @@ export class ResultListComponent implements OnInit, OnDestroy {
     { value: 'created_desc', viewValue: 'Legrégebbi' }
   ];
 
+  public asd: any;
   public accounts: Account[];
   public length = 0;
   private subscriptions = [];
