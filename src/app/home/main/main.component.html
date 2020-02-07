@@ -1,20 +1,20 @@
 <div class="main-container row mx-0">
   <div class="main-headline d-flex flex-column col-lg-6 col-md-12">
     <div class="headline mb-3">
-      IMMOBEES A lakótárskereső
+      IMMOBEES A lakótárs<wbr>kereső
     </div>
-    <div class="subheadline my-3">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit odit
-      voluptates, incidunt architecto facere dolor culpa.
+      <div class="subheadline my-3">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit odit
+        voluptates, incidunt architecto facere dolor culpa.
+      </div>
+      <div class="register-button d-flex align-items-center justify-content-center mt-3">
+        Regisztráció
+      </div>
     </div>
-    <div class="register-button d-flex align-items-center justify-content-center mt-3">
-      Regisztráció
+    <div *ngIf="mobile" class=" d-flex main-highlight col-lg-6 col-md-12 pt-5">
+      <app-immo-card [account]="account"></app-immo-card>
+    </div>
+    <div *ngIf="!mobile" class="d-flex main-highlight col-lg-6 col-md-12">
+      <app-high-light [account]="account" class="mt-5"></app-high-light>
     </div>
   </div>
-  <div *ngIf="mobile" class=" d-flex main-highlight col-lg-6 col-md-12 pt-5">
-    <app-immo-card [account]="account"></app-immo-card>
-  </div>
-  <div *ngIf="!mobile" class="d-flex main-highlight col-lg-6 col-md-12">
-    <app-high-light [account]="account" class="mt-5"></app-high-light>
-  </div>
-</div>
