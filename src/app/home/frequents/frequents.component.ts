@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CodomainsService } from 'src/app/core/codomains.service';
 
 @Component({
   selector: 'app-frequents',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrequentsComponent implements OnInit {
 
-  constructor() { }
+  public languages: any;
+  public nationalities: any;
+
+  constructor(private codomain: CodomainsService) { }
 
   ngOnInit() {
+  this.languages = JSON.stringify(this.codomain.getLanguages());
+  this.nationalities = JSON.stringify(this.codomain.getNationalities());
   }
 
 }
