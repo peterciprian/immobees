@@ -1,96 +1,262 @@
-[{
-  "name": "Réka",
-  "age": 11,
-  "spokenLanguages": ["hun", "eng"],
-  "school": "bge",
-  "subject": {
-    "serviceType": "keres",
-    "address": {
-      "display": "Budapest, XVIII. kerület"
+[
+  {
+    "name": "Réka",
+    "age": 11,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
     }
   },
-  "roomType": "szobatárs",
-  "moveIntoAt": "2020-01-19T12:14:42.275Z",
-  "price": {
-    "currency": "huf",
-    "min": 40000,
-    "max": 60000,
-    "billsIncluded": false
-  }
-}, {
-  "name": "Réka",
-  "age": 22,
-  "spokenLanguages": ["hun", "eng"],
-  "school": "bge",
-  "subject": {
-    "serviceType": "keres",
-    "address": {
-      "display": "Budapest, XVIII. kerület"
+  {
+    "name": "Réka",
+    "age": 22,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
     }
   },
-  "roomType": "szobatárs",
-  "moveIntoAt": "2020-01-19T12:14:42.275Z",
-  "price": {
-    "currency": "huf",
-    "min": 40000,
-    "max": 60000,
-    "billsIncluded": false
-  }
-}, {
-  "name": "Réka",
-  "age": 33,
-  "spokenLanguages": ["hun", "eng"],
-  "school": "bge",
-  "subject": {
-    "serviceType": "keres",
-    "address": {
-      "display": "Budapest, XVIII. kerület"
+  {
+    "name": "Réka",
+    "age": 33,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
     }
   },
-  "roomType": "szobatárs",
-  "moveIntoAt": "2020-01-19T12:14:42.275Z",
-  "price": {
-    "currency": "huf",
-    "min": 40000,
-    "max": 60000,
-    "billsIncluded": false
-  }
-}, {
-  "name": "Réka",
-  "age": 44,
-  "spokenLanguages": ["hun", "eng"],
-  "school": "bge",
-  "subject": {
-    "serviceType": "keres",
-    "address": {
-      "display": "Budapest, XVIII. kerület"
+  {
+    "name": "Réka",
+    "age": 44,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
     }
   },
-  "roomType": "szobatárs",
-  "moveIntoAt": "2020-01-19T12:14:42.275Z",
-  "price": {
-    "currency": "huf",
-    "min": 40000,
-    "max": 60000,
-    "billsIncluded": false
-  }
-}, {
-  "name": "Réka",
-  "age": 55,
-  "spokenLanguages": ["hun", "eng"],
-  "school": "bge",
-  "subject": {
-    "serviceType": "keres",
-    "address": {
-      "display": "Budapest, XVIII. kerület"
+  {
+    "name": "Réka",
+    "age": 55,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
     }
   },
-  "roomType": "szobatárs",
-  "moveIntoAt": "2020-01-19T12:14:42.275Z",
-  "price": {
-    "currency": "huf",
-    "min": 40000,
-    "max": 60000,
-    "billsIncluded": false
+  {
+    "name": "Réka",
+    "age": 66,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 77,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 88,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 99,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 10,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 20,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 30,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
+  },
+  {
+    "name": "Réka",
+    "age": 40,
+    "spokenLanguages": ["hun", "eng"],
+    "school": "bge",
+    "subject": {
+      "serviceType": "keres",
+      "address": {
+        "display": "Budapest, XVIII. kerület"
+      }
+    },
+    "roomType": "szobatárs",
+    "moveIntoAt": "2020-01-19T12:14:42.275Z",
+    "price": {
+      "currency": "huf",
+      "min": 40000,
+      "max": 60000,
+      "billsIncluded": false
+    }
   }
-}]
+]
