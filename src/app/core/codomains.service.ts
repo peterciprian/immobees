@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 
 import * as languages from './models/languages';
 import * as nationalities from './models/nationalities';
+import { Nationality, Language } from './models/public';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class CodomainsService {
     return this.http.get<string[]>(`${environment.baseApiUrl}/pets`, { headers });
   }
 
-  getLanguages() {
+  getLanguages(): Language[] {
     const lans = [];
     Object.keys(languages.default).forEach(key => { lans.push({
         code: key,
@@ -34,7 +35,7 @@ export class CodomainsService {
     return lans;
   }
 
-  getNationalities() {
+  getNationalities(): Nationality[] {
     return nationalities.default.nationality;
   }
 }

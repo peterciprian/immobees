@@ -49,8 +49,8 @@
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
         <mat-select placeholder="Nemzetiség" [formControl]="toppings">
           <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
+          <mat-option *ngFor="let nationality of nationalities" [value]="nationality.value">{{
+            nationality.text
           }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -115,8 +115,8 @@
       <mat-form-field [floatLabel]="'never'" class="language-select">
         <mat-select placeholder="Beszélt nyelvek" [formControl]="toppings">
           <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
+          <mat-option *ngFor="let language of languages" [value]="language.code">{{
+            language.nativeName
           }}</mat-option>
         </mat-select>
       </mat-form-field>
