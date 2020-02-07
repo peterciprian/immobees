@@ -47,7 +47,7 @@
     <div class="input-group nationality d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
-        <mat-select placeholder="Nemzetiség" [formControl]="toppings">
+        <mat-select placeholder="Nemzetiség">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let nationality of nationalities" [value]="nationality.value">{{
             nationality.text
@@ -70,7 +70,7 @@
     <div class="input-group age d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="age-select">
-        <mat-select placeholder="Életkor" [formControl]="toppings">
+        <mat-select placeholder="Életkor">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -82,7 +82,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 0" class="input-group place d-flex flex-row my-1">
       <img src="assets/img/15_helyszin.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="place-select">
-        <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
+        <mat-select placeholder="Helyszín" multiple>
           <mat-select-trigger>
             {{ toppings.value ? toppings.value[0] : "" }}
             <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
@@ -101,7 +101,7 @@
     <div class="input-group erasmus d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="erasmus-select">
-        <mat-select placeholder="Erasmus" [formControl]="toppings">
+        <mat-select placeholder="Erasmus">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -113,7 +113,7 @@
     <div class="input-group language d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="language-select">
-        <mat-select placeholder="Beszélt nyelvek" [formControl]="toppings">
+        <mat-select placeholder="Beszélt nyelvek">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let language of languages" [value]="language.code">{{
             language.nativeName
@@ -125,10 +125,10 @@
     <div class="input-group school d-flex flex-row my-1">
       <img src="assets/img/07_iskola.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="school-select">
-        <mat-select placeholder="Iskola" [formControl]="toppings">
+        <mat-select placeholder="Iskola">
           <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
+          <mat-option *ngFor="let school of schools" [value]="school">{{
+            school
           }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -137,10 +137,10 @@
     <div class="input-group profession d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="profession-select">
-        <mat-select placeholder="Foglalkozás" [formControl]="toppings">
+        <mat-select placeholder="Foglalkozás">
           <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
+          <mat-option *ngFor="let profession of (professions | async)" [value]="profession">{{
+            profession
           }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -149,7 +149,7 @@
     <div class="input-group children d-flex flex-row my-1">
       <img src="assets/img/09_gyermek.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="children-select">
-        <mat-select placeholder="Gyerek" [formControl]="toppings">
+        <mat-select placeholder="Gyerek">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -161,10 +161,10 @@
     <div class="input-group pet d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="pet-select">
-        <mat-select placeholder="Kisállat" [formControl]="toppings">
+        <mat-select placeholder="Kisállat">
           <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
+          <mat-option *ngFor="let pet of (pets | async)" [value]="pet">{{
+            pet
           }}</mat-option>
         </mat-select>
       </mat-form-field>
@@ -173,7 +173,7 @@
     <div class="input-group smoking d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="smoking-select">
-        <mat-select placeholder="Dohányzás" [formControl]="toppings">
+        <mat-select placeholder="Dohányzás">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -185,7 +185,7 @@
     <div class="input-group goesHome d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="goesHome-select">
-        <mat-select placeholder="Hétvégén hazautazik" [formControl]="toppings">
+        <mat-select placeholder="Hétvégén hazautazik">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -197,7 +197,7 @@
     <div class="input-group personality d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="personality-select">
-        <mat-select placeholder="Személyiség" [formControl]="toppings">
+        <mat-select placeholder="Személyiség">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -211,7 +211,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group place d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="place-select">
-        <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
+        <mat-select placeholder="Helyszín" multiple>
           <mat-select-trigger>
             {{ toppings.value ? toppings.value[0] : "" }}
             <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
@@ -230,7 +230,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
-        <mat-select placeholder="asd" [formControl]="toppings">
+        <mat-select placeholder="asd">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -242,7 +242,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="asd-select">
-        <mat-select placeholder="asd" [formControl]="toppings">
+        <mat-select placeholder="asd">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -254,7 +254,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="asd-select">
-        <mat-select placeholder="asd" [formControl]="toppings">
+        <mat-select placeholder="asd">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -266,7 +266,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group bail d-flex flex-row my-1">
       <img src="assets/img/18_kaucio.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="bail-select">
-        <mat-select placeholder="Kaució" [formControl]="toppings">
+        <mat-select placeholder="Kaució">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -278,7 +278,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group furniture d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="furniture-select">
-        <mat-select placeholder="Bútorozottság" [formControl]="toppings">
+        <mat-select placeholder="Bútorozottság">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -290,7 +290,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatType d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatType-select">
-        <mat-select placeholder="Lakás típusa" [formControl]="toppings">
+        <mat-select placeholder="Lakás típusa">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -302,7 +302,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatCondition d-flex flex-row my-1">
       <img src="assets/img/21_lakasallapot.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatCondition-select">
-        <mat-select placeholder="Lakás állapota" [formControl]="toppings">
+        <mat-select placeholder="Lakás állapota">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -336,7 +336,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group residents d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="residents-select">
-        <mat-select placeholder="Lakók száma" [formControl]="toppings">
+        <mat-select placeholder="Lakók száma">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping
@@ -348,7 +348,7 @@
     <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group floor d-flex flex-row my-1">
       <img src="assets/img/25_emelet.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="floor-select">
-        <mat-select placeholder="Emelet" [formControl]="toppings">
+        <mat-select placeholder="Emelet">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
             topping

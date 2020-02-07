@@ -3,6 +3,9 @@ import { QueryService } from 'src/app/core/query.service';
 import { FormControl } from '@angular/forms';
 import { CodomainsService } from 'src/app/core/codomains.service';
 import { Language, Nationality } from 'src/app/core/models/public';
+import { school } from 'src/app/core/models/accounts';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-panel',
@@ -21,12 +24,18 @@ export class SearchPanelComponent implements OnInit {
   ];
   public languages: Language[];
   public nationalities: Nationality[];
+  public schools: string[];
+  public professions: Observable<string[]>;
+  public pets: Observable<string[]>;
 
   constructor(public queryService: QueryService, private codomain: CodomainsService) {}
 
   ngOnInit() {
   this.languages = this.codomain.getLanguages();
   this.nationalities = this.codomain.getNationalities();
+  this.schools = Object.keys(school).filter(key => !isNaN(Number(school[key])));
+  this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
+  this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
   }
   switchRoomType() {
     this.queryService.homeSearchQueryFields.room =
