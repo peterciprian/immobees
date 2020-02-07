@@ -347,28 +347,85 @@ export enum nationality {
 export interface Account {
     name: string;
     age: number;
-    spokenLanguages: string[];
+    spokenLanguages: string | string[];
     school: string;
     subject: Subject;
     roomType: string;
-    moveIntoAt: Date;
+    client?: Client;
+    moveIntoAt?: string | Date;
     price: Price;
 }
 
 export interface Subject {
     serviceType: string;
+    roomType?: string;
     address: Address;
+    pictures?: Picture[];
+    description?: string;
+    price?: Price;
+    floorArea?: number;
+    roomArea?: number;
+    innerHeight?: number;
+    client: Client;
+    furnished?: string;
+    building?: string;
+    condition?: string;
+    residents?: number;
+    roomMates?: number;
+    floors?: number;
+    details?: Details;
 }
 
 export interface Address {
-    display: string;
+    city?: string;
+    postalCode?: number;
+    district?: string;
+    county?: string;
+    country?: string;
+    street?: string;
+    number?: number;
+    googleAddress?: string;
+    display?: string;
+}
+
+export interface Details {
+  lift?: boolean;
+  washingMachine?: boolean;
+  smokingArea?: boolean;
+  balcony?: boolean;
+  gym?: boolean;
+  accessible?: boolean;
+  petsAllowed?: boolean;
+  television?: boolean;
+  internet?: boolean;
+  garage?: boolean;
+  jakuzzi?: boolean;
+  airConditioner?: boolean;
+  privateBathroom?: boolean;
+  parking?: boolean;
+  shortPeriod?: boolean;
 }
 
 export interface Price {
+    fee?: number;
     currency: string;
     min: number;
     max: number;
     billsIncluded: boolean;
+    caution?: number;
+}
+
+export interface Client {
+  gender?: string;
+  nationality?: string;
+  qualification?: string;
+  hasErasmus?: boolean;
+  moveIntoAt?: Date;
+}
+
+export interface Picture {
+  data: string;
+  label: string;
 }
 
 export interface Accounts {
