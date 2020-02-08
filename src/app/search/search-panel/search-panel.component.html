@@ -113,7 +113,14 @@
     <div class="input-group language d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="language-select">
-        <mat-select placeholder="Beszélt nyelvek">
+        <mat-select placeholder="Beszélt nyelvek" multiple>
+          <mat-select-trigger>
+            {{ toppings.value ? toppings.value[0] : "" }}
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+              (+{{ toppings.value.length - 1 }}
+              {{ toppings.value?.length === 2 ? "további" : "további" }})
+            </span>
+          </mat-select-trigger>
           <mat-option>X</mat-option>
           <mat-option *ngFor="let language of languages" [value]="language.code">{{
             language.nativeName

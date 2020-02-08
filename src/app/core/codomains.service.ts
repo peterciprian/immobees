@@ -16,17 +16,18 @@ export class CodomainsService {
 
   getProfessions(): Observable<string[]> {
     const headers = new HttpHeaders();
-    return this.http.get<string[]>(`${environment.baseApiUrl}dev/professions`, { headers });
+    return this.http.get<string[]>(`${environment.baseApiUrl}api/professions`, { headers });
   }
 
   getPets(): Observable<string[]> {
     const headers = new HttpHeaders();
-    return this.http.get<string[]>(`${environment.baseApiUrl}dev/pets`, { headers });
+    return this.http.get<string[]>(`${environment.baseApiUrl}api/pets`, { headers });
   }
 
   getLanguages(): Language[] {
     const lans = [];
-    Object.keys(languages.default).forEach(key => { lans.push({
+    Object.keys(languages.default).forEach(key => {
+      lans.push({
         code: key,
         name: languages.default[key].name,
         nativeName: languages.default[key].nativeName,

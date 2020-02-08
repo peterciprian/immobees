@@ -1,0 +1,48 @@
+.feature-card {
+  cursor: pointer;
+  margin: 20px;
+  max-width: 330px;
+  min-width: 287px;
+  height: 107px;
+  border-radius: 10px;
+  box-shadow: 2.3px 3.3px 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.feature-card-logo {
+  max-width: 50px;
+
+  img {
+    align-self: center;
+    margin: 10px 0 0 0;
+  }
+}
+
+.divider {
+  width: 2px;
+  height: 73px;
+  background-color: #77b2cb;
+  margin: 0 1rem 0 1rem;
+}
+
+.feature-card-body {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #77b2cb;
+}
+
+.feature-card-header {
+  text-transform: uppercase;
+  font-size: 16.5px;
+  font-weight: 900;
+  letter-spacing: 0.66px;
+  color: #fa7d47;
+}

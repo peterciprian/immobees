@@ -1,0 +1,33 @@
+[{
+    "validFrom": 1580907949616,
+    "validTo": 1589807188758,
+    "header": "üzenetküldés",
+    "body": "Küldj üzenetet azonnal, vegyétek fel a kapcsolatot egymással egy kattintással!",
+    "imageSource": "assets/img/chat.png",
+    "route": "./"
+  },
+  {
+    "validFrom": 1580907949616,
+    "validTo": 1589807188758,
+    "header": "részletes keresés",
+    "body": "KERESS LAKÓTÁRSAT, SZŰRJ A LEGAPRÓBB RÉSZLETRE – LAKJ AZZAL, AKIVEL TE SZERETNÉL!",
+    "imageSource": "assets/img/search.png",
+    "route": "../search"
+  },
+  {
+    "validFrom": 1580907949616,
+    "validTo": 1589807188758,
+    "header": "Videó feltöltés",
+    "body": "Mondd el videóban – ha a kép nem elég, mutasd be magad 1 percben!",
+    "imageSource": "assets/img/video.png",
+    "route": "./"
+  },
+  {
+    "validFrom": 1580907949616,
+    "validTo": 1581161810168,
+    "header": "asd",
+    "body": "sdf",
+    "imageSource": "dfg",
+    "route": "fgh"
+  }
+]

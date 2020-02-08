@@ -14,6 +14,7 @@ import { NewFeaturesComponent } from './new-features/new-features.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared';
 import { HighLightComponent } from './main/high-light/high-light.component';
+import { FeatureCardComponent } from './new-features/feature-card/feature-card.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HighLightComponent } from './main/high-light/high-light.component';
     FrequentsComponent,
     ShortcutsComponent,
     NewFeaturesComponent,
-    HighLightComponent
+    HighLightComponent,
+    FeatureCardComponent
   ],
   imports: [
     CommonModule,

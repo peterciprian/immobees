@@ -4,12 +4,12 @@
     <div class="copyright align-self-center ml-4">Copyright © 2016 - Minden jog fenntartva</div>
   </div>
   <div class="footer-tile d-flex flex-row col">
-    <div class="counter-group d-flex flex-row">
+    <div *ngIf="totalDemands" class="counter-group d-flex flex-row">
       <div class="counter counter-user text-l1">{{totalDemands}}</div>
       <div class="label counter-user text-t1 align-self-center ml-2 mr-4">Felhasználó keresi a lakótársát</div>
     </div>
-    <div class="counter-group d-flex flex-row col">
-    <div class="counter counter-user2 text-l1">{{totalOffers}}</div>
+    <div *ngIf="totalOffers" class="counter-group d-flex flex-row col">
+      <div class="counter counter-user2 text-l1">{{totalOffers}}</div>
       <div class="label counter-user2 text-t1 align-self-center ml-2">Keres albérlőtársat</div>
     </div>
 

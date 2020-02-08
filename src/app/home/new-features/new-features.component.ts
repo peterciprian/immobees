@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NewFeaturesService, NewFeature } from './new-features.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-new-features',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewFeaturesComponent implements OnInit {
 
-  constructor() { }
+  public newFeatures: Observable<NewFeature[]>;
+
+  constructor(private news: NewFeaturesService) { }
 
   ngOnInit() {
+    this.newFeatures = this.news.getNewFeatures();
   }
-
 }
