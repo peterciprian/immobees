@@ -5,6 +5,7 @@ import { HexagonComponent } from './hexagon/hexagon.component';
 import { ImmoCardComponent } from './immo-card/immo-card.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule } from '@angular/forms';
+import { HexagonLargeComponent } from './hexagon_large/hexagon.large.component';
 
 
 
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
  */
 const sharedComponents: any[] = [
   HexagonComponent,
+  HexagonLargeComponent,
   ImmoCardComponent
 ];
 

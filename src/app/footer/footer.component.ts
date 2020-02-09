@@ -20,7 +20,9 @@ export class FooterComponent implements OnInit {
       console.log(res);
       this.totalDemands = res.totalDemands;
       this.totalOffers = res.totalOffers;
-    });
+    },
+      error => { console.error(error); }
+    );
   }
 
 }

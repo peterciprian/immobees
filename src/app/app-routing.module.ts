@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
   { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
-  { path: '**', component: NotFoundComponent },
+  { path: 'view', loadChildren: () => import('./view/view.module').then(m => m.ViewModule) },
+  { path: 'messages', loadChildren: () => import('./messages/messages.module').then(m => m.MessagesModule) },
   {
     path: 'externalRedirect',
     resolve: {
@@ -18,7 +19,8 @@ const routes: Routes = [
     },
     // We need a component here because we cannot define the route otherwise
     component: NotFoundComponent,
-  }
+  },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

@@ -4,15 +4,16 @@
   box-sizing: border-box;
 }
 
+/* try passing different sizes and background images to the mixin */
 .hexagon {
   /*this smushes a square into a 60deg/120deg rhombus*/
   position: relative;
-  width: 170px;
-  height: 98.14955px;
-  margin-top: 56.66667px;
-  margin-bottom: 56.66667px;
+  width: 220px;
+  height: 127.01706px;
+  margin-top: 73.33333px;
+  margin-bottom: 73.33333px;
   background: url(http://placekitten.com/g/650);
-  background-size: 268.14955px auto;
+  background-size: 347.01706px auto;
   background-position: center center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   border-left: solid 3px #fff;
@@ -24,9 +25,9 @@
 .hexagon .hex2 {
   position: absolute;
   overflow: hidden;
-  width: 120.20815px;
-  height: 120.20815px;
-  left: 22.53739px;
+  width: 155.56349px;
+  height: 155.56349px;
+  left: 29.75426px;
   /*for some reason this 1px correction is needed */
   background: inherit;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
@@ -41,10 +42,10 @@
   /*counter rotate and un-scale the bg image*/
   content: "";
   position: absolute;
-  left: -25.53739px;
+  left: -32.75426px;
   /*same correction as up above */
-  width: 170px;
-  height: 120.20815px;
+  width: 220px;
+  height: 155.56349px;
   top: 0;
   background: inherit;
   -moz-transform: rotate(45deg) scaleY(1.73205);
@@ -54,7 +55,7 @@
 }
 
 .hexagon .hex1 {
-  top: -60.10408px;
+  top: -77.78175px;
   border-top: solid 5.19615px #fff;
   border-right: solid 5.19615px #fff;
 }
@@ -65,7 +66,7 @@
 }
 
 .hexagon .hex2 {
-  bottom: -60.10408px;
+  bottom: -77.78175px;
   border-left: solid 5.19615px #fff;
   border-bottom: solid 5.19615px #fff;
 }
@@ -83,6 +84,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 93.90691px;
+  height: 122.77442px;
   background: inherit;
 }
