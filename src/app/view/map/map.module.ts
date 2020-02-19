@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { MapComponent } from './map.component';
 
 
@@ -9,6 +10,7 @@ import { MapComponent } from './map.component';
     // MapComponent
   ],
   imports: [
+    // AngularOpenlayersModule,
     CommonModule
   ]
 })

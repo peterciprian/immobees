@@ -12,7 +12,6 @@ export class AppComponent {
 
   title = 'frontend';
   constructor(private translate: TranslateService) {
-    console.log(navigator);
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang(this.lang);
 

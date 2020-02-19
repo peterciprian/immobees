@@ -14,6 +14,7 @@ import { RecommendCardComponent } from './recommend-card/recommend-card.componen
 import { ProfileCardEditComponent } from '../profile/profile-card-edit/profile-card-edit.component';
 import { AdPropertiesEditComponent } from '../profile/ad-properties-edit/ad-properties-edit.component';
 import { MapComponent } from './map/map.component';
+import { AngularOpenlayersModule } from 'ngx-openlayers';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MapComponent } from './map/map.component';
   imports: [
     CommonModule,
     ViewRoutingModule,
+    AngularOpenlayersModule,
     MapModule
   ]
 })
