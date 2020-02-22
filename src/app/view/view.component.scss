@@ -1,0 +1,8 @@
+.background {
+  min-height: calc(100vh - 177px);
+  background-image: linear-gradient(to left, #95c6d775, #8aadb475, #938ec575, #87b0d975, #95c7d775);
+
+  .container {
+    max-width: 96vw;
+  }
+}

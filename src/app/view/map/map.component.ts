@@ -7,7 +7,7 @@ import { GeoLocationService, GeoReverseValue } from './geo-location.service';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: [],
+  styleUrls: ['./map.component.scss'],
   providers: [HttpClient, GeoLocationService]
 })
 export class MapComponent implements OnInit, OnDestroy {
@@ -32,7 +32,7 @@ export class MapComponent implements OnInit, OnDestroy {
   longitudePointer = 13.404954;
 
   @Input()
-  showControlsZoom: boolean;
+  showControlsZoom = true;
   @Input()
   titleZoomIn = 'Zoom in';
   @Input()

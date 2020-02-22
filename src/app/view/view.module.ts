@@ -15,6 +15,7 @@ import { ProfileCardEditComponent } from '../profile/profile-card-edit/profile-c
 import { AdPropertiesEditComponent } from '../profile/ad-properties-edit/ad-properties-edit.component';
 import { MapComponent } from './map/map.component';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
+import { SharedModule } from '../shared';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AngularOpenlayersModule } from 'ngx-openlayers';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ViewRoutingModule,
     AngularOpenlayersModule,
     MapModule
