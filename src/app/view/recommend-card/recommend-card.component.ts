@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Account } from 'src/app/core/models/accounts';
 
 @Component({
   selector: 'app-recommend-card',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendCardComponent implements OnInit {
 
+  @Input() flatMate: Account;
   constructor() { }
 
   ngOnInit() {

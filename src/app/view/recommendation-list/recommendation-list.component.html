@@ -2,8 +2,5 @@
   ajánlott lakótársak
 </div>
 <div class="list">
-  <app-recommend-card></app-recommend-card>
-  <app-recommend-card></app-recommend-card>
-  <app-recommend-card></app-recommend-card>
-  <app-recommend-card></app-recommend-card>
+  <app-recommend-card *ngFor="let rec of recommendations" [flatMate]="rec"></app-recommend-card>
 </div>
