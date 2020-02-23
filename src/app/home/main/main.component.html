@@ -12,9 +12,9 @@
       </div>
     </div>
     <div *ngIf="isLoaded && mobile" class=" d-flex main-highlight col-lg-6 col-md-12 pt-5">
-      <app-immo-card [account]="highLight"></app-immo-card>
+      <app-immo-card [account]="highLight" class="mb-4"></app-immo-card>
     </div>
     <div *ngIf="isLoaded && !mobile" class="d-flex main-highlight col-lg-6 col-md-12">
-      <app-high-light [account]="highLight" class="mt-5"></app-high-light>
+      <app-high-light [account]="highLight" class="mt-5 mb-4"></app-high-light>
     </div>
   </div>
