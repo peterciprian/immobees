@@ -2,7 +2,7 @@
   <div class="immo-avatar d-flex">
     <app-hexagon></app-hexagon>
   </div>
-  <div class="immo-card d-flex flex-column">
+  <div class="immo-card d-flex flex-column" (click)="view(account)">
     <div class="name">{{account.name}} ({{account.age}})</div>
     <div class="top-divider d-flex flex-row">
       <div class="top-side-divider mr-auto"></div>

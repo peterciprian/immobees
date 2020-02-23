@@ -1,19 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Account } from 'src/app/core/models/accounts';
+import { ViewService } from 'src/app/core/view.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-immo-card',
   templateUrl: './immo-card.component.html',
   styleUrls: ['./immo-card.component.scss']
 })
-export class ImmoCardComponent implements OnInit {
+export class ImmoCardComponent {
 
   @Input() account: Account;
 
-  constructor() {
-  }
+  constructor(private viewService: ViewService, private router: Router) { }
 
-  ngOnInit() {
+  view(account) {
+    this.viewService.flatMate = account;
+    this.router.navigate(['/view']);
   }
 
 }

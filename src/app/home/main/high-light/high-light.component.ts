@@ -1,17 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { ViewService } from 'src/app/core/view.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-high-light',
   templateUrl: './high-light.component.html',
   styleUrls: ['./high-light.component.scss']
 })
-export class HighLightComponent implements OnInit {
+export class HighLightComponent {
 
   @Input() account;
 
-  constructor() { }
+  constructor(private viewService: ViewService, private router: Router) { }
 
-  ngOnInit() {
+  view(account) {
+    this.viewService.flatMate = account;
+    this.router.navigate(['/view']);
   }
-
 }

@@ -42,9 +42,12 @@
             <button [title]="titleZoomOut" class="ol-zoom-out btn btn-sm btn-primary" type="button" title="Zoom out"
               (click)="decreaseZoom()">−</button>
           </div>
-          <div *ngIf="showControlsCurrentLocation && position" class="ol-rotate ol-unselectable ol-control">
-            <button [title]="titleCurrentLocation" (click)="setCurrentLocation($event)">&#8982;</button>
-          </div>
+        </div>
+        <div *ngIf="showControlsCurrentLocation && position" class="ol-rotate ol-unselectable ol-control">
+          <button [title]="titleCurrentLocation" (click)="setCurrentLocation($event)"
+            class=" btn btn-sm btn-primary mb-1">
+            <img src="assets/img/home.svg">
+          </button>
         </div>
       </aol-content>
     </aol-control>

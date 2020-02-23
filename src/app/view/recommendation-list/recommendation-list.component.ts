@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Accounts } from 'src/app/core/models/accounts';
+import { Component, OnInit, Input } from '@angular/core';
+import { Account } from 'src/app/core/models/accounts';
 
 @Component({
   selector: 'app-recommendation-list',
@@ -8,9 +7,8 @@ import { Accounts } from 'src/app/core/models/accounts';
   styleUrls: ['./recommendation-list.component.scss']
 })
 export class RecommendationListComponent implements OnInit {
-  public recommendations: Account[];
-  constructor(private http: HttpClient) {
-    http.get<Account[]>('assets/accounts.JSON').subscribe(acc => this.recommendations = acc.slice(0, 3));
+  @Input() recommendations: Account[];
+  constructor() {
   }
 
   ngOnInit() {

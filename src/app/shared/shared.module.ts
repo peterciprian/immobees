@@ -6,6 +6,7 @@ import { ImmoCardComponent } from './immo-card/immo-card.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule } from '@angular/forms';
 import { HexagonLargeComponent } from './hexagon_large/hexagon.large.component';
+import { LocaleDatePipe } from './locale-date.pipe';
 
 
 
@@ -34,7 +35,8 @@ const sharedDirectives: any[] = [
 @NgModule({
   declarations: [
     sharedComponents,
-    sharedDirectives
+    sharedDirectives,
+    LocaleDatePipe
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ const sharedDirectives: any[] = [
     FormsModule,
     CarouselModule,
     sharedComponents,
-    sharedDirectives
+    sharedDirectives,
+    LocaleDatePipe
   ],
   providers: [
     sharedServices

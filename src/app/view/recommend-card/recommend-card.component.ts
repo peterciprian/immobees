@@ -1,17 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Account } from 'src/app/core/models/accounts';
+import { ViewService } from 'src/app/core/view.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recommend-card',
   templateUrl: './recommend-card.component.html',
   styleUrls: ['./recommend-card.component.scss']
 })
-export class RecommendCardComponent implements OnInit {
+export class RecommendCardComponent {
 
   @Input() flatMate: Account;
-  constructor() { }
+  constructor(private viewService: ViewService, private router: Router) {
+  }
 
-  ngOnInit() {
+  view(account) {
+    this.viewService.flatMate = account;
+    this.router.navigate(['/view']);
   }
 
 }

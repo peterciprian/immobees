@@ -11,10 +11,10 @@
         Regisztráció
       </div>
     </div>
-    <div *ngIf="mobile" class=" d-flex main-highlight col-lg-6 col-md-12 pt-5">
-      <app-immo-card [account]="account"></app-immo-card>
+    <div *ngIf="isLoaded && mobile" class=" d-flex main-highlight col-lg-6 col-md-12 pt-5">
+      <app-immo-card [account]="highLight"></app-immo-card>
     </div>
-    <div *ngIf="!mobile" class="d-flex main-highlight col-lg-6 col-md-12">
-      <app-high-light [account]="account" class="mt-5"></app-high-light>
+    <div *ngIf="isLoaded && !mobile" class="d-flex main-highlight col-lg-6 col-md-12">
+      <app-high-light [account]="highLight" class="mt-5"></app-high-light>
     </div>
   </div>

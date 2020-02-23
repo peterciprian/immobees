@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
@@ -6,29 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  public isLoaded = false;
   public mobile: boolean;
-  public account = {
-    name: 'Réka',
-    age: 11,
-    spokenLanguages: ['hun', 'eng'],
-    school: 'bge',
-    subject: {
-      serviceType: 'keres',
-      address: {
-        display: 'Budapest, XVIII. kerület'
-      }
-    },
-    roomType: 'szobatárs',
-    moveIntoAt: '2020-01-19T12:14:42.275Z',
-    price: {
-      currency: 'huf',
-      min: 40000,
-      max: 60000,
-      billsIncluded: false
-    }
-  };
-
-  constructor() { }
+  public highLight: Account;
+  constructor(private http: HttpClient) {
+    this.http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
+      this.highLight = acc.shift();
+      this.isLoaded = true;
+    });
+  }
 
   ngOnInit() {
     this.mobile = window.screen.width < 660 ? true : false;

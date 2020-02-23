@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Account } from 'src/app/core/models/accounts';
+import { ViewService } from 'src/app/core/view.service';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-profile-card',
@@ -7,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public viewService: ViewService) {
+  }
 
   ngOnInit() {
   }
