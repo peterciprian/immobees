@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Account } from '../core/models/accounts';
+import { Account, serviceType } from '../core/models/accounts';
+import { ViewService } from '../core/view.service';
 
 @Component({
   selector: 'app-view',
@@ -10,7 +11,7 @@ import { Account } from '../core/models/accounts';
 export class ViewComponent implements OnInit {
   public account: Account;
   public recommendations: Account[];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public viewService: ViewService) {
     http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
       this.account = acc.shift();
       this.recommendations = acc;

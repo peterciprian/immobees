@@ -1,1 +1,181 @@
-<p>flat-properties works!</p>
+<div class="flat-properties-card d-flex flex-column d-flex justify-content-center">
+  <div class="location-box d-flex flex-row">
+    <div class="poi-icon mr-2">
+      <img src="assets/img/poi.svg">
+    </div>
+    <div class="location">{{viewService.flatMate.subject.address.display}}</div>
+    <div class="address">{{viewService.flatMate.subject.address.street}} {{viewService.flatMate.subject.address.number}}</div>
+  </div>
+  <div class="types d-flex flex-row">
+    <img src="assets/img/26_szoba.svg" class="icon mr-2">
+    <div class="serviceType">{{viewService.flatMate.subject.serviceType}} - </div>
+    <div class="roomType">{{viewService.flatMate.roomType}}</div>
+  </div>
+  <div class="attribute flatArea d-flex flex-row">
+    <div class="icon mr-2">
+      <img src="">
+    </div>
+    <div class="label">
+      lakás alapterülete
+    </div>
+    <div class="value ml-auto">
+      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="attribute roomArea d-flex flex-row">
+    <div class="icon mr-2">
+      <img src="">
+    </div>
+    <div class="label">
+      szoba alapterülete
+    </div>
+    <div class="value ml-auto">
+      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="attribute moveIntoAt d-flex flex-row">
+    <div class="icon mr-2">
+      <img src="">
+    </div>
+    <div class="label">
+      költözhető
+    </div>
+    <div class="value ml-auto">
+      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="attribute gender d-flex flex-row">
+    <div class="icon mr-2">
+      <img src="">
+    </div>
+    <div class="label">
+      akit várok
+    </div>
+    <div class="value ml-auto">
+      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div *ngIf="showAll" class="hide-container">
+    <div class="attribute caution d-flex flex-row">
+      <div class="icon mr-2">
+        <img src="">
+      </div>
+      <div class="label">
+        kaució
+      </div>
+      <div class="value ml-auto">
+        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="attribute furnished d-flex flex-row">
+      <div class="icon mr-2">
+        <img src="">
+      </div>
+      <div class="label">
+        bútorozottság
+      </div>
+      <div class="value ml-auto">
+        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="attribute roomArea d-flex flex-row">
+      <div class="icon mr-2">
+        <img src="">
+      </div>
+      <div class="label">
+        lakás típusa
+      </div>
+      <div class="value ml-auto">
+        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="attribute roomArea d-flex flex-row">
+      <div class="icon mr-2">
+        <img src="">
+      </div>
+      <div class="label">
+        lakás állapota
+      </div>
+      <div class="value ml-auto">
+        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="attribute roomArea d-flex flex-row">
+      <div class="icon mr-2">
+        <img src="">
+      </div>
+      <div class="label">
+        lakók száma
+      </div>
+      <div class="value ml-auto">
+        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="attribute roomArea d-flex flex-row">
+      <div class="icon mr-2">
+        <img src="">
+      </div>
+      <div class="label">
+        emelet
+      </div>
+      <div class="value ml-auto">
+        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </div>
+  <div class="showAll-button d-flex flex-row d-flex justify-content-between d-flex align-items-center">
+    <div class="line"></div>
+    <div class="button mx-2" (click)="showAll = !showAll">Több részlet</div>
+    <div class="line"></div>
+  </div>
+  <div class="attribute-board d-flex flex-wrap">
+    <div class="attribute-set d-flex flex-row align-items-center">
+      <div class="checkbox mr-2">
+        <img src="assets/img/checkmark.svg">
+      </div>
+      <div class="label">Lift</div>
+    </div>
+    <div class="attribute-set d-flex flex-row align-items-center">
+      <div class="checkbox mr-2">
+        <img src="assets/img/checkmark.svg">
+      </div>
+      <div class="label">Állatbarát</div>
+    </div>
+    <div class="attribute-set d-flex flex-row align-items-center">
+      <div class="checkbox mr-2">
+        <img src="assets/img/checkmark.svg">
+      </div>
+      <div class="label">Mosógép</div>
+    </div>
+    <div class="attribute-set d-flex flex-row align-items-center">
+      <div class="checkbox mr-2">
+        <img src="assets/img/checkmark.svg">
+      </div>
+      <div class="label">TV</div>
+    </div>
+    <div class="attribute-set d-flex flex-row align-items-center">
+      <div class="checkbox mr-2">
+        <img src="assets/img/checkmark.svg">
+      </div>
+      <div class="label">Dohányzó</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="price d-flex flex-row">
+    <div class="main-price"></div>
+    <div class="measure"></div>
+  </div>
+  <div class="overhead">
+    +rezsi 15,000 Ft/fő
+  </div>
+</div>
