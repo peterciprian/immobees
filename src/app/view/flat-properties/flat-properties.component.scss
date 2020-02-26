@@ -8,6 +8,12 @@
 .location-box {
   justify-content: center;
 
+  .poi-icon {
+    img path {
+      height: 20px;
+    }
+  }
+
   .location {
     font-family: Roboto;
     font-size: 22px;
@@ -125,16 +131,26 @@
     margin: 7px 0;
 
     .checkbox {
-      img {
-        height: 24px;
-        margin-left: 3px;
-        margin-top: -6px;
-      }
-
       border-radius: 12px;
       width: 24px;
       height: 24px;
-      background-color: #f47c4c;
+      border: 2px solid #f47c4c;
+
+      img {
+        display: none;
+      }
+
+      &.checked {
+        border: none;
+        background-color: #f47c4c;
+
+        img {
+          display: unset;
+          height: 24px;
+          margin-left: 3px;
+          margin-top: -6px;
+        }
+      }
     }
 
     .label {

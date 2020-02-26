@@ -11,7 +11,7 @@ export class ShowroomComponent implements OnInit {
 
   public accounts: Account[];
   constructor(private http: HttpClient) {
-    http.get<Account[]>('assets/accounts.JSON').subscribe(acc => this.accounts = acc);
+    http.get<Account[]>('assets/profiles.JSON').subscribe(acc => this.accounts = acc);
   }
 
   ngOnInit() {
