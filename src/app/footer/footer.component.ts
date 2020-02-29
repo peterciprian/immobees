@@ -17,7 +17,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.publicS.getStatistics().subscribe(res => {
-      console.log(res);
       this.totalDemands = res.totalDemands;
       this.totalOffers = res.totalOffers;
     },

@@ -7,6 +7,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule } from '@angular/forms';
 import { HexagonLargeComponent } from './hexagon_large/hexagon.large.component';
 import { LocaleDatePipe } from './locale-date.pipe';
+import { AvatarComponent } from './avatar/avatar.component';
 
 
 
@@ -16,7 +17,8 @@ import { LocaleDatePipe } from './locale-date.pipe';
 const sharedComponents: any[] = [
   HexagonComponent,
   HexagonLargeComponent,
-  ImmoCardComponent
+  ImmoCardComponent,
+  AvatarComponent
 ];
 
 /**

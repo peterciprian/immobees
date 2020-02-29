@@ -70,10 +70,9 @@ export class MapComponent implements OnInit, OnDestroy {
     return navigator.geolocation.getCurrentPosition(resp => {
       this.lon = resp.coords.longitude;
       this.lat = resp.coords.latitude;
-      console.log(`lon: ${this.lon}, lat: ${this.lat}`);
     },
       err => {
-        console.log(err);
+        console.error(err);
       });
   }
 

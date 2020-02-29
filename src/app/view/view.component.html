@@ -1,6 +1,6 @@
 <div class="background">
   <div class="container">
-    <div class="row">
+    <div *ngIf="viewService.flatMate" class="row">
       <div class="col-lg-3 col-sm-12">
         <app-profile-card></app-profile-card>
       </div>
@@ -17,9 +17,13 @@
         </div>
       </div>
       <div class="col-lg-3 col-sm-12">
-            <app-flat-properties *ngIf="viewService.flatMate.subject.serviceType == 'OFFER'"></app-flat-properties>
+        <app-flat-properties *ngIf="viewService.flatMate.subject.serviceType == 'OFFER'"></app-flat-properties>
         <app-recommendation-list [recommendations]="recommendations"></app-recommendation-list>
       </div>
+    </div>
+
+    <div *ngIf="!viewService.flatMate" class="row">
+      <button class="return-button" (click)="return()">vissza</button>
     </div>
   </div>
 </div>

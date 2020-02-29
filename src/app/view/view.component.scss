@@ -5,5 +5,23 @@
 
   .container {
     max-width: 96vw;
+
+    .return-button {
+      width: 90px;
+      height: 24px;
+      border-radius: 12px;
+      background-color: #f47c4c;
+      border: none;
+      font-family: Roboto;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 900;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.48px;
+      text-align: center;
+      color: #f8fcfc;
+    }
   }
 }
