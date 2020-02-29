@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NotFoundComponent } from 'src/app/core/not-found/not-found.component';
 import { externalUrlProvider } from 'src/app/core';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './core/interceptor.service';
 
 
 const routes: Routes = [
@@ -25,6 +27,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  }]
 })
 export class AppRoutingModule { }

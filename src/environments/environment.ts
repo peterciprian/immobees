@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: '/',
+  baseApiUrl: '/api/',
   domain: 'immobees-dev.auth0.com',
   client_id: 'CqNt87HuCMBsu8jGK_4wqAZxh6yAowTX',
 };

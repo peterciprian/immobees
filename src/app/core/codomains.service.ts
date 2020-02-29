@@ -16,12 +16,12 @@ export class CodomainsService {
 
   getProfessions(): Observable<string[]> {
     const headers = new HttpHeaders();
-    return this.http.get<string[]>(`${environment.baseApiUrl}api/professions`, { headers });
+    return this.http.get<string[]>(`${environment.baseApiUrl}/professions`, { headers });
   }
 
   getPets(): Observable<string[]> {
     const headers = new HttpHeaders();
-    return this.http.get<string[]>(`${environment.baseApiUrl}api/pets`, { headers });
+    return this.http.get<string[]>(`${environment.baseApiUrl}/pets`, { headers });
   }
 
   getLanguages(): Language[] {

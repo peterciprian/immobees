@@ -14,17 +14,17 @@ export class PublicService {
 
   getAccounts(): Observable<Accounts> {
     const headers = new HttpHeaders();
-    return this.http.get<Accounts>(`${environment.baseApiUrl}api/public/accounts`, { headers });
+    return this.http.get<Accounts>(`${environment.baseApiUrl}public/accounts`, { headers });
   }
 
   getFrequents(): Observable<Frequents> {
     const headers = new HttpHeaders();
-    return this.http.get<Frequents>(`${environment.baseApiUrl}api/public/search`, { headers });
+    return this.http.get<Frequents>(`${environment.baseApiUrl}public/search`, { headers });
   }
 
   getStatistics(): Observable<Statistics> {
     const headers = new HttpHeaders();
-    return this.http.get<Statistics>(`${environment.baseApiUrl}api/public/statistics`, { headers });
+    return this.http.get<Statistics>(`${environment.baseApiUrl}public/statistics`, { headers });
   }
 
 }

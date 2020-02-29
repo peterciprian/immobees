@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
   public mobile: boolean;
   public highLight: Account;
   constructor(private http: HttpClient) {
-    this.http.get<Account[]>('assets/profiles.JSON').subscribe(acc => {
+    this.http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
       this.highLight = acc.shift();
       this.isLoaded = true;
     });

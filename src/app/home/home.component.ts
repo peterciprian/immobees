@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../core/profile.service';
+import { CodomainsService } from '../core/codomains.service';
 
 @Component({
   selector: 'app-home',
