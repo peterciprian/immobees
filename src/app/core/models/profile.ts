@@ -13,8 +13,8 @@ export interface Profile extends Account {
     nationality: string;
     qualification: string;
     hasErasmus: boolean;
-    spokenLanguages: string |string[];
-    moveIntoAt: string | Date;
+    spokenLanguages: string | string[];
+    moveIntoAt: string;
     school: string;
     profession: string;
     children: boolean | number;

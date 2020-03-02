@@ -119,7 +119,7 @@ export interface Account {
     subject: Subject;
     roomType: string;
     client?: Client;
-    moveIntoAt?: string | Date;
+    moveIntoAt?: string;
     price: Price;
 }
 
@@ -156,43 +156,43 @@ export interface Address {
 }
 
 export interface Details {
-  lift?: boolean;
-  washingMachine?: boolean;
-  smokingArea?: boolean;
-  balcony?: boolean;
-  gym?: boolean;
-  accessible?: boolean;
-  petsAllowed?: boolean;
-  television?: boolean;
-  internet?: boolean;
-  garage?: boolean;
-  jakuzzi?: boolean;
-  airConditioner?: boolean;
-  privateBathroom?: boolean;
-  parking?: boolean;
-  shortPeriod?: boolean;
+    lift?: boolean;
+    washingMachine?: boolean;
+    smokingArea?: boolean;
+    balcony?: boolean;
+    gym?: boolean;
+    accessible?: boolean;
+    petsAllowed?: boolean;
+    television?: boolean;
+    internet?: boolean;
+    garage?: boolean;
+    jakuzzi?: boolean;
+    airConditioner?: boolean;
+    privateBathroom?: boolean;
+    parking?: boolean;
+    shortPeriod?: boolean;
 }
 
 export interface Price {
-  fee?: number;
-  currency: string;
-  min: number;
-  max: number;
-  billsIncluded: boolean;
-  caution?: number;
+    fee?: number;
+    currency: string;
+    min: number;
+    max: number;
+    billsIncluded: boolean;
+    caution?: number;
 }
 
 export interface Client {
-  gender?: string;
-  nationality?: string;
-  qualification?: string;
-  hasErasmus?: boolean;
-  moveIntoAt?: Date;
+    gender?: string;
+    nationality?: string;
+    qualification?: string;
+    hasErasmus?: boolean;
+    moveIntoAt?: string;
 }
 
 export interface Picture {
-  data: string;
-  label: string;
+    data: string;
+    label: string;
 }
 
 export interface Accounts {
