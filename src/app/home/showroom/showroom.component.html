@@ -1,12 +1,11 @@
-<div class="showroom-container row mx-0">
-
-  <!--   <carousel [itemsPerSlide]="2" [singleSlideOffset]="true" [startFromIndex]="0" [interval]="false">
-    <slide *ngFor="let account of accounts">
-      <div class="carousel-caption"></div>
+<div class="showroom-container d-flex flex-row justify-content-center mx-0 flex-wrap">
+  <div class="caroussel-container d-flex justify-content-around align-items-center">
+    <div class="arrow-button mx-3" (click)="previous()">&#x276E;</div>
+<!--     <div @myInsertRemoveTrigger *ngFor="let account of accounts" class="pt-5"> -->
+    <div *ngFor="let account of accounts" class="pt-5">
       <app-immo-card [account]="account"></app-immo-card>
-    </slide>
-  </carousel> -->
-  <div *ngFor="let account of accounts" class="col pt-5">
-    <app-immo-card [account]="account"></app-immo-card>
+    </div>
+    <div class="arrow-button mx-3" (click)="next()">&#x276F;</div>
   </div>
+
 </div>
