@@ -6,3 +6,15 @@
   background-image: linear-gradient(to right, #95c7d7, #8aadb4, #938ec5, #87b0d9, #95c7d7);
   overflow: hidden;
 }
+
+.arrow-button {
+  cursor: pointer;
+  width: 43px;
+  height: 43px;
+  box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.33);
+  background-color: #ffffff;
+  border-radius: 21px;
+  color: #686868;
+  padding: 5px 15px;
+  font-size: 18pt;
+}
