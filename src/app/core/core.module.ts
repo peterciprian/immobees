@@ -8,6 +8,7 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { NotFoundModule } from './not-found';
 import { QueryService } from './query.service';
 import { ViewService } from './view.service';
+import { ModalService } from '../modal/modal.service';
 
 ///////////////////////////////////
 // Declare tree-shakeable tokens //
@@ -33,6 +34,7 @@ const coreServices: any[] = [
   },
   QueryService,
   ViewService,
+  ModalService
 ];
 
 @NgModule({

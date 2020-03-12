@@ -20,19 +20,16 @@ export class InterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log(req.url);
     if (
       req.url.includes('assets') ||
       req.url.includes('statistics') ||
       req.url.includes('pets') ||
-      req.url.includes('professions') ||
-      req.url.includes('search')) {
-      console.log(req);
+      req.url.includes('professions') /* ||
+      req.url.includes('search') */) {
       return next.handle(req);
     } else {
       return this.auth.getTokenSilently$().pipe(
         mergeMap(token => {
-          console.log(token);
           const tokenReq = req.clone({
             setHeaders: { Authorization: `Bearer ${token}` }
           });

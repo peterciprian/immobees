@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { PublicService } from '../core/public.service';
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   selector: 'app-footer',
@@ -13,7 +14,7 @@ export class FooterComponent implements OnInit {
   totalOffers: number;
   faCoffee = faCoffee;
 
-  constructor(public publicS: PublicService) { }
+  constructor(public publicS: PublicService, public modalService: ModalService) { }
 
   ngOnInit() {
     this.publicS.getStatistics().subscribe(res => {

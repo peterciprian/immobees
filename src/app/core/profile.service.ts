@@ -45,13 +45,15 @@ export class ProfileService {
     return this.http.get<Profile>(`${environment.baseApiUrl}me`, { headers });
   }
 
-  putMyProfile(body: Profile): Observable<Profile> {
-    const headers = new HttpHeaders();
+  putMyProfile(body: string): Observable<Profile> {
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json');
     return this.http.put<Profile>(`${environment.baseApiUrl}me`, body, { headers });
   }
 
-  putSubject(body: Subject): Observable<Profile> {
-    const headers = new HttpHeaders();
+  putSubject(body: string): Observable<Profile> {
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json');
     return this.http.put<Profile>(`${environment.baseApiUrl}me/subject`, body, { headers });
   }
 }

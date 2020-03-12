@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { ModalComponent } from './modal/modal.component';
+import { MatDialogModule } from '@angular/material';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,7 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,10 +41,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     CoreModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  entryComponents: [
+    ModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
