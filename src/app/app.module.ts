@@ -20,6 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule } from '@angular/material';
+import { RegisterComponent } from './register/register.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     NavComponent,
     FooterComponent,
-    ModalComponent
+    ModalComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

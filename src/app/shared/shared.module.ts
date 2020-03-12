@@ -5,9 +5,19 @@ import { HexagonComponent } from './hexagon/hexagon.component';
 import { ImmoCardComponent } from './immo-card/immo-card.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule } from '@angular/forms';
+import { PaginationModule } from 'ngx-bootstrap';
+import { MatSelectModule } from '@angular/material/select';
+
 import { HexagonLargeComponent } from './hexagon_large/hexagon.large.component';
 import { LocaleDatePipe } from './locale-date.pipe';
 import { AvatarComponent } from './avatar/avatar.component';
+import { DemandPersonalComponent } from './demand-personal/demand-personal.component';
+import { DemandRoommateComponent } from './demand-roommate/demand-roommate.component';
+import { DemandAvatarComponent } from './demand-avatar/demand-avatar.component';
+import { OfferRoomComponent } from './offer-room/offer-room.component';
+import { OfferPersonalComponent } from './offer-personal/offer-personal.component';
+import { OfferAvatarComponent } from './offer-avatar/offer-avatar.component';
+import { OfferImagesComponent } from './offer-images/offer-images.component';
 
 
 
@@ -18,7 +28,14 @@ const sharedComponents: any[] = [
   HexagonComponent,
   HexagonLargeComponent,
   ImmoCardComponent,
-  AvatarComponent
+  AvatarComponent,
+  DemandPersonalComponent,
+  DemandRoommateComponent,
+  DemandAvatarComponent,
+  OfferRoomComponent,
+  OfferPersonalComponent,
+  OfferAvatarComponent,
+  OfferImagesComponent
 ];
 
 /**
@@ -43,12 +60,16 @@ const sharedDirectives: any[] = [
   imports: [
     CommonModule,
     FormsModule,
-    CarouselModule.forRoot()
+    MatSelectModule,
+    CarouselModule.forRoot(),
+    PaginationModule.forRoot(),
   ],
   exports: [
     CommonModule,
     FormsModule,
+    MatSelectModule,
     CarouselModule,
+    PaginationModule,
     sharedComponents,
     sharedDirectives,
     LocaleDatePipe

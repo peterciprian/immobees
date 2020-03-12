@@ -7,7 +7,6 @@ import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ResultListComponent } from './result-list/result-list.component';
 import { SharedModule } from '../shared';
 
-import { PaginationModule } from 'ngx-bootstrap';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -20,8 +19,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     SearchRoutingModule,
     SharedModule,
-    PaginationModule.forRoot(),
-    MatSelectModule
   ]
 })
 export class SearchModule { }

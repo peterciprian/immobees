@@ -1,0 +1,59 @@
+.divider {
+  box-sizing: border-box;
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  height: 3px;
+  background-color: #d7d7d7;
+}
+
+.title {
+  margin: 0 10px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  text-align: center;
+  color: #5a5a5a;
+}
+
+
+/*ngx-bootstrap paginator stype overwrite*/
+
+::ng-deep.page-item.disabled .page-link,
+::ng-deep.page-item .page-link {
+  font-size: 0 !important;
+  padding: 0;
+  margin-left: 5px;
+  color: #d7d7d7;
+  background-color: #d7d7d7;
+  border: none;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  color: #d7d7d7;
+}
+
+::ng-deep.page-link:focus {
+  box-shadow: none;
+}
+
+::ng-deep.page-item.active .page-link {
+  background-color: #818181;
+  border-color: #818181;
+  color: #818181;
+}
+
+::ng-deep.page-item:last-child .page-link,
+::ng-deep.page-item:first-child .page-link {
+  border-radius: 5px;
+}
+
+::ng-deep ul.pagination {
+  margin: 0;
+}
