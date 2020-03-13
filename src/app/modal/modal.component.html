@@ -29,7 +29,7 @@
 
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-  <pagination [boundaryLinks]="false" [directionLinks]="false" [totalItems]="55" [maxSize]="stepperItems" [rotate]="true"
+  <pagination *ngIf="stepperItems>1" [boundaryLinks]="false" [directionLinks]="false" [itemsPerPage]="1" [totalItems]="stepperItems" [rotate]="true"
   [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)">
 </pagination>
 </mat-dialog-actions>
