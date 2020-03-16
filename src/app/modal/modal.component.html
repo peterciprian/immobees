@@ -1,35 +1,42 @@
 <div mat-dialog-title class="modal-header d-flex flex-row justify-content-center align-items-center">
   <div class="divider"></div>
-  <div class="title"> TITLE</div>
+  <div class="title"> {{title}}</div>
   <div class="divider"></div>
+  <div class="close" (click)="modalService.closeDialog()">
+    &times;
+  </div>
 </div>
 <mat-dialog-content class="mat-typography">
-
-  <app-demand-avatar
-    *ngIf="currentPage === 3 && modalType === 'DEMAND'">
+  <app-register *ngIf="modalType === 'REGISTER'">
+  </app-register>
+  <app-demand-avatar *ngIf="currentPage === 3 && modalType === 'DEMAND'">
   </app-demand-avatar>
-  <app-demand-personal
-    *ngIf="currentPage === 1 && modalType === 'DEMAND'">
+  <app-demand-personal *ngIf="currentPage === 1 && modalType === 'DEMAND'">
   </app-demand-personal>
   <app-demand-roommate
     *ngIf="(currentPage === 2 && modalType === 'DEMAND') || (currentPage === 3 && modalType === 'OFFER')">
   </app-demand-roommate>
-  <app-offer-avatar
-    *ngIf="currentPage === 4 && modalType === 'OFFER'">
+  <app-offer-avatar *ngIf="currentPage === 4 && modalType === 'OFFER'">
   </app-offer-avatar>
-  <app-offer-images
-    *ngIf="currentPage === 5 && modalType === 'OFFER'">
+  <app-offer-images *ngIf="currentPage === 5 && modalType === 'OFFER'">
   </app-offer-images>
-  <app-offer-personal
-    *ngIf="currentPage === 1 && modalType === 'OFFER'">
+  <app-offer-personal *ngIf="currentPage === 1 && modalType === 'OFFER'">
   </app-offer-personal>
-  <app-offer-room
-    *ngIf="currentPage === 2 && modalType === 'OFFER'">
+  <app-offer-room *ngIf="currentPage === 2 && modalType === 'OFFER'">
   </app-offer-room>
 
 </mat-dialog-content>
-<mat-dialog-actions align="center">
-  <pagination [boundaryLinks]="false" [directionLinks]="false" [totalItems]="55" [maxSize]="stepperItems" [rotate]="true"
-  [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)">
-</pagination>
+<mat-dialog-actions align="center" class="d-flex flex-column">
+  <div *ngIf="modalType === 'DEMAND' || modalType === 'OFFER'"
+    class="action-buttons d-flex flex-row justify-content-center mb-3">
+    <div class="button button-previous mr-3" (click)="back()">vissza</div>
+    <div *ngIf="(currentPage !== 3 && modalType === 'DEMAND') || (currentPage !== 5 && modalType === 'OFFER')"
+      class="button button-next" (click)="next()"> tovább</div>
+    <div *ngIf="(currentPage === 3 && modalType === 'DEMAND') || (currentPage === 5 && modalType === 'OFFER')"
+      class="button button-save" (click)="save()">mentés</div>
+  </div>
+
+  <pagination [boundaryLinks]="false" [directionLinks]="false" [totalItems]="55" [maxSize]="stepperItems"
+    [rotate]="true" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)">
+  </pagination>
 </mat-dialog-actions>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PageChangedEvent } from 'ngx-bootstrap';
+import { ModalService } from './modal.service';
 
 @Component({
   selector: 'app-modal',
@@ -14,7 +15,10 @@ export class ModalComponent implements OnInit {
   public returnedArray: string[];
   public stepperItems = 5;
   public modalType = 'OFFER';
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  public title = 'TITLE';
+  constructor(
+    public modalService: ModalService,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }
@@ -23,5 +27,21 @@ export class ModalComponent implements OnInit {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
     this.returnedArray = this.contentArray.slice(startItem, endItem);
+  }
+
+  next() {
+    if ((this.modalType === 'OFFER' && this.currentPage < 5) || (this.modalType === 'demand' && this.currentPage < 3)) {
+      this.currentPage++;
+    }
+    console.log('next, current page: ' + this.currentPage);
+  }
+  back() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+    console.log('back, current page: ' + this.currentPage);
+  }
+  save() {
+    console.log('save');
   }
 }

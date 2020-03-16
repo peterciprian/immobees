@@ -21,6 +21,41 @@
   color: #5a5a5a;
 }
 
+.action-buttons {
+  .button {
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 13.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.54px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #f8fcfc;
+    margin-top: 30px;
+    padding-top: 13px;
+    width: 145px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: #f47c4c;
+  }
+}
+
+.modal-header.mat-dialog-title {
+  position: relative;
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    right: -5px;
+  }
+}
+
+::ng-deep.modal-header {
+  border: none;
+}
 
 /*ngx-bootstrap paginator stype overwrite*/
 
