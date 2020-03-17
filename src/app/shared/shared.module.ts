@@ -16,8 +16,8 @@ import { DemandRoommateComponent } from './demand-roommate/demand-roommate.compo
 import { DemandAvatarComponent } from './demand-avatar/demand-avatar.component';
 import { OfferRoomComponent } from './offer-room/offer-room.component';
 import { OfferPersonalComponent } from './offer-personal/offer-personal.component';
-import { OfferAvatarComponent } from './offer-avatar/offer-avatar.component';
 import { OfferImagesComponent } from './offer-images/offer-images.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 
@@ -34,8 +34,8 @@ const sharedComponents: any[] = [
   DemandAvatarComponent,
   OfferRoomComponent,
   OfferPersonalComponent,
-  OfferAvatarComponent,
-  OfferImagesComponent
+  OfferImagesComponent,
+  FileUploadComponent
 ];
 
 /**

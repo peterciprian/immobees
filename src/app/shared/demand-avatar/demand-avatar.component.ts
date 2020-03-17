@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemandAvatarComponent implements OnInit {
 
+  private image: string;
   constructor() { }
 
   ngOnInit() {
