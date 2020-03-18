@@ -1,1 +1,15 @@
-<p>demand-avatar works!</p>
+<div class="avatar-upload-container d-flex flex-column justify-content-center">
+  <div class="image d-flex align-self-center align-items-center justify-content-center mb-4">
+    drag and drop
+    <br>
+    picture to upload
+  </div>
+  <div class="notes d-flex align-self-center justify-content-center mb-3">
+    Maximális fájlméret 5mb
+    <br>
+    Minimum képfelbontás 1024x768
+  </div>
+  <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="kép kiválasztása"
+    [(ngModel)]="image">
+  </app-file-upload>
+</div>

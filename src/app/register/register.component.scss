@@ -1,0 +1,26 @@
+.register-container {
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .button {
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 13.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.54px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #f8fcfc;
+    margin-top: 30px;
+    padding-top: 13px;
+    width: 231px;
+    height: 42px;
+    border-radius: 21px;
+    background-color: #f47c4c;
+  }
+}

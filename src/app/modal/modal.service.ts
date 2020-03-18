@@ -9,17 +9,18 @@ export class ModalService {
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog() {
+  openDialog(data) {
     const dialogRef = this.dialog.open(
       ModalComponent, {
-      data: { name: 'austin' },
+      data,
       panelClass: 'custom-modal-panel',
       backdropClass: 'custom-modal-backdrop'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed().subscribe();
+  }
+  closeDialog() {
+    this.dialog.closeAll();
   }
 }
 
