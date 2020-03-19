@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
 
 @Component({
   selector: 'app-demand-personal',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemandPersonalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modalDataShare: ModalDataShareService) { }
 
   ngOnInit() {
   }

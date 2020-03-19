@@ -9,6 +9,7 @@ import { NotFoundModule } from './not-found';
 import { QueryService } from './query.service';
 import { ViewService } from './view.service';
 import { ModalService } from '../modal/modal.service';
+import { ModalDataShareService } from '../modal/modal-data-share.service';
 
 ///////////////////////////////////
 // Declare tree-shakeable tokens //
@@ -34,7 +35,8 @@ const coreServices: any[] = [
   },
   QueryService,
   ViewService,
-  ModalService
+  ModalService,
+  ModalDataShareService
 ];
 
 @NgModule({

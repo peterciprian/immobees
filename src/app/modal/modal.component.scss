@@ -1,9 +1,8 @@
 .divider {
   box-sizing: border-box;
-  width: 100%;
-  width: -moz-available;
+  width: stretch;
   width: -webkit-fill-available;
-  width: fill-available;
+  width: -moz-available;
   height: 3px;
   background-color: #d7d7d7;
 }

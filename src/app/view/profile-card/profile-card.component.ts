@@ -1,7 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Account } from 'src/app/core/models/accounts';
+import { Component, OnInit } from '@angular/core';
 import { ViewService } from 'src/app/core/view.service';
-import { Observable, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-profile-card',

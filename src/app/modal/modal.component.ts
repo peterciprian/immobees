@@ -1,49 +1,47 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PageChangedEvent } from 'ngx-bootstrap';
+import { Component, Inject, OnDestroy } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalDataSet } from '../core/models/modalDataSet';
-import { ModalService } from './modal.service';
+import { ModalDataShareService } from './modal-data-share.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnDestroy {
 
-@Input() modalDataSet: ModalDataSet = {stepperItems: 5, modalType: 'OFFER'};
+  public modalDataSet: ModalDataSet;
   public currentPage = 1;
-  public contentArray = new Array(90).fill('');
-  public returnedArray: string[];
-  public stepperItems = 5;
-  public modalType = 'OFFER';
   public title = 'TITLE';
+  private subscriptions = new Array<Subscription>();
+
   constructor(
-    public modalService: ModalService,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-  ngOnInit() {
-  }
-
-  pageChanged(event: PageChangedEvent): void {
-    const startItem = (event.page - 1) * event.itemsPerPage;
-    const endItem = event.page * event.itemsPerPage;
-    this.returnedArray = this.contentArray.slice(startItem, endItem);
-  }
+    public modalDataShare: ModalDataShareService,
+    public dialogRef: MatDialogRef<ModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.subscriptions.push(modalDataShare.modalDataSet.subscribe(modalData => this.modalDataSet = modalData));
+     }
 
   next() {
-    if ((this.modalType === 'OFFER' && this.currentPage < 5) || (this.modalType === 'demand' && this.currentPage < 3)) {
+    if ((this.modalDataSet.modalType === 'OFFER' && this.currentPage < 5) ||
+        (this.modalDataSet.modalType === 'DEMAND' && this.currentPage < 3)) {
       this.currentPage++;
     }
-    console.log('next, current page: ' + this.currentPage);
   }
   back() {
     if (this.currentPage > 1) {
       this.currentPage--;
     }
-    console.log('back, current page: ' + this.currentPage);
   }
   save() {
-    console.log('save');
+    console.log(this.modalDataShare.profile);
+  }
+
+  close() {
+    this.dialogRef.close();
+  }
+  ngOnDestroy() {
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 }

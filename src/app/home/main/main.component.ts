@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProfileService } from 'src/app/core/profile.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +12,7 @@ export class MainComponent implements OnInit {
   public isLoaded = false;
   public mobile: boolean;
   public highLight: Account;
-  private profile = `{
+  /*private profile = `{
     "name": "Balint Csak",
     "birthday":"1992-03-31T10:13:09.307Z",
     "hasErasmus":true,
@@ -103,8 +104,11 @@ export class MainComponent implements OnInit {
      "parking":"street",
      "shortPeriod":true
   }
-}`;
-  constructor(private http: HttpClient, private profilService: ProfileService) {
+}`;*/
+  constructor(
+    private http: HttpClient,
+    private profilService: ProfileService,
+    public auth: AuthService, ) {
     this.http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
       this.highLight = acc.shift();
       this.isLoaded = true;

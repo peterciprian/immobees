@@ -16,6 +16,22 @@
     resize: none;
   }
 
+  ::-webkit-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  ::-moz-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  :-ms-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  ::-ms-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
   ::placeholder {
     color: #5a5a5a5a;
   }
