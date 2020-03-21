@@ -8,6 +8,9 @@
 }
 
 .title {
+  width: stretch;
+  width: -webkit-fill-available;
+  width: -moz-available;
   margin: 0 10px;
   font-family: Roboto;
   font-size: 16px;
@@ -16,6 +19,7 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 0.64px;
+  text-transform: uppercase;
   text-align: center;
   color: #5a5a5a;
 }
@@ -33,7 +37,7 @@
     text-align: center;
     text-transform: uppercase;
     color: #f8fcfc;
-    margin-top: 30px;
+    margin-top: 20px;
     padding-top: 13px;
     width: 145px;
     height: 42px;
@@ -54,6 +58,10 @@
 
 ::ng-deep.modal-header {
   border: none;
+}
+
+::ng-deep.mat-dialog-container {
+  max-width: 732px;
 }
 
 /*ngx-bootstrap paginator stype overwrite*/

@@ -1,1 +1,172 @@
-<p>demand-personal works!</p>
+<div class="personal-container d-flex flex-column">
+  <div class="head-roomtype d-flex flex-row align-items-center justify-content-center">
+    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5">
+      <div class="image mx-auto mb-3">
+        <img src="assets/img/single.png">
+      </div>
+      <div class="button active">külön szoba</div>
+    </div>
+    <div class="roomtype shared d-flex flex-column align-items-end">
+      <div class="image mb-3">
+        <img src="assets/img/shared.png">
+      </div>
+      <div class="button">szobatárs</div>
+    </div>
+  </div>
+  <div class="body-personal d-flex flex-column mt-3">
+    <div class="title align-self-center justify-content-center my-2">SZEMÉLYES INFORMÁCIÓK</div>
+    <div class="wrap-container d-flex flex-wrap">
+
+      <div class="input-group age d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="age-select">
+          <mat-select placeholder="Életkor">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group place d-flex flex-row my-1">
+        <img src="assets/img/15_helyszin.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="place-select">
+          <mat-select placeholder="Helyszín" multiple>
+            <mat-select-trigger>
+              {{ toppings.value ? toppings.value[0] : "" }}
+              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                (+{{ toppings.value.length - 1 }}
+                {{ toppings.value?.length === 2 ? "további" : "további" }})
+              </span>
+            </mat-select-trigger>
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group erasmus d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="erasmus-select">
+          <mat-select placeholder="Erasmus">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group language d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="language-select">
+          <mat-select placeholder="Beszélt nyelvek" multiple>
+            <mat-select-trigger>
+              {{ toppings.value ? toppings.value[0] : "" }}
+              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                (+{{ toppings.value.length - 1 }}
+                {{ toppings.value?.length === 2 ? "további" : "további" }})
+              </span>
+            </mat-select-trigger>
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let language of languages" [value]="language.code">{{
+              language.nativeName
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group school d-flex flex-row my-1">
+        <img src="assets/img/07_iskola.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="school-select">
+          <mat-select placeholder="Iskola">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let school of schools" [value]="school">{{
+              school
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group profession d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="profession-select">
+          <mat-select placeholder="Foglalkozás">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let profession of (professions | async)" [value]="profession">{{
+              profession
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group children d-flex flex-row my-1">
+        <img src="assets/img/09_gyermek.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="children-select">
+          <mat-select placeholder="Gyerek">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group pet d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="pet-select">
+          <mat-select placeholder="Kisállat">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let pet of (pets | async)" [value]="pet">{{
+              pet
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group smoking d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="smoking-select">
+          <mat-select placeholder="Dohányzás">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group goesHome d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="goesHome-select">
+          <mat-select placeholder="Hétvégén hazautazik">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="input-group personality d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="personality-select">
+          <mat-select placeholder="Személyiség">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="text-area d-flex align-self-center mt-3">
+      <textarea matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
+        placeholder="&#9998; MUTASD BE ?AGAD PÁR SZÓBAN..."></textarea>
+    </div>
+  </div>
+</div>

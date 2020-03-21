@@ -8,7 +8,8 @@ import { Profile } from '../core/models/profile';
 })
 export class ModalDataShareService {
 
-public modalDataSet = new BehaviorSubject<ModalDataSet>({stepperItems: 3, modalType: 'DEMAND'});
+  public title = new BehaviorSubject<string>('teljes regisztráció');
+public modalDataSet = new BehaviorSubject<ModalDataSet>({stepperItems: 0, modalType: 'REGISTER'});
 public profile = {} as Profile;
 
 constructor() { }

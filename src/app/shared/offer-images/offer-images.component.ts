@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
 
 @Component({
   selector: 'app-offer-images',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfferImagesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalDataShare: ModalDataShareService) { }
 
   ngOnInit() {
+    this.modalDataShare.title.next('képk a lakásról');
   }
 
 }

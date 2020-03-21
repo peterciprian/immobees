@@ -1,0 +1,50 @@
+.text-area {
+  textarea {
+    min-height: 37px;
+    padding: 12px;
+    border-radius: 17.8px;
+    border: solid 3px #d7d7d7;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.52px;
+    text-align: left;
+    color: #5a5a5a;
+    resize: none;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  ::-moz-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  :-ms-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  ::-ms-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  ::placeholder {
+    color: #5a5a5a5a;
+  }
+
+  :-ms-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  ::-ms-input-placeholder {
+    color: #5a5a5a5a;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+}

@@ -12,6 +12,7 @@ export class DemandAvatarComponent implements OnInit {
   constructor(public modalDataShare: ModalDataShareService) { }
 
   ngOnInit() {
+    this.modalDataShare.title.next('profilkép');
   }
 
 }
