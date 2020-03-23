@@ -4,7 +4,7 @@ import { ExternalUrlDirective } from './external-url/external-url.directive';
 import { HexagonComponent } from './hexagon/hexagon.component';
 import { ImmoCardComponent } from './immo-card/immo-card.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -18,6 +18,7 @@ import { OfferRoomComponent } from './offer-room/offer-room.component';
 import { OfferPersonalComponent } from './offer-personal/offer-personal.component';
 import { OfferImagesComponent } from './offer-images/offer-images.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 
 
@@ -60,14 +61,27 @@ const sharedDirectives: any[] = [
   imports: [
     CommonModule,
     FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatFormFieldModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     CarouselModule.forRoot(),
     PaginationModule.forRoot(),
   ],
   exports: [
     CommonModule,
     FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     CarouselModule,
     PaginationModule,
     sharedComponents,

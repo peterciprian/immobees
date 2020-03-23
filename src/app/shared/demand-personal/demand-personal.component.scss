@@ -62,6 +62,31 @@
   }
 }
 
+.input-group-option {
+  cursor: pointer;
+}
+
+.input-field {
+  padding: 0 .5rem 0 .5rem;
+  width: 40px;
+  height: 26px;
+  border-radius: 8px;
+  border: solid 2px #d7d7d7;
+}
+
+.text-l1 {
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: left;
+  color: #5a5a5a;
+}
+
 .example-additional-selection {
   opacity: 0.75;
   font-size: 0.75em;

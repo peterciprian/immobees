@@ -17,156 +17,153 @@
     <div class="title align-self-center justify-content-center my-2">SZOBA INFORMÁCIÓK</div>
     <div class="wrap-container d-flex flex-wrap">
 
-      <div class="input-group age d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="age-select">
-          <mat-select placeholder="Életkor">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-
       <div class="input-group place d-flex flex-row my-1">
         <img src="assets/img/15_helyszin.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="place-select">
-          <mat-select placeholder="Helyszín" multiple>
-            <mat-select-trigger>
-              {{ toppings.value ? toppings.value[0] : "" }}
-              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-                (+{{ toppings.value.length - 1 }}
-                {{ toppings.value?.length === 2 ? "további" : "további" }})
-              </span>
-            </mat-select-trigger>
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
+          <input matInput type="text" placeholder="Helyszín" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
         </mat-form-field>
       </div>
 
-      <div class="input-group erasmus d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="erasmus-select">
-          <mat-select placeholder="Erasmus">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group roomPrice d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Szobaár</div>
+      <input type="number" min="0"
+        class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="ár" />
+      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+    </div>
 
-      <div class="input-group language d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="language-select">
-          <mat-select placeholder="Beszélt nyelvek" multiple>
-            <mat-select-trigger>
-              {{ toppings.value ? toppings.value[0] : "" }}
-              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-                (+{{ toppings.value.length - 1 }}
-                {{ toppings.value?.length === 2 ? "további" : "további" }})
-              </span>
-            </mat-select-trigger>
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let language of languages" [value]="language.code">{{
-              language.nativeName
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
 
-      <div class="input-group school d-flex flex-row my-1">
-        <img src="assets/img/07_iskola.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="school-select">
-          <mat-select placeholder="Iskola">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let school of schools" [value]="school">{{
-              school
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group buildingType d-flex flex-row my-1">
+      <img src="assets/img/07_iskola.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="building-select">
+        <mat-select placeholder="Lakás típusa">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let building of buildingType" [value]="building">{{
+            building
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-      <div class="input-group profession d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="profession-select">
-          <mat-select placeholder="Foglalkozás">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let profession of (professions | async)" [value]="profession">{{
-              profession
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group costs d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Rezsi</div>
+      <input type="number" min="0"
+        class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="ár" />
+      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+    </div>
 
-      <div class="input-group children d-flex flex-row my-1">
-        <img src="assets/img/09_gyermek.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="children-select">
-          <mat-select placeholder="Gyerek">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group buildingCondition d-flex flex-row my-1">
+      <img src="assets/img/07_iskola.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="building-condition-select">
+        <mat-select placeholder="Lakás állapota">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let condition of buildingCondition" [value]="condition">{{
+            condition
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-      <div class="input-group pet d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="pet-select">
-          <mat-select placeholder="Kisállat">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let pet of (pets | async)" [value]="pet">{{
-              pet
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group av_date d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="av_date">
+        <input matInput [matDatepicker]="av_date" placeholder="Költözhető">
+        <mat-datepicker-toggle matSuffix [for]="av_date"></mat-datepicker-toggle>
+        <mat-datepicker #av_date></mat-datepicker>
+      </mat-form-field>
+    </div>
 
-      <div class="input-group smoking d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="smoking-select">
-          <mat-select placeholder="Dohányzás">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group roomPrice d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Lakás alapterülete</div>
+      <input type="number" min="0"
+        class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="ár" />
+      <div class="input-group-label text-l1 align-self-center mr-1">m<sup>2</sup></div>
+    </div>
 
-      <div class="input-group goesHome d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="goesHome-select">
-          <mat-select placeholder="Hétvégén hazautazik">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group furnished d-flex flex-row my-1">
+      <img src="assets/img/07_iskola.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="furnished-select">
+        <mat-select placeholder="Bútorozottság">
+          <mat-option>X</mat-option>
+          <mat-option *ngFor="let furnish of furnished" [value]="furnish">{{
+            furnish
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-      <div class="input-group personality d-flex flex-row my-1">
-        <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="personality-select">
-          <mat-select placeholder="Személyiség">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-              topping
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="input-group roomPrice d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Szoba alapterülete</div>
+      <input type="number" min="0"
+        class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="ár" />
+      <div class="input-group-label text-l1 align-self-center mr-1">m<sup>2</sup></div>
+    </div>
+
+    <div class="input-group floor d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Emelet</div>
+      <input type="number" min="0" max="20"
+        class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="földszint" />
+    </div>
+
+    <div class="input-group gender d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="gender-select">
+        <mat-select placeholder="Akit várok">
+          <mat-option [value]="'female'">Nő</mat-option>
+          <mat-option [value]="'male'">Férfi</mat-option>
+          <mat-option [value]="'other'">Más</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group height d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Belmagasság</div>
+      <input type="number" min="0" max ="10" step="0.1"
+        class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="m" />
+      <div class="input-group-label text-l1 align-self-center mr-1">m</div>
+    </div>
+
+    <div class="input-group residents d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Lakók száma</div>
+      <input type="number" min="0" max ="10"
+        class="input-group-option input-field align-self-center ml-auto mr-2" />
+      <div class="input-group-label text-l1 align-self-center mr-1">lakó</div>
+    </div>
+
+    <div class="input-group parking d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <mat-form-field [floatLabel]="'never'" class="erasmus">
+        <mat-select placeholder="Parkolás">
+          <mat-option [value]="'no'">Nincs</mat-option>
+          <mat-option [value]="'inSite'">Telken belül</mat-option>
+          <mat-option [value]="'forRent'">Bérelhető</mat-option>
+          <mat-option [value]="'free'">Utcán ingyenes</mat-option>
+          <mat-option [value]="'pay'">Utcán fizetős</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="input-group caution d-flex flex-row my-1">
+      <img src="assets/img/03_nemzetiseg.svg" class="icon">
+      <div class="input-group-label text-l1 align-self-center mr-2">Kaució</div>
+      <input type="number" min="0"
+        class="input-group-option input-field align-self-center ml-auto mr-2" />
+      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+    </div>
 
     </div>
     <div class="text-area d-flex align-self-center mt-3">
-      <textarea matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
-        placeholder="&#9998; MUTASD BE ?AGAD PÁR SZÓBAN..."></textarea>
+      <textarea matInput name="about-room" id="about-room" cols="50" rows="5"
+        placeholder="&#9998; ÍRJ A LAKÁSRÓL/SZOBÁRÓL PÁR SZÓT..."></textarea>
     </div>
   </div>
 </div>
