@@ -17,11 +17,11 @@
       <button *ngIf="auth.loggedIn" [matMenuTriggerFor]="profileMenu"
         class="im-orange-bg button-m1">{{'NAV.PROFILE' | translate }}</button>
       <mat-menu #profileMenu="matMenu" xPosition="before" yPosition="below">
-        <button mat-menu-item>Akikkel laknék</button>
-        <button mat-menu-item>Profil megtekintése</button>
-        <button mat-menu-item>Profil szerkesztése</button>
-        <button mat-menu-item>Beállítások</button>
-        <button mat-menu-item>Üzenetek</button>
+        <button mat-menu-item [routerLink]="['/profile/favs']">Akikkel laknék</button>
+        <button mat-menu-item (click)="viewMyProfile()">Profil megtekintése</button>
+        <button mat-menu-item [routerLink]="['/profile']" >Profil szerkesztése</button>
+        <button mat-menu-item [routerLink]="['/profile/settings']">Beállítások</button>
+        <button mat-menu-item [routerLink]="['/messages']">Üzenetek</button>
         <button (click)="auth.logout()" mat-menu-item>Kijelentkezés</button>
       </mat-menu>
     </div>

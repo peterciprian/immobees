@@ -1,2 +1,33 @@
-<p>profile works!</p>
+<div class="background">
+  <div class="container">
+    <div *ngIf="myProfile && myProfile.age" class="row">
+      <div class="col-lg-3 col-sm-12">
+        <app-profile-card-edit></app-profile-card-edit>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="row">
+          <div class="col">
+            <app-ad-properties-edit *ngIf="myProfile.subject.serviceType == 'DEMAND'"></app-ad-properties-edit>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <app-flat-properties-edit *ngIf="myProfile.subject.serviceType == 'OFFER'"></app-flat-properties-edit>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <app-recommendation-list [recommendations]="recommendations"></app-recommendation-list>
+      </div>
+    </div>
+
+    <div *ngIf="!myProfile || !myProfile.age" class="row">
+      <h3>Ismeretlen profil</h3>
+      <button class="return-button" (click)="this.modalService.openDialog('data')">Profil regisztrálása</button>
+      <button class="return-button" (click)="return()">vissza</button>
+    </div>
+  </div>
+</div>
+
+
 <router-outlet></router-outlet>

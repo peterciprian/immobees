@@ -1,0 +1,16 @@
+<div class="profile-edit-header-container d-flex flex-row">
+<div class="title">profil szerkesztése</div>
+<div class="switcher">
+  <div class="label">Profil:</div>
+  <div class="input-group profile d-flex flex-row">
+    <div class="input-group-option text-l2 align-self-center mr-auto"
+      [ngClass]="{ 'selected': selected }" (click)="switchActiveStatus()">
+      aktív
+    </div>
+    <div class="input-group-option text-l2 align-self-center"
+      [ngClass]="{ 'selected': !selected }" (click)="switchActiveStatus()">
+      inaktív
+    </div>
+  </div>
+</div>
+</div>

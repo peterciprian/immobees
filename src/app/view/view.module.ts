@@ -9,8 +9,6 @@ import { ViewComponent } from './view.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { AdPropertiesComponent } from './ad-properties/ad-properties.component';
 import { FlatPropertiesComponent } from './flat-properties/flat-properties.component';
-import { RecommendationListComponent } from './recommendation-list/recommendation-list.component';
-import { RecommendCardComponent } from './recommend-card/recommend-card.component';
 import { MapComponent } from './map/map.component';
 import { AngularOpenlayersModule } from 'ngx-openlayers';
 import { SharedModule } from '../shared';
@@ -21,8 +19,6 @@ import { SharedModule } from '../shared';
     ProfileCardComponent,
     AdPropertiesComponent,
     FlatPropertiesComponent,
-    RecommendationListComponent,
-    RecommendCardComponent,
     MapComponent
   ],
   imports: [

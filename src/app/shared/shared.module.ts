@@ -19,6 +19,8 @@ import { OfferPersonalComponent } from './offer-personal/offer-personal.componen
 import { OfferImagesComponent } from './offer-images/offer-images.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { RecommendationListComponent } from './recommendation-list/recommendation-list.component';
+import { RecommendCardComponent } from './recommend-card/recommend-card.component';
 
 
 
@@ -36,7 +38,9 @@ const sharedComponents: any[] = [
   OfferRoomComponent,
   OfferPersonalComponent,
   OfferImagesComponent,
-  FileUploadComponent
+  FileUploadComponent,
+  RecommendationListComponent,
+  RecommendCardComponent
 ];
 
 /**

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
 })
 export class DemandRoommateComponent implements OnInit {
 
+  @Input() showImage = true;
   constructor(private modalDataShare: ModalDataShareService) { }
 
   ngOnInit() {

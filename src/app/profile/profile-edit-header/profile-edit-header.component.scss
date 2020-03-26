@@ -1,0 +1,43 @@
+.input-group {
+  padding: 0 2px 0 2px;
+  height: 36px;
+  border-radius: 18px;
+  border: solid 3px #d9d8d6;
+  background-color: #ffffff;
+
+  &.profile {
+    width: 180px;
+  }
+
+  .input-group-option {
+    width: 78px;
+    padding: 6px .5rem 0 .5rem;
+    text-transform: uppercase;
+    height: 26px;
+    border-radius: 13px;
+    font-family: Roboto;
+  }
+
+  .selected {
+    background-color: #f47c4c;
+    font-weight: 900;
+    color: #ffffff;
+  }
+}
+
+.input-group-option {
+  cursor: pointer;
+}
+
+.text-l2 {
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #5a5a5a;
+}
