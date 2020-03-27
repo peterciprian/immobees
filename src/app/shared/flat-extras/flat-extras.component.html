@@ -1,0 +1,11 @@
+<div class="attribute-container d-flex flex-column mt-3">
+  <div class="title align-self-center justify-content-center my-2">extrák</div>
+  <div class="attribute-board d-flex flex-wrap">
+    <div *ngFor="let attribute of extraList" class="attribute-set d-flex flex-row align-items-center mr-auto" (click)="switchAttribute(attribute)">
+      <div class="checkbox mr-2" [class.checked]="extras[attribute]">
+        <img src="assets/img/checkmark.svg">
+      </div>
+      <div class="label">{{attribute | translate}}</div>
+    </div>
+  </div>
+</div>

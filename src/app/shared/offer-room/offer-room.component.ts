@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class OfferRoomComponent implements OnInit {
 
+  public selected = 'single';
   value: string;
   toppings = new FormControl();
   toppingList: string[] = [
@@ -48,5 +49,9 @@ export class OfferRoomComponent implements OnInit {
 
     this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
     this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
+  }
+
+  switchRoomtype(roomtype) {
+      this.selected = roomtype;
   }
 }

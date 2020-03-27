@@ -18,9 +18,18 @@ import { OfferRoomComponent } from './offer-room/offer-room.component';
 import { OfferPersonalComponent } from './offer-personal/offer-personal.component';
 import { OfferImagesComponent } from './offer-images/offer-images.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
-import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
+import {
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatIconModule,
+  MatButtonModule
+} from '@angular/material';
 import { RecommendationListComponent } from './recommendation-list/recommendation-list.component';
 import { RecommendCardComponent } from './recommend-card/recommend-card.component';
+import { FlatExtrasComponent } from './flat-extras/flat-extras.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -40,7 +49,8 @@ const sharedComponents: any[] = [
   OfferImagesComponent,
   FileUploadComponent,
   RecommendationListComponent,
-  RecommendCardComponent
+  RecommendCardComponent,
+  FlatExtrasComponent
 ];
 
 /**
@@ -72,6 +82,7 @@ const sharedDirectives: any[] = [
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    TranslateModule,
     CarouselModule.forRoot(),
     PaginationModule.forRoot(),
   ],
@@ -90,6 +101,7 @@ const sharedDirectives: any[] = [
     PaginationModule,
     sharedComponents,
     sharedDirectives,
+    TranslateModule,
     LocaleDatePipe
   ],
   providers: [

@@ -14,6 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class DemandPersonalComponent implements OnInit {
 
+  public selected = 'single';
   toppings = new FormControl();
   toppingList: string[] = [
     'Extra cheese',
@@ -40,6 +41,10 @@ export class DemandPersonalComponent implements OnInit {
     this.schools = Object.keys(school).filter(key => !isNaN(Number(school[key])));
     this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
     this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
+  }
+
+  switchRoomtype(roomtype) {
+    this.selected = roomtype;
   }
 
 }

@@ -4,5 +4,20 @@
   },
   "WELCOME": "Üdvözöljük!",
   "HUNGARIAN": "Magyar",
-  "ENGLISH": "Angol"
+  "ENGLISH": "Angol",
+  "LIFT": "Lift",
+  "WASHINGMACHINE": "Mosógép",
+  "SMOKINGAREA": "Dohányzó",
+  "BALCONY": "Erkély",
+  "GYM": "Konditerem",
+  "ACCESSIBLE": "Akadálymentes",
+  "PETSALLOWED": "Állatbarát",
+  "TELEVISION": "TV",
+  "INTERNET": "Internet",
+  "GARAGE": "Garázs",
+  "JAKUZZI": "Jacuzzi",
+  "AIRCONDITIONER": "Légkondi",
+  "PRIVATEBATHROOM": "Saját fürdő",
+  "PARKING": "Parkoló",
+  "SHORTPERIOD": "Rövidtávra is"
 }

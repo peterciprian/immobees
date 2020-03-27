@@ -1,0 +1,56 @@
+.title {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #5a5a5a;
+}
+
+.attribute-board {
+  padding: 28px;
+
+  .attribute-set {
+    width: 150px;
+    margin: 7px 0;
+
+    .checkbox {
+      border-radius: 12px;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #f47c4c;
+
+      img {
+        display: none;
+      }
+
+      &.checked {
+        border: none;
+        background-color: #f47c4c;
+
+        img {
+          display: unset;
+          height: 24px;
+          margin-left: 3px;
+          margin-top: -6px;
+        }
+      }
+    }
+
+    .label {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: 0.52px;
+      text-align: left;
+      color: #5a5a5a;
+    }
+  }
+}

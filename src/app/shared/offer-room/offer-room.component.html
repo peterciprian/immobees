@@ -1,16 +1,18 @@
 <div class="personal-container d-flex flex-column">
   <div class="head-roomtype d-flex flex-row align-items-center justify-content-center">
-    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5">
+    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5"
+    (click)="switchRoomtype('single')">
       <div class="image mx-auto mb-3">
         <img src="assets/img/single.png">
       </div>
-      <div class="button active">külön szoba</div>
+      <div class="button" [ngClass]="{ 'selected': selected === 'single' }">külön szoba</div>
     </div>
-    <div class="roomtype shared d-flex flex-column align-items-end">
+    <div class="roomtype shared d-flex flex-column align-items-end"
+    (click)="switchRoomtype('shared')">
       <div class="image mb-3">
         <img src="assets/img/shared.png">
       </div>
-      <div class="button">szobatárs</div>
+      <div class="button" [ngClass]="{ 'selected': selected === 'shared' }">szobatárs</div>
     </div>
   </div>
   <div class="body-personal d-flex flex-column mt-3">
@@ -159,7 +161,7 @@
         class="input-group-option input-field align-self-center ml-auto mr-2" />
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
-
+    <app-flat-extras></app-flat-extras>
     </div>
     <div class="text-area d-flex align-self-center mt-3">
       <textarea matInput name="about-room" id="about-room" cols="50" rows="5"

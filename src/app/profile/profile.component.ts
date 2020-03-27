@@ -23,7 +23,7 @@ export class ProfileComponent {
     http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
       console.log(acc);
       this.recommendations = acc;
-      this.myProfile = acc[2];
+      this.myProfile = acc[3];
     });
     /* profileService.getMyProfile().subscribe(me => {
       console.log(me);

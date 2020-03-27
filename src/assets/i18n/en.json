@@ -2,7 +2,22 @@
   "NAV": {
     "PROFILE": "Profile"
   },
-  "WELCOME": "Welcome",
-  "HUNGARIAN": "Hungarian",
-  "ENGLISH": "English"
+  "WELCOME": "Üdvözöljük!",
+  "HUNGARIAN": "Magyar",
+  "ENGLISH": "Angol",
+  "LIFT": "Lift",
+  "WASHINGMACHINE": "Washing machine",
+  "SMOKINGAREA": "Smoking allowed",
+  "BALCONY": "Balcony",
+  "GYM": "Gym",
+  "ACCESSIBLE": "Accessible",
+  "PETSALLOWED": "Pets allowed",
+  "TELEVISION": "TV",
+  "INTERNET": "Internet",
+  "GARAGE": "Garage",
+  "JAKUZZI": "Jacuzzi",
+  "AIRCONDITIONER": "Air conditioner",
+  "PRIVATEBATHROOM": "Private bathroom",
+  "PARKING": "Parking place",
+  "SHORTPERIOD": "Short term"
 }
