@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../core/auth.service';
+import { Component } from '@angular/core';
+import { AuthService } from '../core/services/auth.service';
 import { ModalService } from '../modal/modal.service';
-import { ViewService } from '../core/view.service';
+import { ViewService } from '../core/services/view.service';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -17,14 +17,20 @@ export class NavComponent {
     private modalService: ModalService,
     private viewService: ViewService,
     private router: Router
-    ) {
-    this.auth.isAuthenticated$.subscribe(val => { if (val) { this.modalService.openDialog('data'); } });
+  ) {
+    this.auth.isAuthenticated$.subscribe(val => {
+      console.log(val);
+      if (val) {
+        console.log(val);
+        this.modalService.openDialog('data');
+      }
+    });
   }
-public viewMyProfile() {
-  this.auth.userProfile$.pipe(first()).subscribe(me => {
-    console.log(me);
-    this.viewService.flatMate = me;
-    this.router.navigate(['/view']);
-  });
-}
+  public viewMyProfile() {
+    this.auth.userProfile$.pipe(first()).subscribe(me => {
+      console.log(me);
+      this.viewService.flatMate = me;
+      this.router.navigate(['/view']);
+    });
+  }
 }

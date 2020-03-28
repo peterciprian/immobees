@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Account } from '../core/models/accounts';
-import { ViewService } from '../core/view.service';
+import { ViewService } from '../core/services/view.service';
 import { Location } from '@angular/common';
 import { ModalService } from '../modal/modal.service';
 

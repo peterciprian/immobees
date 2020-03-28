@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Account } from 'src/app/core/models/accounts';
-import { ViewService } from 'src/app/core/view.service';
+import { ViewService } from 'src/app/core/services/view.service';
 import { Router } from '@angular/router';
 
 @Component({

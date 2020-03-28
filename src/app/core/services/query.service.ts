@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { serviceType, gender, roomType } from './models/accounts';
+import { serviceType, gender, roomType } from '../models/accounts';
 
 @Injectable({
   providedIn: 'root'

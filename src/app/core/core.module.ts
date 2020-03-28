@@ -5,11 +5,13 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { NotFoundModule } from './not-found';
-import { QueryService } from './query.service';
-import { ViewService } from './view.service';
+import { NotFoundModule } from './not-found-component';
+import { QueryService } from './services/query.service';
+import { ViewService } from './services/view.service';
 import { ModalService } from '../modal/modal.service';
 import { ModalDataShareService } from '../modal/modal-data-share.service';
+import { AccountService } from './services/account.service';
+import { AuthService } from './services/auth.service';
 
 ///////////////////////////////////
 // Declare tree-shakeable tokens //
@@ -33,10 +35,12 @@ const coreServices: any[] = [
       window.open(externalUrl, '_self');
     }
   },
+  AuthService,
   QueryService,
   ViewService,
   ModalService,
-  ModalDataShareService
+  ModalDataShareService,
+  AccountService
 ];
 
 @NgModule({

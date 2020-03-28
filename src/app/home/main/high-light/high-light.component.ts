@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { ViewService } from 'src/app/core/view.service';
+import { Component, Input } from '@angular/core';
+import { ViewService } from 'src/app/core/services/view.service';
 import { Router } from '@angular/router';
 import { Account } from 'src/app/core/models/accounts';
 

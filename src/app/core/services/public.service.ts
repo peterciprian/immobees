@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { Accounts } from './models/accounts';
-import { Frequents, Statistics } from './models/public';
+import { Accounts } from '../models/accounts';
+import { Frequents, Statistics } from '../models/public';
 
 @Injectable({
   providedIn: 'root'

@@ -113,46 +113,64 @@ export enum condition {
 
 export interface Account {
     name: string;
-    age: number;
-    spokenLanguages: string | string[];
+    introduction: string;
+    avatar: Avatar;
+    birthday: Date;
+    createdAt: Date;
+    updatedAt: Date;
+    lastLoginAt: Date;
+    gender: string;
+    nationality: string;
+    qualification: string;
+    hasErasmus: boolean;
+    spokenLanguages: string[];
+    moveIntoAt: string;
     school: string;
+    profession: string;
+    children: number;
+    pets: number;
+    smoking: boolean;
+    leaveOnWeekends: boolean;
+    personality: string;
     subject: Subject;
-    roomType: string;
-    client?: Client;
-    moveIntoAt?: string;
-    price: Price;
 }
 
-export interface Subject {
-    serviceType: string;
-    roomType?: string;
-    address: Address;
-    pictures?: Picture[];
-    description?: string;
-    price?: Price;
-    floorArea?: number;
-    roomArea?: number;
-    innerHeight?: number;
-    client: Client;
-    furnished?: string;
-    building?: string;
-    condition?: string;
-    residents?: number;
-    roomMates?: number;
-    floors?: number;
-    details?: Details;
+export interface Avatar {
+    url: string;
 }
 
 export interface Address {
     city?: string;
-    postalCode?: number;
+    postalCode?: string;
     district?: string;
     county?: string;
     country?: string;
     street?: string;
-    number?: number;
+    number?: string;
     googleAddress?: string;
     display?: string;
+}
+
+export interface Price {
+    fee?: number;
+    min?: number;
+    max?: number;
+    billsIncluded?: boolean;
+    caution?: number;
+    currency: string;
+}
+
+export interface Picture {
+    url: string;
+    label: string;
+}
+
+export interface Client {
+    gender?: string;
+    nationality?: string;
+    qualification?: string;
+    hasErasmus?: boolean;
+    moveIntoAt?: string;
 }
 
 export interface Details {
@@ -173,29 +191,33 @@ export interface Details {
     shortPeriod?: boolean;
 }
 
-export interface Price {
-    fee?: number;
-    currency: string;
-    min: number;
-    max: number;
-    billsIncluded: boolean;
-    caution?: number;
+export interface Subject {
+    serviceType?: string;
+    roomType?: string;
+    address?: Address;
+    description?: string;
+    price?: Price;
+    pictures?: Picture[];
+    floorArea?: number;
+    roomArea?: number;
+    innerHeight?: number;
+    client?: Client;
+    furnished?: string;
+    building?: string;
+    condition?: string;
+    residents?: number;
+    roomMates?: number;
+    floors?: string;
+    details?: Details;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
-export interface Client {
-    gender?: string;
-    nationality?: string;
-    qualification?: string;
-    hasErasmus?: boolean;
-    moveIntoAt?: string;
-}
-
-export interface Picture {
-    data: string;
-    label: string;
-}
 
 export interface Accounts {
     accounts: Account[];
 }
 
+export interface Recommendations {
+    accounts: Accounts[];
+}

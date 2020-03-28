@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { Router } from '@angular/router';
-import { QueryService } from 'src/app/core/query.service';
+import { QueryService } from 'src/app/core/services/query.service';
 
 export enum roomType {
   keres,
@@ -40,6 +40,6 @@ export class SearchBarComponent implements OnInit {
 
   changeGender(param: number) {
     this.queryService.homeSearchQueryFields.gender = param;
-    }
+  }
 
 }

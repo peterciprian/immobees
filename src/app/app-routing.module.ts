@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NotFoundComponent } from 'src/app/core/not-found/not-found.component';
+import { NotFoundComponent } from 'src/app/core/not-found-component/not-found.component';
 import { externalUrlProvider } from 'src/app/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorService } from './core/interceptor.service';
+import { InterceptorService } from './core/services/interceptor.service';
 
 
 const routes: Routes = [

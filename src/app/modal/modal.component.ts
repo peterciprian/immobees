@@ -20,15 +20,15 @@ export class ModalComponent implements OnDestroy {
     public modalDataShare: ModalDataShareService,
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-      this.subscriptions.push(
-        modalDataShare.modalDataSet.subscribe(modalData => this.modalDataSet = modalData),
-        modalDataShare.title.subscribe(title => this.title = title)
-        );
-     }
+    this.subscriptions.push(
+      modalDataShare.modalDataSet.subscribe(modalData => this.modalDataSet = modalData),
+      modalDataShare.title.subscribe(title => this.title = title)
+    );
+  }
 
   next() {
     if ((this.modalDataSet.modalType === 'OFFER' && this.currentPage < 5) ||
-        (this.modalDataSet.modalType === 'DEMAND' && this.currentPage < 3)) {
+      (this.modalDataSet.modalType === 'DEMAND' && this.currentPage < 3)) {
       this.currentPage++;
     }
   }
@@ -36,7 +36,7 @@ export class ModalComponent implements OnDestroy {
     if (this.currentPage > 1) {
       this.currentPage--;
     } else if (this.currentPage === 1) {
-      this.modalDataShare.modalDataSet.next({stepperItems: 0, modalType: 'REGISTER'});
+      this.modalDataShare.modalDataSet.next({ stepperItems: 0, modalType: 'REGISTER' });
     }
   }
   save() {

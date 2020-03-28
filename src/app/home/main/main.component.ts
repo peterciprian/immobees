@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProfileService } from 'src/app/core/profile.service';
-import { AuthService } from 'src/app/core/auth.service';
+import { ProfileService } from 'src/app/core/services/profile.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-main',

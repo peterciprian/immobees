@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Language, Nationality } from 'src/app/core/models/public';
 import { Observable } from 'rxjs';
 import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
-import { CodomainsService } from 'src/app/core/codomains.service';
+import { CodomainsService } from 'src/app/core/services/codomains.service';
 import { school } from 'src/app/core/models/accounts';
 import { map } from 'rxjs/operators';
 
@@ -31,7 +31,7 @@ export class OfferPersonalComponent implements OnInit {
   constructor(
     public modalDataShare: ModalDataShareService,
     private codomain: CodomainsService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.modalDataShare.title.next('Szobát kínálok');

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { QueryService } from 'src/app/core/query.service';
+import { QueryService } from 'src/app/core/services/query.service';
 import { FormControl } from '@angular/forms';
-import { CodomainsService } from 'src/app/core/codomains.service';
+import { CodomainsService } from 'src/app/core/services/codomains.service';
 import { Language, Nationality } from 'src/app/core/models/public';
 import { school } from 'src/app/core/models/accounts';
 import { Observable } from 'rxjs';
@@ -28,14 +28,14 @@ export class SearchPanelComponent implements OnInit {
   public professions: Observable<string[]>;
   public pets: Observable<string[]>;
 
-  constructor(public queryService: QueryService, private codomain: CodomainsService) {}
+  constructor(public queryService: QueryService, private codomain: CodomainsService) { }
 
   ngOnInit() {
-  this.languages = this.codomain.getLanguages();
-  this.nationalities = this.codomain.getNationalities();
-  this.schools = Object.keys(school).filter(key => !isNaN(Number(school[key])));
-  this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
-  this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
+    this.languages = this.codomain.getLanguages();
+    this.nationalities = this.codomain.getNationalities();
+    this.schools = Object.keys(school).filter(key => !isNaN(Number(school[key])));
+    this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
+    this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
   }
   switchRoomType() {
     this.queryService.homeSearchQueryFields.room =

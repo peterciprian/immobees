@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewService } from 'src/app/core/view.service';
+import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
   selector: 'app-profile-card',

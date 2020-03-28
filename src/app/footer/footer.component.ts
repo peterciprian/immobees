@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { PublicService } from '../core/public.service';
+import { PublicService } from '../core/services/public.service';
 import { ModalService } from '../modal/modal.service';
 
 @Component({

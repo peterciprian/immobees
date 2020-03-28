@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import * as languages from './models/languages';
-import * as nationalities from './models/nationalities';
-import { Nationality, Language } from './models/public';
+import * as languages from '../models/languages';
+import * as nationalities from '../models/nationalities';
+import { Nationality, Language } from '../models/public';
 
 @Injectable({
   providedIn: 'root'
