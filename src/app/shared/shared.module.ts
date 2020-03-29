@@ -30,6 +30,7 @@ import { RecommendationListComponent } from './recommendation-list/recommendatio
 import { RecommendCardComponent } from './recommend-card/recommend-card.component';
 import { FlatExtrasComponent } from './flat-extras/flat-extras.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { AgePipe } from '../pipes/age.pipe';
 
 
 
@@ -70,7 +71,8 @@ const sharedDirectives: any[] = [
   declarations: [
     sharedComponents,
     sharedDirectives,
-    LocaleDatePipe
+    LocaleDatePipe,
+    AgePipe
   ],
   imports: [
     CommonModule,
@@ -102,7 +104,8 @@ const sharedDirectives: any[] = [
     sharedComponents,
     sharedDirectives,
     TranslateModule,
-    LocaleDatePipe
+    LocaleDatePipe,
+    AgePipe
   ],
   providers: [
     sharedServices

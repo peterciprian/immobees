@@ -20,7 +20,7 @@ export class ProfileComponent {
     private location: Location,
     public modalService: ModalService
   ) {
-    http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
+    http.get<Account[]>('assets/accounts.json').subscribe(acc => {
       console.log(acc);
       this.recommendations = acc;
       this.myProfile = acc[3];

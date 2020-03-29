@@ -3,13 +3,14 @@
     <div class="poi-icon mr-2">
       <img src="assets/img/poi-icon.svg">
     </div>
-    <div class="location mb-2">{{viewService.flatMate.subject.address.display}}</div>
-    <div class="address mb-2">{{viewService.flatMate.subject.address.street}} {{viewService.flatMate.subject.address.number}}</div>
+    <div class="location mb-2">{{viewService.flatMate.subject.address.city}}</div>
+    <div class="address mb-2">{{viewService.flatMate.subject.address.street}}
+      {{viewService.flatMate.subject.address.number}}</div>
   </div>
   <div class="types d-flex flex-row mb-2">
     <img src="assets/img/26_szoba.svg" class="icon mr-2">
     <div class="serviceType">{{viewService.flatMate.subject.serviceType}} - </div>
-    <div class="roomType">{{viewService.flatMate.roomType}}</div>
+    <div class="roomType">{{viewService.flatMate.subject.roomType}}</div>
   </div>
   <div class="attribute flatArea d-flex flex-row">
     <div class="icon mr-2">
@@ -19,7 +20,7 @@
       lakás alapterülete
     </div>
     <div class="value ml-auto">
-      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      {{viewService.flatMate.subject.floorArea}} m<sup>2</sup>
     </div>
   </div>
   <div class="divider"></div>
@@ -43,7 +44,7 @@
       költözhető
     </div>
     <div class="value ml-auto">
-      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      {{viewService.flatMate.moveIntoAt | localeDate}}
     </div>
   </div>
   <div class="divider"></div>
@@ -55,7 +56,7 @@
       akit várok
     </div>
     <div class="value ml-auto">
-      {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+      {{viewService.flatMate.gender}}
     </div>
   </div>
   <div class="divider"></div>
@@ -68,7 +69,7 @@
         kaució
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+        {{viewService.flatMate.subject.price.caution}} {{viewService.flatMate.subject.price.currency}}
       </div>
     </div>
     <div class="divider"></div>
@@ -80,11 +81,11 @@
         bútorozottság
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+        {{viewService.flatMate.subject.furnished}}
       </div>
     </div>
     <div class="divider"></div>
-    <div class="attribute roomArea d-flex flex-row">
+    <div class="attribute buildingType d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -92,11 +93,11 @@
         lakás típusa
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+        {{viewService.flatMate.subject.building}}
       </div>
     </div>
     <div class="divider"></div>
-    <div class="attribute roomArea d-flex flex-row">
+    <div class="attribute condition d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -104,11 +105,11 @@
         lakás állapota
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+        {{viewService.flatMate.subject.condition}}
       </div>
     </div>
     <div class="divider"></div>
-    <div class="attribute roomArea d-flex flex-row">
+    <div class="attribute residents d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -116,11 +117,11 @@
         lakók száma
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+        {{viewService.flatMate.subject.residents}}
       </div>
     </div>
     <div class="divider"></div>
-    <div class="attribute roomArea d-flex flex-row">
+    <div class="attribute floor d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -128,7 +129,7 @@
         emelet
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
+        {{viewService.flatMate.subject.floor}}
       </div>
     </div>
     <div class="divider"></div>
@@ -232,10 +233,7 @@
   </div>
   <div class="divider"></div>
   <div class="price d-flex flex-row">
-    <div class="main-price"></div>
-    <div class="measure"></div>
-  </div>
-  <div class="overhead">
-    +rezsi 15,000 Ft/fő
+    <div class="main-price">{{viewService.flatMate.subject.price.fee}}</div>
+    <div class="measure">{{viewService.flatMate.subject.price.currency}}</div>
   </div>
 </div>

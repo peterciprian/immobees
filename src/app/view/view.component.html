@@ -1,6 +1,6 @@
 <div class="background">
   <div class="container">
-    <div *ngIf="viewService.flatMate && viewService.flatMate.age" class="row">
+    <div *ngIf="viewService.flatMate && viewService.flatMate.birthday" class="row">
       <div class="col-lg-3 col-sm-12">
         <app-profile-card></app-profile-card>
       </div>
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div *ngIf="!viewService.flatMate || !viewService.flatMate.age" class="row">
+    <div *ngIf="!viewService.flatMate || !viewService.flatMate.birthday" class="row">
       <h3>Ismeretlen profil</h3>
       <button class="return-button" (click)="this.modalService.openDialog('data')">Profil regisztrálása</button>
       <button class="return-button" (click)="return()">vissza</button>

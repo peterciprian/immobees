@@ -40,7 +40,7 @@ export class ResultListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscriptions.push(this.http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
+    this.subscriptions.push(this.http.get<Account[]>('assets/accounts.json').subscribe(acc => {
       this.accounts = acc;
       this.length = acc.length;
     }));

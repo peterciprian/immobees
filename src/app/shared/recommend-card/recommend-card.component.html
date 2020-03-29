@@ -1,9 +1,9 @@
 <div class="card-container d-flex flex-row">
   <app-avatar [size]="'110px'" class="mr-3"></app-avatar>
   <div class="card-container-body d-flex flex-column">
-    <div class="name">{{flatMate.name}} ({{flatMate.age}})</div>
+    <div class="name">{{flatMate.name}} ({{flatMate.birthday | age}})</div>
     <div class="icon-line d-flex flex-row">
-      <div class="iconset d-flex flex-row">
+      <div *ngFor="let lang of flatMate.spokenLanguages" class="iconset d-flex flex-row">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.36 163.81">
           <path class="cls-1"
             d="M3,163.81a3.17,3.17,0,0,1-.85-.12,3,3,0,0,1-2-3.73L46.7,2.15a3,3,0,1,1,5.75,1.7L5.88,161.66A3,3,0,0,1,3,163.81Z" />
@@ -12,7 +12,7 @@
           <path class="cls-1"
             d="M143.6,81.34A68.3,68.3,0,0,1,96.25,63C67.9,36.83,39.83,49.41,39.55,49.54A3,3,0,0,1,37,44.09c.31-.14,32-14.36,63.29,14.52C128.72,84.84,164.9,72.13,165.26,72a3,3,0,0,1,2.06,5.63A74.38,74.38,0,0,1,143.6,81.34Z" />
         </svg>
-        <div class="label">{{flatMate.spokenLanguages[0]}}</div>
+        <div class="label">{{lang}}</div>
       </div>
       <div class="iconset d-flex flex-row">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 164.7">
@@ -38,7 +38,7 @@
       </div>{{flatMate.subject.address.display}}
     </div>
     <div class="last-line d-flex flex-row">
-      <div class="ml-auto price">{{flatMate.price.min}} Ft</div>
+      <div class="ml-auto price">{{flatMate.subject.price.fee}} Ft</div>
       <div class="arrow" (click)="view(flatMate)">
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"

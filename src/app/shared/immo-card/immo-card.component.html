@@ -3,16 +3,16 @@
     <app-avatar [size]="'170px'"></app-avatar>
   </div>
   <div class="immo-card d-flex flex-column" (click)="view(account)">
-    <div class="name">{{account.name}} ({{account.age}})</div>
+    <div class="name">{{account.name}} ({{account.birthday | age}})</div>
     <div class="top-divider d-flex flex-row">
       <div class="top-side-divider mr-auto"></div>
-      <div class="nationality mx-auto">{{account.spokenLanguages[0]}}</div>
+      <div * ngFor="let lang of account.spokenLanguages" class="nationality mx-auto">{{lang}}</div>
       <div class="school mx-auto">{{account.school}}</div>
       <div class="top-side-divider ml-auto"></div>
     </div>
     <div class="location mx-auto">{{account.subject.address.display}}</div>
     <div class="props d-flex flex-row">
-      <div class="immotype mx-auto">{{account.roomType}}</div>
+      <div class="immotype mx-auto">{{account.subject.roomType}}</div>
       <div class="moving-date m-auto">{{account.moveIntoAt | date: 'yyyy.MM.dd.'}}</div>
     </div>
     <div class="bottom-divider d-flex flex-row">
@@ -20,6 +20,6 @@
       <div class="roomtype">{{account.subject.serviceType}}</div>
       <div class="bottom-side-divider ml-auto"></div>
     </div>
-    <div class="price">{{account.price.max}} {{account.price.currency}}</div>
+    <div class="price">{{account.subject.price.fee}} {{account.subject.price.currency}}</div>
   </div>
 </div>

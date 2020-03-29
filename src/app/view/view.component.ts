@@ -13,7 +13,7 @@ import { ModalService } from '../modal/modal.service';
 export class ViewComponent {
   public recommendations: Account[];
   constructor(private http: HttpClient, public viewService: ViewService, private location: Location, public modalService: ModalService) {
-    http.get<Account[]>('assets/accounts.JSON').subscribe(acc => {
+    http.get<Account[]>('assets/accounts.json').subscribe(acc => {
       this.recommendations = acc;
     });
   }

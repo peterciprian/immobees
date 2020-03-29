@@ -6,7 +6,7 @@
     <div class="highlight-card-content">
       <div class="highlight-card-header d-flex flex-column">
         <div class="d-flex flex-row mb-2">
-          <div class="name">{{account.name}} ({{account.age}})</div>
+          <div class="name">{{account.name}} ({{account.birthday | age}})</div>
           <div class="location ml-auto">
             <svg viewBox="0 0 384 512">
               <path fill="currentColor"
@@ -17,7 +17,7 @@
           </div>
         </div>
         <div class="d-flex flex-row">
-          <div class="properties d-flex flex-row mr-1">
+          <div *ngFor="let lang of account.spokenLanguages" class="properties d-flex flex-row mr-1">
             <div class="ico">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.36 163.81">
                 <path class="cls-1"
@@ -28,7 +28,7 @@
                   d="M143.6,81.34A68.3,68.3,0,0,1,96.25,63C67.9,36.83,39.83,49.41,39.55,49.54A3,3,0,0,1,37,44.09c.31-.14,32-14.36,63.29,14.52C128.72,84.84,164.9,72.13,165.26,72a3,3,0,0,1,2.06,5.63A74.38,74.38,0,0,1,143.6,81.34Z" />
               </svg>
             </div>
-            <div class="label">{{account.spokenLanguages[0]}}</div>
+            <div class="label">{{lang}}</div>
           </div>
           <div class="properties d-flex flex-row mr-1">
             <div class="ico">
@@ -53,7 +53,7 @@
                 <path class="cls-1"
                   d="M169.54,0H12A12,12,0,0,0,0,12V54A12,12,0,0,0,12,66H22.94A11.91,11.91,0,0,1,21,59.5V45A12,12,0,0,1,33,33H148.54a12,12,0,0,1,12,12V59.5a11.9,11.9,0,0,1-1.93,6.5h10.93a12,12,0,0,0,12-12V12A12,12,0,0,0,169.54,0Z" />
               </svg>
-              {{account.roomType}}
+              {{account.subject.roomType}}
             </span>
           </div>
           <div class=" roomtype">{{account.subject.serviceType}}</div>
@@ -61,10 +61,7 @@
       </div>
       <div class="divider"></div>
       <div class="highlight-card-body">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
-        possimus hic nostrum quis obcaecati, illum ipsa neque vitae aspernatur
-        perferendis? Voluptas nulla accusamus laudantium mollitia iste veniam
-        unde quae! Nobis!
+        {{account.introduction}}
       </div>
       <div class="divider"></div>
       <div class="highlight-card-footer d-flex flex-row">
@@ -102,7 +99,7 @@
           </svg>
           {{account.moveIntoAt | localeDate}}
         </div>
-        <div class="ml-auto budget">{{account.price.min}} {{account.price.currency}}</div>
+        <div class="ml-auto budget">{{account.subject.price.fee}} {{account.subject.price.currency}}</div>
         <div class="arrow" (click)="view(account)">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
