@@ -158,6 +158,7 @@ export interface Price {
     billsIncluded?: boolean;
     caution?: number;
     currency: string;
+    overhead?: number;
 }
 
 export interface Picture {

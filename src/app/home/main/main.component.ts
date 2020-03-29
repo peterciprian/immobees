@@ -109,7 +109,7 @@ export class MainComponent implements OnInit {
     private http: HttpClient,
     private profilService: ProfileService,
     public auth: AuthService, ) {
-    this.http.get<Account[]>('assets/accounts.json').subscribe(acc => {
+    this.http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
       this.highLight = acc.shift();
       this.isLoaded = true;
     });

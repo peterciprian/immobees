@@ -1,0 +1,680 @@
+[{
+    "name": "Ceruza Elemér",
+    "introduction": "Lórum ipse mint fojtos fájós roba, elsősorban egy hagyagos köszmény. A kélkeszte csak a csopjaság barcsokat vizálja. A fultubáns kombok kíségében a podozott hálaton gyapár butódok (kofszálcák, cserpedvélek, sáros vagy karkodáz tátott szitarta) után a porsnak be kell nalálnia a brost a pice füzetségének észlemlésébe. A fultubáns kélkeszték miatt vélhetően többet kell majd nalálniuk a mora százásoknak - vezésben, ahol talán folyos a bros flés -, akár 25 famussal is. A fultubáns perás egyúttal azt is avalja, hogy a fedék ritárt ebrencéknek át kell ékedniük a tárna felé teleges brágot. A kélkeszte csak a csopjaság barcsokat vizálja, a folya pancokra nem hezik. A perásban tavaly sizáltak meg, miután úgy alinázott, ki kell kárítnia a tellát a pagázs zsord örmény bérenségek és az azon kívül ságosak között. Sok zötyögő ebrence már eddig is lomókos brost elektronikusan gyató mentusai után, mostantól viszont ezt nem kell vicsondniuk, amennyiben a szemlés füzetségek ironárán kívülre székednek.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1989-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "MALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian"],
+    "moveIntoAt": "2020-03-23T18:25:43.511Z",
+    "school": "OR_ZSE",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "INTROVERT",
+    "subject": {
+      "serviceType": "OFFER",
+      "roomType": "PRIVATE",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "1114",
+        "district": "XI",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "Fehérló",
+        "number": "3",
+        "googleAddress": "",
+        "display": "Budapest XI. Fehérló utca"
+      },
+      "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
+      "price": {
+        "fee": "60000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "120000",
+        "currency": "Ft",
+        "overhead": "12000"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  },
+  {
+    "name": "Tóth Mariann",
+    "introduction": "A riccére, amely bánság 9-10-ig salanít, egész fejegyzetből, a szerától a puszuszig szürkítnek kadások. A motvány felé tulasz bakájából igen várkony lesz a több mint 200 művens butroma, akik csutást bukóznak, vagy másképpen lantnak a trin jelzes regájának zsonnájára.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1990-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "FEMALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian", "German"],
+    "moveIntoAt": "2020-05-23T18:25:43.511Z",
+    "school": "NKE",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "EXTROVERT",
+    "subject": {
+      "serviceType": "DEMAND",
+      "roomType": "PRIVATE",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "",
+        "district": "",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "",
+        "number": "",
+        "googleAddress": "",
+        "display": "Budapest XI."
+      },
+      "description": "A fogázacson vihorál kísérő lázás, a kedély belenség orálya, golaj frium, a növezés szendés orálya, hehereg rigász, a réklő petle sítévetének orálya, és szabazsár iság, a szítény bizasás balása.",
+      "price": {
+        "fee": "61000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "121000",
+        "currency": "Ft",
+        "overhead": "12100"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  },
+  {
+    "name": "Jon Doe",
+    "introduction": "A fogázacson vihorál kísérő lázás, a kedély belenség orálya, golaj frium, a növezés szendés orálya, hehereg rigász, a réklő petle sítévetének orálya, és szabazsár iság, a szítény bizasás balása.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1986-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "MALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian"],
+    "moveIntoAt": "2020-03-23T18:25:43.511Z",
+    "school": "MOME",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "INTROVERT",
+    "subject": {
+      "serviceType": "OFFER",
+      "roomType": "SHARED",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "1114",
+        "district": "XII",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "Levendula",
+        "number": "3",
+        "googleAddress": "",
+        "display": "Budapest XI. Levendula utca"
+      },
+      "description": "Sok zötyögő ebrence már eddig is lomókos brost elektronikusan gyató mentusai után, mostantól viszont ezt nem kell vicsondniuk, amennyiben a szemlés füzetségek ironárán kívülre székednek.",
+      "price": {
+        "fee": "90000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "270000",
+        "currency": "Ft",
+        "overhead": "18000"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  },
+  {
+    "name": "Jane Doe",
+    "introduction": "A fultubáns perás egyúttal azt is avalja, hogy a fedék ritárt ebrencéknek át kell ékedniük a tárna felé teleges brágot. A kélkeszte csak a csopjaság barcsokat vizálja, a folya pancokra nem hezik.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1989-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "FEMALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian", "German"],
+    "moveIntoAt": "2020-03-23T18:25:43.511Z",
+    "school": "OE",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "INTROVERT",
+    "subject": {
+      "serviceType": "DEMAND",
+      "roomType": "SHARED",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "",
+        "district": "XIV",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "",
+        "number": "",
+        "googleAddress": "",
+        "display": "Budapest XIV."
+      },
+      "description": "Fejegyzetnek kecser kedike van olyan tatalmas tödésök és kvánok zsonnájában, amelyek kogatják a fúgonok fojt förnyire és a pogarmályra szivitus caftott redő és pich tatalmas cántányát.",
+      "price": {
+        "fee": "60000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "120000",
+        "currency": "Ft",
+        "overhead": "12000"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  },
+  {
+    "name": "Ceruza Elemér",
+    "introduction": "Lórum ipse mint fojtos fájós roba, elsősorban egy hagyagos köszmény. A kélkeszte csak a csopjaság barcsokat vizálja. A fultubáns kombok kíségében a podozott hálaton gyapár butódok (kofszálcák, cserpedvélek, sáros vagy karkodáz tátott szitarta) után a porsnak be kell nalálnia a brost a pice füzetségének észlemlésébe. A fultubáns kélkeszték miatt vélhetően többet kell majd nalálniuk a mora százásoknak - vezésben, ahol talán folyos a bros flés -, akár 25 famussal is. A fultubáns perás egyúttal azt is avalja, hogy a fedék ritárt ebrencéknek át kell ékedniük a tárna felé teleges brágot. A kélkeszte csak a csopjaság barcsokat vizálja, a folya pancokra nem hezik. A perásban tavaly sizáltak meg, miután úgy alinázott, ki kell kárítnia a tellát a pagázs zsord örmény bérenségek és az azon kívül ságosak között. Sok zötyögő ebrence már eddig is lomókos brost elektronikusan gyató mentusai után, mostantól viszont ezt nem kell vicsondniuk, amennyiben a szemlés füzetségek ironárán kívülre székednek.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1989-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "MALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian"],
+    "moveIntoAt": "2020-03-23T18:25:43.511Z",
+    "school": "OR_ZSE",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "INTROVERT",
+    "subject": {
+      "serviceType": "OFFER",
+      "roomType": "PRIVATE",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "1114",
+        "district": "XI",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "Fehérló",
+        "number": "3",
+        "googleAddress": "",
+        "display": "Budapest XI. Fehérló utca"
+      },
+      "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
+      "price": {
+        "fee": "60000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "120000",
+        "currency": "Ft",
+        "overhead": "12000"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  },
+  {
+    "name": "Ceruza Elemér",
+    "introduction": "Lórum ipse mint fojtos fájós roba, elsősorban egy hagyagos köszmény. A kélkeszte csak a csopjaság barcsokat vizálja. A fultubáns kombok kíségében a podozott hálaton gyapár butódok (kofszálcák, cserpedvélek, sáros vagy karkodáz tátott szitarta) után a porsnak be kell nalálnia a brost a pice füzetségének észlemlésébe. A fultubáns kélkeszték miatt vélhetően többet kell majd nalálniuk a mora százásoknak - vezésben, ahol talán folyos a bros flés -, akár 25 famussal is. A fultubáns perás egyúttal azt is avalja, hogy a fedék ritárt ebrencéknek át kell ékedniük a tárna felé teleges brágot. A kélkeszte csak a csopjaság barcsokat vizálja, a folya pancokra nem hezik. A perásban tavaly sizáltak meg, miután úgy alinázott, ki kell kárítnia a tellát a pagázs zsord örmény bérenségek és az azon kívül ságosak között. Sok zötyögő ebrence már eddig is lomókos brost elektronikusan gyató mentusai után, mostantól viszont ezt nem kell vicsondniuk, amennyiben a szemlés füzetségek ironárán kívülre székednek.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1989-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "MALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian"],
+    "moveIntoAt": "2020-03-23T18:25:43.511Z",
+    "school": "OR_ZSE",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "INTROVERT",
+    "subject": {
+      "serviceType": "OFFER",
+      "roomType": "PRIVATE",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "1114",
+        "district": "XI",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "Fehérló",
+        "number": "3",
+        "googleAddress": "",
+        "display": "Budapest XI. Fehérló utca"
+      },
+      "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
+      "price": {
+        "fee": "60000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "120000",
+        "currency": "Ft",
+        "overhead": "12000"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  },
+  {
+    "name": "Ceruza Elemér",
+    "introduction": "Lórum ipse mint fojtos fájós roba, elsősorban egy hagyagos köszmény. A kélkeszte csak a csopjaság barcsokat vizálja. A fultubáns kombok kíségében a podozott hálaton gyapár butódok (kofszálcák, cserpedvélek, sáros vagy karkodáz tátott szitarta) után a porsnak be kell nalálnia a brost a pice füzetségének észlemlésébe. A fultubáns kélkeszték miatt vélhetően többet kell majd nalálniuk a mora százásoknak - vezésben, ahol talán folyos a bros flés -, akár 25 famussal is. A fultubáns perás egyúttal azt is avalja, hogy a fedék ritárt ebrencéknek át kell ékedniük a tárna felé teleges brágot. A kélkeszte csak a csopjaság barcsokat vizálja, a folya pancokra nem hezik. A perásban tavaly sizáltak meg, miután úgy alinázott, ki kell kárítnia a tellát a pagázs zsord örmény bérenségek és az azon kívül ságosak között. Sok zötyögő ebrence már eddig is lomókos brost elektronikusan gyató mentusai után, mostantól viszont ezt nem kell vicsondniuk, amennyiben a szemlés füzetségek ironárán kívülre székednek.",
+    "avatar": {
+      "url": "https://picsum.photos/640/480"
+    },
+    "birthday": "1989-04-23T18:25:43.511Z",
+    "createdAt": "2018-06-23T18:25:43.511Z",
+    "updatedAt": "2019-12-23T18:25:43.511Z",
+    "lastLoginAt": "2020-03-23T18:25:43.511Z",
+    "gender": "MALE",
+    "nationality": "HU",
+    "qualification": "STUDENT",
+    "hasErasmus": false,
+    "spokenLanguages": ["English", "Hungarian"],
+    "moveIntoAt": "2020-03-23T18:25:43.511Z",
+    "school": "OR_ZSE",
+    "profession": "STUDENT",
+    "children": false,
+    "pets": "",
+    "smoking": false,
+    "leaveOnWeekends": false,
+    "personality": "INTROVERT",
+    "subject": {
+      "serviceType": "OFFER",
+      "roomType": "PRIVATE",
+      "address": {
+        "city": "Budapest",
+        "postalCode": "1114",
+        "district": "XI",
+        "county": "Budapest",
+        "country": "Hungary",
+        "street": "Fehérló",
+        "number": "3",
+        "googleAddress": "",
+        "display": "Budapest XI. Fehérló utca"
+      },
+      "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
+      "price": {
+        "fee": "60000",
+        "min": "",
+        "max": "",
+        "billsIncluded": false,
+        "caution": "120000",
+        "currency": "Ft",
+        "overhead": "12000"
+      },
+      "pictures": [{
+          "url": "https://picsum.photos/640/480",
+          "label": "Image"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image2"
+        },
+        {
+          "url": "https://picsum.photos/640/480",
+          "label": "Image3"
+        }
+      ],
+      "floorArea": "63",
+      "roomArea": "16",
+      "innerHeight": "3,2",
+      "client": {
+        "gender": "FEMALE",
+        "nationality": "BRA",
+        "qualification": "",
+        "hasErasmus": true,
+        "moveIntoAt": "2020-03-23T18:25:43.511Z"
+      },
+      "furnished": "PARTIALLY",
+      "building": "SLIDING_FORMWORK",
+      "condition": "GOOD",
+      "residents": 2,
+      "roomMates": 0,
+      "floors": 4,
+      "details": {
+        "lift": true,
+        "washingMachine": true,
+        "smokingArea": false,
+        "balcony": true,
+        "gym": false,
+        "accessible": false,
+        "petsAllowed": true,
+        "television": false,
+        "internet": true,
+        "garage": false,
+        "jakuzzi": false,
+        "airConditioner": true,
+        "privateBathroom": true,
+        "parking": false,
+        "shortPeriod": false
+      },
+      "createdAt": "2018-06-23T18:25:43.511Z",
+      "updatedAt": "2019-12-23T18:25:43.511Z"
+    }
+  }
+]

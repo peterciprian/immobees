@@ -27,7 +27,7 @@ export class ShowroomComponent implements OnInit {
   private totalAccounts = 0;
 
   constructor(private http: HttpClient) {
-    http.get<Account[]>('assets/accounts.json').subscribe(acc => {
+    http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
       this.totalAccounts = acc.length;
       this.everyAccount = acc;
       this.sliceAccounts(0, this.itemsPerSlide);
