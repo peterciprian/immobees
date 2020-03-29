@@ -1,8 +1,8 @@
 <div class="avatar-upload-container d-flex flex-column justify-content-center">
-  <img *ngIf="modalDataShare.profile.avatar"
+  <img *ngIf="accountService.account.avatar"
     class="image d-flex align-self-center align-items-center justify-content-center mb-4"
-    src="{{modalDataShare.profile.avatar}}">
-  <div *ngIf="!modalDataShare.profile.avatar"
+    src="{{accountService.account.avatar.url}}">
+  <div *ngIf="!accountService.account.avatar"
     class="image d-flex align-self-center align-items-center justify-content-center mb-4">
     drag and drop
     <br>
@@ -14,6 +14,6 @@
     Minimum képfelbontás 1024x768
   </div>
   <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="kép kiválasztása"
-    [(ngModel)]="modalDataShare.profile.avatar.url">
+    [(ngModel)]="accountService.account.avatar.url">
   </app-file-upload>
 </div>

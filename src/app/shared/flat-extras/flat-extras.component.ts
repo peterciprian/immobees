@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Details } from 'src/app/core/models/accounts';
+import { AccountService } from 'src/app/core/services/account.service';
+
 
 @Component({
   selector: 'app-flat-extras',
@@ -28,17 +30,16 @@ export class FlatExtrasComponent implements OnInit {
 
   public extraList = [];
 
-  constructor() {
-    console.log(this.extras);
-    Object.keys(this.extras).forEach(k => {
+  constructor(
+    public accountService: AccountService) {
+    Object.keys(this.accountService.account.subject.details).forEach(k => {
       this.extraList.push(k.toUpperCase());
     });
-    console.log(this.extraList);
   }
 
   ngOnInit() {
   }
   switchAttribute(attribute) {
-    this.extras[attribute] = !this.extras[attribute];
+    this.accountService.account.subject.details[attribute] = !this.accountService.account.subject.details[attribute];
   }
 }

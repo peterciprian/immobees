@@ -1,16 +1,18 @@
 <div class="personal-container d-flex flex-column">
   <div class="head-roomtype d-flex flex-row align-items-center justify-content-center">
-    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5" (click)="switchRoomtype('single')">
+    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5" (click)="switchRoomtype('PRIVATE')">
       <div class="image mx-auto mb-3">
         <img src="assets/img/single.png">
       </div>
-      <div class="button" [ngClass]="{ 'selected': selected === 'single' }">külön szoba</div>
+      <div class="button" [ngClass]="{ 'selected': accountService.account.subject.roomType === 'PRIVATE' }">külön szoba
+      </div>
     </div>
-    <div class="roomtype shared d-flex flex-column align-items-end" (click)="switchRoomtype('shared')">
+    <div class="roomtype shared d-flex flex-column align-items-end" (click)="switchRoomtype('SHARED')">
       <div class="image mb-3">
         <img src="assets/img/shared.png">
       </div>
-      <div class="button" [ngClass]="{ 'selected': selected === 'shared' }">szobatárs</div>
+      <div class="button" [ngClass]="{ 'selected': accountService.account.subject.roomType === 'SHARED' }">szobatárs
+      </div>
     </div>
   </div>
   <div class="body-personal d-flex flex-column mt-3">
@@ -20,9 +22,9 @@
       <div class="input-group gender d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="gender-select">
-          <mat-select placeholder="Nem">
-            <mat-option [value]="'female'">Nő</mat-option>
-            <mat-option [value]="'male'">Férfi</mat-option>
+          <mat-select placeholder="Nem" [(ngModel)]="accountService.account.gender">
+            <mat-option [value]="'FEMALE'">Nő</mat-option>
+            <mat-option [value]="'MALE'">Férfi</mat-option>
             <mat-option [value]="'other'">Más</mat-option>
           </mat-select>
         </mat-form-field>
@@ -31,14 +33,15 @@
       <div class="input-group budget d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <div class="input-group-label text-l1 align-self-center mr-2">Ár</div>
-        <input type="number" min="0" class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="ár" />
+        <input [(ngModel)]="accountService.account.subject.price.fee" type="number" min="0"
+          class="input-group-option input-field align-self-center ml-auto mr-2" placeholder="ár" />
         <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
       </div>
 
       <div class="input-group nationality d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="nationality-select">
-          <mat-select placeholder="Nemzetiség">
+          <mat-select [(ngModel)]="accountService.account.nationality" placeholder="Nemzetiség">
             <mat-option>X</mat-option>
             <mat-option *ngFor="let nationality of nationalities" [value]="nationality.value">{{
               nationality.text
@@ -50,7 +53,8 @@
       <div class="input-group av_date d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="av_date">
-          <input matInput [matDatepicker]="av_date" placeholder="Költözhető">
+          <input [(ngModel)]="accountService.account.moveIntoAt" matInput [matDatepicker]="av_date"
+            placeholder="Költözhető">
           <mat-datepicker-toggle matSuffix [for]="av_date"></mat-datepicker-toggle>
           <mat-datepicker #av_date></mat-datepicker>
         </mat-form-field>
@@ -59,7 +63,8 @@
       <div class="input-group birthDate d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="birthDate">
-          <input matInput [matDatepicker]="birthDate" placeholder="Születési dátum">
+          <input [(ngModel)]="accountService.account.birthday" matInput [matDatepicker]="birthDate"
+            placeholder="Születési dátum">
           <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
           <mat-datepicker #birthDate></mat-datepicker>
         </mat-form-field>
@@ -68,7 +73,7 @@
       <div class="input-group erasmus d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="erasmus">
-          <mat-select placeholder="Erasmus">
+          <mat-select [(ngModel)]="accountService.account.hasErasmus" placeholder="Erasmus">
             <mat-option [value]="false">Nem</mat-option>
             <mat-option [value]="true">Igen</mat-option>
           </mat-select>
@@ -78,7 +83,7 @@
       <div class="input-group hasChild d-flex flex-row my-1">
         <img src="assets/img/09_gyermek.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="hasChild">
-          <mat-select placeholder="Gyerek">
+          <mat-select [(ngModel)]="accountService.account.children" placeholder="Gyerek">
             <mat-option [value]="false">Nincs</mat-option>
             <mat-option [value]="true">Van</mat-option>
           </mat-select>
@@ -88,16 +93,16 @@
       <div class="input-group language d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="language-select">
-          <mat-select placeholder="Beszélt nyelvek" multiple>
+          <mat-select [(ngModel)]="accountService.account.spokenLanguages" placeholder="Beszélt nyelvek" multiple>
             <mat-select-trigger>
-              {{ toppings.value ? toppings.value[0] : "" }}
-              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-                (+{{ toppings.value.length - 1 }}
-                {{ toppings.value?.length === 2 ? "további" : "további" }})
+              {{ accountService.account.spokenLanguages ? accountService.account.spokenLanguages[0] : "" }}
+              <span *ngIf="accountService.account.spokenLanguages?.length > 1" class="example-additional-selection">
+                (+{{ accountService.account.spokenLanguages.length - 1 }}
+                {{ accountService.account.spokenLanguages?.length === 2 ? "további" : "további" }})
               </span>
             </mat-select-trigger>
             <mat-option>X</mat-option>
-            <mat-option *ngFor="let language of languages" [value]="language.code">{{
+            <mat-option *ngFor="let language of languages" [value]="language.name">{{
               language.nativeName
             }}</mat-option>
           </mat-select>
@@ -107,7 +112,7 @@
       <div class="input-group pet d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="pet-select">
-          <mat-select placeholder="Kisállat">
+          <mat-select [(ngModel)]="accountService.account.pets" placeholder="Kisállat">
             <mat-option>X</mat-option>
             <mat-option *ngFor="let pet of (pets | async)" [value]="pet">{{
               pet
@@ -119,7 +124,7 @@
       <div class="input-group school d-flex flex-row my-1">
         <img src="assets/img/07_iskola.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="school-select">
-          <mat-select placeholder="Iskola">
+          <mat-select [(ngModel)]="accountService.account.school" placeholder="Iskola">
             <mat-option>X</mat-option>
             <mat-option *ngFor="let school of schools" [value]="school">{{
               school
@@ -131,7 +136,7 @@
       <div class="input-group smoking d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="smoking-select">
-          <mat-select placeholder="Dohányzás">
+          <mat-select [(ngModel)]="accountService.account.smoking" placeholder="Dohányzás">
             <mat-option [value]="true">Dohányzik</mat-option>
             <mat-option [value]="false">Nem dohányzik</mat-option>
           </mat-select>
@@ -141,7 +146,7 @@
       <div class="input-group profession d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="profession-select">
-          <mat-select placeholder="Foglalkozás">
+          <mat-select [(ngModel)]="accountService.account.profession" placeholder="Foglalkozás">
             <mat-option>X</mat-option>
             <mat-option *ngFor="let profession of (professions | async)" [value]="profession">{{
               profession
@@ -153,7 +158,7 @@
       <div class="input-group goesHome d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="goesHome-select">
-          <mat-select placeholder="Hétvégén hazautazik">
+          <mat-select [(ngModel)]="accountService.account.leaveOnWeekends" placeholder="Hétvégén hazautazik">
             <mat-option [value]="true">Általában hazautazik</mat-option>
             <mat-option [value]="false">Általában otthon marad</mat-option>
           </mat-select>
@@ -163,7 +168,7 @@
       <div class="input-group personality d-flex flex-row my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="personality-select">
-          <mat-select placeholder="Személyiség">
+          <mat-select [(ngModel)]="accountService.account.personality" placeholder="Személyiség">
             <mat-option [value]="'introvert'">Introvertált</mat-option>
             <mat-option [value]="'extrovert'">Extrovertált</mat-option>
           </mat-select>
@@ -172,7 +177,7 @@
 
     </div>
     <div class="text-area d-flex align-self-center mt-3">
-      <textarea matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
+      <textarea [(ngModel)]="accountService.account.introduction" matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
         placeholder="&#9998; MUTASD BE MAGAD PÁR SZÓBAN..."></textarea>
     </div>
   </div>

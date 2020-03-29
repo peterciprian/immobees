@@ -6,7 +6,7 @@
     <div class="name">{{account.name}} ({{account.birthday | age}})</div>
     <div class="top-divider d-flex flex-row">
       <div class="top-side-divider mr-auto"></div>
-      <div * ngFor="let lang of account.spokenLanguages" class="nationality mx-auto">{{lang}}</div>
+      <div *ngFor="let lang of account.spokenLanguages" class="nationality mx-auto">{{lang}}</div>
       <div class="school mx-auto">{{account.school}}</div>
       <div class="top-side-divider ml-auto"></div>
     </div>

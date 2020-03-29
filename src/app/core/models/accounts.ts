@@ -127,8 +127,8 @@ export interface Account {
     moveIntoAt: string;
     school: string;
     profession: string;
-    children: number;
-    pets: number;
+    children: boolean;
+    pets: string;
     smoking: boolean;
     leaveOnWeekends: boolean;
     personality: string;
@@ -172,6 +172,7 @@ export interface Client {
     qualification?: string;
     hasErasmus?: boolean;
     moveIntoAt?: string;
+    description?: string;
 }
 
 export interface Details {

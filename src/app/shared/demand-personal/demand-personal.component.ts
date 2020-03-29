@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { CodomainsService } from 'src/app/core/services/codomains.service';
 import { school } from 'src/app/core/models/accounts';
 import { map } from 'rxjs/operators';
+import { AccountService } from 'src/app/core/services/account.service';
 
 @Component({
   selector: 'app-demand-personal',
@@ -14,7 +15,6 @@ import { map } from 'rxjs/operators';
 })
 export class DemandPersonalComponent implements OnInit {
 
-  public selected = 'single';
   toppings = new FormControl();
   toppingList: string[] = [
     'Extra cheese',
@@ -31,7 +31,8 @@ export class DemandPersonalComponent implements OnInit {
   public pets: Observable<string[]>;
   constructor(
     public modalDataShare: ModalDataShareService,
-    private codomain: CodomainsService
+    private codomain: CodomainsService,
+    public accountService: AccountService
   ) { }
 
   ngOnInit() {
@@ -44,7 +45,7 @@ export class DemandPersonalComponent implements OnInit {
   }
 
   switchRoomtype(roomtype) {
-    this.selected = roomtype;
+    this.accountService.account.subject.roomType = roomtype;
   }
 
 }

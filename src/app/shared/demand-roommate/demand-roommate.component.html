@@ -3,7 +3,7 @@
     <img src="assets/img/room-mate.png">
   </div>
   <div class="text-area d-flex align-self-center">
-    <textarea matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
+    <textarea [(ngModel)]="accountService.account.subject.client.description" matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
       placeholder="&#9998; MUTASD BE AZ IDEÁLIS LAKÓTÁRSAT PÁR SZÓBAN..."></textarea>
   </div>
 </div>

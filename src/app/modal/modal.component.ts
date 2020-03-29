@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ModalDataSet } from '../core/models/modalDataSet';
 import { ModalDataShareService } from './modal-data-share.service';
 import { Subscription } from 'rxjs';
+import { AccountService } from '../core/services/account.service';
 
 @Component({
   selector: 'app-modal',
@@ -18,6 +19,7 @@ export class ModalComponent implements OnDestroy {
 
   constructor(
     public modalDataShare: ModalDataShareService,
+    public accountService: AccountService,
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.subscriptions.push(
@@ -40,7 +42,7 @@ export class ModalComponent implements OnDestroy {
     }
   }
   save() {
-    console.log(this.modalDataShare.profile);
+    this.accountService.save();
   }
 
   close() {
