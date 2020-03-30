@@ -2,7 +2,7 @@
   <app-avatar [size]="'110px'" class="mr-3"></app-avatar>
   <div class="card-container-body d-flex flex-column">
     <div class="name">{{flatMate.name}} ({{flatMate.birthday | age}})</div>
-    <div class="icon-line d-flex flex-row">
+    <div class="icon-line d-flex flex-row flex-wrap">
       <div *ngFor="let lang of flatMate.spokenLanguages" class="iconset d-flex flex-row">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.36 163.81">
           <path class="cls-1"
@@ -38,7 +38,7 @@
       </div>{{flatMate.subject.address.display}}
     </div>
     <div class="last-line d-flex flex-row">
-      <div class="ml-auto price">{{flatMate.subject.price.fee}} Ft</div>
+      <div class="ml-auto price">{{flatMate.subject.price.fee*1000}} Ft</div>
       <div class="arrow" (click)="view(flatMate)">
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img"
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"

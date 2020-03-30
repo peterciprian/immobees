@@ -31,19 +31,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "Fehérló",
-        "number": "3",
+        "number": 3,
         "googleAddress": "",
         "display": "Budapest XI. Fehérló utca"
       },
       "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
       "price": {
-        "fee": "60000",
-        "min": "",
-        "max": "",
+        "fee": 60,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "120000",
+        "caution": 120,
         "currency": "Ft",
-        "overhead": "12000"
+        "overhead": 12
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",
@@ -128,19 +128,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "",
-        "number": "",
+        "number": null,
         "googleAddress": "",
         "display": "Budapest XI."
       },
       "description": "A fogázacson vihorál kísérő lázás, a kedély belenség orálya, golaj frium, a növezés szendés orálya, hehereg rigász, a réklő petle sítévetének orálya, és szabazsár iság, a szítény bizasás balása.",
       "price": {
-        "fee": "61000",
-        "min": "",
-        "max": "",
+        "fee": 61,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "121000",
+        "caution": 121,
         "currency": "Ft",
-        "overhead": "12100"
+        "overhead": 12.1
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",
@@ -225,19 +225,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "Levendula",
-        "number": "3",
+        "number": 3,
         "googleAddress": "",
         "display": "Budapest XI. Levendula utca"
       },
       "description": "Sok zötyögő ebrence már eddig is lomókos brost elektronikusan gyató mentusai után, mostantól viszont ezt nem kell vicsondniuk, amennyiben a szemlés füzetségek ironárán kívülre székednek.",
       "price": {
-        "fee": "90000",
-        "min": "",
-        "max": "",
+        "fee": 90,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "270000",
+        "caution": 270,
         "currency": "Ft",
-        "overhead": "18000"
+        "overhead": 18
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",
@@ -322,19 +322,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "",
-        "number": "",
+        "number": null,
         "googleAddress": "",
         "display": "Budapest XIV."
       },
       "description": "Fejegyzetnek kecser kedike van olyan tatalmas tödésök és kvánok zsonnájában, amelyek kogatják a fúgonok fojt förnyire és a pogarmályra szivitus caftott redő és pich tatalmas cántányát.",
       "price": {
-        "fee": "60000",
-        "min": "",
-        "max": "",
+        "fee": 60,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "120000",
+        "caution": 120,
         "currency": "Ft",
-        "overhead": "12000"
+        "overhead": 12
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",
@@ -419,19 +419,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "Fehérló",
-        "number": "3",
+        "number": 3,
         "googleAddress": "",
         "display": "Budapest XI. Fehérló utca"
       },
       "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
       "price": {
-        "fee": "60000",
-        "min": "",
-        "max": "",
+        "fee": 60,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "120000",
+        "caution": 120,
         "currency": "Ft",
-        "overhead": "12000"
+        "overhead": 12
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",
@@ -516,19 +516,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "Fehérló",
-        "number": "3",
+        "number": 3,
         "googleAddress": "",
         "display": "Budapest XI. Fehérló utca"
       },
       "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
       "price": {
-        "fee": "60000",
-        "min": "",
-        "max": "",
+        "fee": 60,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "120000",
+        "caution": 120,
         "currency": "Ft",
-        "overhead": "12000"
+        "overhead": 12
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",
@@ -613,19 +613,19 @@
         "county": "Budapest",
         "country": "Hungary",
         "street": "Fehérló",
-        "number": "3",
+        "number": 3,
         "googleAddress": "",
         "display": "Budapest XI. Fehérló utca"
       },
       "description": "Kadások és krákok együtt csúfognak majd a négy makhajtos murgában, mely fondogat egy „himát a kedély bilára”.",
       "price": {
-        "fee": "60000",
-        "min": "",
-        "max": "",
+        "fee": 60,
+        "min": null,
+        "max": null,
         "billsIncluded": false,
-        "caution": "120000",
+        "caution": 120,
         "currency": "Ft",
-        "overhead": "12000"
+        "overhead": 12
       },
       "pictures": [{
           "url": "https://picsum.photos/640/480",

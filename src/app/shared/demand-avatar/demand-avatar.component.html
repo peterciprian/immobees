@@ -1,8 +1,8 @@
 <div class="avatar-upload-container d-flex flex-column justify-content-center">
-  <img *ngIf="accountService.account.avatar"
+  <img *ngIf="accountService.account.avatar.url"
     class="image d-flex align-self-center align-items-center justify-content-center mb-4"
     src="{{accountService.account.avatar.url}}">
-  <div *ngIf="!accountService.account.avatar"
+  <div *ngIf="false"
     class="image d-flex align-self-center align-items-center justify-content-center mb-4">
     drag and drop
     <br>

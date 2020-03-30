@@ -232,8 +232,8 @@
     </div>
   </div>
   <div class="divider"></div>
-  <div class="price d-flex flex-row">
-    <div class="main-price">{{viewService.flatMate.subject.price.fee}}</div>
-    <div class="measure">{{viewService.flatMate.subject.price.currency}}</div>
+  <div class="price d-flex flex-column justify-content-center">
+    <div class="main-price">{{viewService.flatMate.subject.price.fee*1000}} Ft/szoba</div>
+    <div class="overhead">+ rezsi: {{viewService.flatMate.subject.price.caution*1000}} Ft/fő</div>
   </div>
 </div>

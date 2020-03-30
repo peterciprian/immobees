@@ -6,6 +6,7 @@ import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
 import { CodomainsService } from 'src/app/core/services/codomains.service';
 import { school } from 'src/app/core/models/accounts';
 import { map } from 'rxjs/operators';
+import { AccountService } from 'src/app/core/services/account.service';
 
 @Component({
   selector: 'app-offer-personal',
@@ -14,15 +15,6 @@ import { map } from 'rxjs/operators';
 })
 export class OfferPersonalComponent implements OnInit {
 
-  toppings = new FormControl();
-  toppingList: string[] = [
-    'Extra cheese',
-    'Mushroom',
-    'Onion',
-    'Pepperoni',
-    'Sausage',
-    'Tomato'
-  ];
   public languages: Language[];
   public nationalities: Nationality[];
   public schools: string[];
@@ -30,6 +22,7 @@ export class OfferPersonalComponent implements OnInit {
   public pets: Observable<string[]>;
   constructor(
     public modalDataShare: ModalDataShareService,
+    public accountService: AccountService,
     private codomain: CodomainsService
   ) { }
 

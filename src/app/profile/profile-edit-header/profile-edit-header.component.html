@@ -4,11 +4,11 @@
   <div class="label mr-3">Profil:</div>
   <div class="input-group profile d-flex flex-row">
     <div class="input-group-option text-l2 align-self-center mr-auto"
-      [ngClass]="{ 'selected': selected }" (click)="switchActiveStatus()">
+      [ngClass]="{ 'selected': accountService.account.active }" (click)="switchActiveStatus()">
       aktív
     </div>
     <div class="input-group-option text-l2 align-self-center"
-      [ngClass]="{ 'selected': !selected }" (click)="switchActiveStatus()">
+      [ngClass]="{ 'selected': !accountService.account.active }" (click)="switchActiveStatus()">
       inaktív
     </div>
   </div>

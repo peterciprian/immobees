@@ -133,6 +133,8 @@ export interface Account {
     leaveOnWeekends: boolean;
     personality: string;
     subject: Subject;
+    active: boolean;
+    confirmed: boolean;
 }
 
 export interface Avatar {

@@ -6,6 +6,7 @@ import { ModalDataShareService } from 'src/app/modal/modal-data-share.service';
 import { CodomainsService } from 'src/app/core/services/codomains.service';
 import { school, building, condition, furnished } from 'src/app/core/models/accounts';
 import { map } from 'rxjs/operators';
+import { AccountService } from 'src/app/core/services/account.service';
 
 @Component({
   selector: 'app-offer-room',
@@ -15,7 +16,7 @@ import { map } from 'rxjs/operators';
 export class OfferRoomComponent implements OnInit {
 
   public selected = 'single';
-  value: string;
+  value: string; // helyszín
   toppings = new FormControl();
   toppingList: string[] = [
     'Extra cheese',
@@ -35,6 +36,7 @@ export class OfferRoomComponent implements OnInit {
   public pets: Observable<string[]>;
   constructor(
     public modalDataShare: ModalDataShareService,
+    public accountService: AccountService,
     private codomain: CodomainsService
   ) { }
 
@@ -52,6 +54,6 @@ export class OfferRoomComponent implements OnInit {
   }
 
   switchRoomtype(roomtype) {
-    this.selected = roomtype;
+    this.accountService.account.subject.roomType = roomtype;
   }
 }

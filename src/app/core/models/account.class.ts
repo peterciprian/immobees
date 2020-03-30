@@ -4,7 +4,7 @@ export class Profile implements Account {
     constructor() {
         this.name = '';
         this.introduction = '';
-        this.avatar = { url: '' };
+        this.avatar = { url: null };
         this.birthday = null;
         this.createdAt = new Date();
         this.updatedAt = new Date();
@@ -43,11 +43,11 @@ export class Profile implements Account {
                 max: null,
                 billsIncluded: null,
                 caution: null,
-                currency: '',
+                currency: 'Ft',
                 overhead: null
             },
             pictures: [{
-                url: '',
+                url: null,
                 label: ''
             }],
             floorArea: null,
@@ -87,6 +87,8 @@ export class Profile implements Account {
             createdAt: new Date(),
             updatedAt: new Date()
         };
+        this.active = false;
+        this.confirmed = false;
     }
     name: string;
     introduction: string;
@@ -109,4 +111,6 @@ export class Profile implements Account {
     leaveOnWeekends: boolean;
     personality: string;
     subject: Subject;
+    active: boolean;
+    confirmed: boolean;
 }

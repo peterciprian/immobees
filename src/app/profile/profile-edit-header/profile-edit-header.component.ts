@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/core/services/account.service';
 
 @Component({
   selector: 'app-profile-edit-header',
   templateUrl: './profile-edit-header.component.html',
   styleUrls: ['./profile-edit-header.component.scss']
 })
-export class ProfileEditHeaderComponent implements OnInit {
+export class ProfileEditHeaderComponent {
 
-  public selected = false;
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(public accountService: AccountService) { }
 
   switchActiveStatus() {
-    this.selected = !this.selected;
+    this.accountService.account.active = !this.accountService.account.active;
   }
 }
