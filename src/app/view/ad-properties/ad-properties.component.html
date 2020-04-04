@@ -1,1 +1,118 @@
-<p>ad-properties works!</p>
+<div class="ad-properties-container d-flex flex-column justify-content-center">
+  <div *ngIf="viewService.flatMate.subject.serviceType == 'OFFER'" class="image-container">
+    <carousel [showIndicators]="false" [interval]="3000" [(activeSlide)]="activeSlideIndex"
+      (activeSlideChange)="change($event)">
+      <slide *ngFor="let slide of slides; let index=index">
+        <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+        <div class="carousel-caption">
+          <div class="label">Slide {{index}}</div>
+        </div>
+      </slide>
+    </carousel>
+    <div class="image-list d-flex flex-row">
+      <div *ngFor="let image of slides; let index=index" class="image" [class.active]="index == activeSlideIndex"
+        (click)="activeSlideIndex = index">
+        <img [src]="image.image">
+      </div>
+    </div>
+  </div>
+  <div class="ad-properties-header d-flex flex-row justify-content-between">
+    <div class="title">Magamról</div>
+    <div *ngIf="viewService.flatMate.subject.serviceType == 'DEMAND'" class="prop-top-box d-flex flex-column">
+      <div class="budget d-flex flex-row align-items-center">
+        <div class="label mr-2">Büdzsé:</div>
+        <div class="value">45000 Ft</div>
+      </div>
+      <div class="types d-flex flex-row align-items-center">
+        <div class="icon mr-2"></div>
+        <div class="label">Szobát keres - Külön szoba</div>
+      </div>
+    </div>
+  </div>
+  <div class="ad-properties-body d-flex flex-wrap">
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Nem</div>
+      <div class="value ml-auto">Nő</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Város</div>
+      <div class="value ml-auto text-capitalize">Budapest</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Nemzetiség</div>
+      <div class="value ml-auto">magyar</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Költözés időpontja</div>
+      <div class="value ml-auto">2017.04.01.</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Életkor</div>
+      <div class="value ml-auto">22</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Gyerek</div>
+      <div class="value ml-auto">nincs</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Erasmus</div>
+      <div class="value ml-auto">nem</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">kisállat</div>
+      <div class="value ml-auto">macska</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label mr-auto">Beszélt nyelvek</div>
+      <div class="value">angol</div>
+      <div class="value">német</div>
+      <div class="value">francia</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Dohányzás</div>
+      <div class="value ml-auto">nem</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Iskola</div>
+      <div class="value ml-auto">BGF</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Hétvégén hazautazik</div>
+      <div class="value ml-auto">nem</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Foglalkozás</div>
+      <div class="value ml-auto">eladó</div>
+    </div>
+    <div class="prop-box d-flex flex-row align-items-center">
+      <div class="icon mr-2"></div>
+      <div class="label">Személyiség</div>
+      <div class="value ml-auto">--</div>
+    </div>
+  </div>
+  <div class="ad-properties-description d-flex flex-column">
+    <div class="title">Az ideális lakótársról</div>
+    <div class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget venenatis sem. Phasellus malesuada orci id
+      vulputate tincidunt. Aliquam convallis augue orci, ut vulputate massa fringilla id. Proin scelerisque nisl nec
+      arcu aliquam, sit amet vehicula metus dignissim. Nulla vitae iaculis nisi. Integer gravida porttitor leo. Donec
+      venenatis arcu at vehicula aliquam. Vestibulum ut pretium metus, ac ornare ante. Aenean eget feugiat tortor, sit
+      amet accumsan arcu. Aenean hendrerit iaculis mauris at ullamcorper. In in massa egestas, tristique velit sit amet,
+      ullamcorper risus. Suspendisse potenti. Integer pretium, purus ac varius dictum, metus nunc posuere ante, et
+      imperdiet ligula ante quis sem. Duis fringilla sapien id sapien finibus egestas.
+    </div>
+  </div>
+</div>
