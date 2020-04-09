@@ -1,6 +1,5 @@
-import { NgModule, Component, Input, Output, ElementRef, forwardRef } from '@angular/core';
+import { Component, Input, Output, forwardRef, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-file-upload',
@@ -15,7 +14,7 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class FileUploadComponent implements ControlValueAccessor {
-
+  className: string;
   constructor() { }
 
   selectedFileName: string = null;
@@ -25,6 +24,7 @@ export class FileUploadComponent implements ControlValueAccessor {
   @Input() allowedTypes: string;
   @Input() maxUploads: number;
   @Input() maxSize: number;
+  @Output() hasFile = new EventEmitter<boolean>();
 
   writeValue(value: any) {
   }
@@ -35,30 +35,41 @@ export class FileUploadComponent implements ControlValueAccessor {
   registerOnTouched() { }
 
   changeListener($event): void {
-    this.readThis($event.target);
+    this.readThis($event.target.files);
   }
-  readThis(inputValue: any): void {
-    console.log(inputValue.files);
-    if (inputValue.files.length > this.maxUploads) {
+  readThis(f: FileList): void {
+    const files = Array.from(f);
+    console.log(files);
+    if (files.length > this.maxUploads) {
       // TODO elegánsabb megoldásra cserélni!
-      alert(`Túl sok fájlt próbálsz feltölteni, csak az első ${this.maxUploads} kiválasztott kép töltödik fel.`);
-
-      Object.values(inputValue.files).forEach((file: File) => {
-        console.log(file.size);
-        if (file.size > this.maxSize) {
-          // TODO: elegánsabb megoldásra cserélni!
-          alert(`A ${file.name} mérete nagyobb, mint ${this.maxSize / 1024 / 1024}Mb így nem tudod feltölteni.`);
-
-        } else {
-          const myReader: FileReader = new FileReader();
-          myReader.onloadend = (e) => {
-            console.log(e);
-            this.propagateChange(myReader.result);
-            this.selectedFileName = file.name;
-          },
-            myReader.readAsDataURL(file);
-        }
-      });
+      alert(`Túl sok fájlt próbálsz feltölteni, csak ${this.maxUploads} kép töltödik fel.`);
+      files.splice(this.maxUploads, f.length - this.maxUploads);
     }
+    Object.values(files).forEach((file: File) => {
+      console.log(file.size);
+      if (file.size > this.maxSize) {
+        // TODO: elegánsabb megoldásra cserélni!
+        alert(`A ${file.name} mérete nagyobb, mint ${this.maxSize / 1024 / 1024}Mb így nem tudod feltölteni.`);
+
+      } else {
+        const myReader: FileReader = new FileReader();
+        myReader.onloadend = (e) => {
+          console.log(e);
+          this.propagateChange(myReader.result);
+          this.selectedFileName = file.name;
+          this.hasFile.emit(true);
+        },
+          myReader.readAsDataURL(file);
+      }
+    });
+  }
+
+  onDragOver() {this.className = 'hover'; return false; }
+  onDragEnd() {this.className = ''; return false; }
+  onDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.readThis(e.dataTransfer.files);
+    this.className = '';
   }
 }

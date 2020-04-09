@@ -1,6 +1,18 @@
-<div *ngIf="dnd" class="holder"></div>
-<input *ngIf="showFileNameInput" id="uploadFile" class="upload-file form-control" placeholder="Choose File"
-  [(ngModel)]="selectedFileName" disabled="disabled" hidden />
+<div
+  class="holder  {{className}} d-flex align-self-center align-items-center justify-content-center mb-4"
+  [ngStyle]="{'opacity':dnd ? '1' : '0' }"
+  draggable="true"
+  (dragend)="onDragEnd()"
+  (dragleave)="onDragEnd()"
+  (dragover)="onDragOver()"
+  (drop)="onDrop($event)"></div>
+<input *ngIf="showFileNameInput"
+  id="uploadFile"
+  class="upload-file form-control"
+  placeholder="Choose File"
+  [(ngModel)]="selectedFileName"
+  disabled="disabled"
+  hidden />
 <div class="fileUpload">
   <span>{{uploadButtonText}}</span>
   <input type="file" class="upload" accept="{{allowedTypes}}" (change)="changeListener($event)" multiple
