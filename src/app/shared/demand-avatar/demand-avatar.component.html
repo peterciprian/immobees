@@ -2,8 +2,7 @@
   <img *ngIf="accountService.account.avatar.url"
     class="image d-flex align-self-center align-items-center justify-content-center mb-4"
     src="{{accountService.account.avatar.url}}">
-  <div *ngIf="false"
-    class="image d-flex align-self-center align-items-center justify-content-center mb-4">
+  <div *ngIf="false" class="image d-flex align-self-center align-items-center justify-content-center mb-4">
     drag and drop
     <br>
     picture to upload
@@ -13,7 +12,8 @@
     <br>
     Minimum képfelbontás 1024x768
   </div>
-  <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" uploadButtonText="kép kiválasztása"
-    [(ngModel)]="accountService.account.avatar.url">
+  <app-file-upload [showFileNameInput]="true" allowedTypes="image/png, image/jpeg" [maxUploads]="2"
+    uploadButtonText="kép kiválasztása" [maxSize]="2097152" [(ngModel)]="accountService.account.avatar.url"
+    [dnd]="true">
   </app-file-upload>
 </div>

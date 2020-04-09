@@ -19,16 +19,13 @@ export class NavComponent {
     private router: Router
   ) {
     this.auth.isAuthenticated$.subscribe(val => {
-      console.log(val);
       if (val) {
-        console.log(val);
         this.modalService.openDialog('data');
       }
     });
   }
   public viewMyProfile() {
     this.auth.userProfile$.pipe(first()).subscribe(me => {
-      console.log(me);
       this.viewService.flatMate = me;
       this.router.navigate(['/view']);
     });

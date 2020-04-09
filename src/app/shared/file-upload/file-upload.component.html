@@ -1,6 +1,8 @@
+<div *ngIf="dnd" class="holder"></div>
 <input *ngIf="showFileNameInput" id="uploadFile" class="upload-file form-control" placeholder="Choose File"
   [(ngModel)]="selectedFileName" disabled="disabled" hidden />
 <div class="fileUpload">
   <span>{{uploadButtonText}}</span>
-  <input type="file" class="upload" accept="{{allowedTypes}}" (change)="changeListener($event)">
+  <input type="file" class="upload" accept="{{allowedTypes}}" (change)="changeListener($event)" multiple
+    max-uploads="maxUploads">
 </div>

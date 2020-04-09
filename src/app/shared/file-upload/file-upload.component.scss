@@ -30,3 +30,15 @@ input.upload {
   width: 100%;
   margin: auto;
 }
+
+.holder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 2px #5a5a5a;
+  border-style: dashed;
+  border-radius: 21px;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+}

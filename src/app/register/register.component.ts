@@ -14,11 +14,9 @@ export class RegisterComponent implements OnInit {
     this.modalDataService.title.next('teljes regisztráció');
   }
   changeToOffer() {
-    this.modalDataService.modalDataSet.next({stepperItems: 5, modalType: 'OFFER'});
-    console.log('changed to offer');
+    this.modalDataService.modalDataSet.next({ stepperItems: 5, modalType: 'OFFER' });
   }
   changeToDemand() {
-    this.modalDataService.modalDataSet.next({stepperItems: 3, modalType: 'DEMAND'});
-    console.log('changed to demand');
+    this.modalDataService.modalDataSet.next({ stepperItems: 3, modalType: 'DEMAND' });
   }
 }

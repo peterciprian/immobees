@@ -124,18 +124,6 @@ export class MainComponent implements OnInit {
       data => console.log(data),
       error => console.error(error)
     );
-    /* this.profilService.putMyProfile(this.profile).subscribe(
-      data => console.log(data),
-      error => console.error(error)
-    );
-    this.profilService.putSubject(this.subject).subscribe(
-      data => console.log(data),
-      error => console.error(error)
-    );
-    this.profilService.getMyProfile().subscribe(
-      data => console.log(data),
-      error => console.error(error)
-    ); */
   }
 
   ngOnInit() {

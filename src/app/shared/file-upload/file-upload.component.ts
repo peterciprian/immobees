@@ -19,9 +19,12 @@ export class FileUploadComponent implements ControlValueAccessor {
   constructor() { }
 
   selectedFileName: string = null;
+  @Input() dnd: boolean;
   @Input() showFileNameInput: boolean;
   @Input() uploadButtonText: string;
   @Input() allowedTypes: string;
+  @Input() maxUploads: number;
+  @Input() maxSize: number;
 
   writeValue(value: any) {
   }
@@ -32,18 +35,30 @@ export class FileUploadComponent implements ControlValueAccessor {
   registerOnTouched() { }
 
   changeListener($event): void {
-    // debugger; // uncomment this for debugging purposes
     this.readThis($event.target);
   }
   readThis(inputValue: any): void {
-    // debugger; // uncomment this for debugging purposes
-    const file: File = inputValue.files[0];
-    const myReader: FileReader = new FileReader();
+    console.log(inputValue.files);
+    if (inputValue.files.length > this.maxUploads) {
+      // TODO elegánsabb megoldásra cserélni!
+      alert(`Túl sok fájlt próbálsz feltölteni, csak az első ${this.maxUploads} kiválasztott kép töltödik fel.`);
 
-    myReader.onloadend = (e) => {
-      this.propagateChange(myReader.result);
-      this.selectedFileName = file.name;
-    },
-      myReader.readAsDataURL(file);
+      Object.values(inputValue.files).forEach((file: File) => {
+        console.log(file.size);
+        if (file.size > this.maxSize) {
+          // TODO: elegánsabb megoldásra cserélni!
+          alert(`A ${file.name} mérete nagyobb, mint ${this.maxSize / 1024 / 1024}Mb így nem tudod feltölteni.`);
+
+        } else {
+          const myReader: FileReader = new FileReader();
+          myReader.onloadend = (e) => {
+            console.log(e);
+            this.propagateChange(myReader.result);
+            this.selectedFileName = file.name;
+          },
+            myReader.readAsDataURL(file);
+        }
+      });
+    }
   }
 }
