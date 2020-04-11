@@ -11,25 +11,34 @@ Run `ng serve --port 3000` for a dev server. Navigate to `http://localhost:3000/
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## TODO
-* backend kéréseket feltérképezni
-* hatszög-ikont megcsinálni méretezhetőre
-* ikonokat gyűjteni, beilleszteni
+* ~~backend kéréseket feltérképezni~~
+* __Firebase-backend__
+  * kapcsolat
+  * auth / roles
+  * db 
+* _hatszög-ikont megcsinálni méretezhetőre_
+* _ikonokat gyűjteni, beilleszteni_
 * főoldali linkeket beilleszteni
-* footerben a számlálókat bekötni
+* _footerben a számlálókat bekötni_
 * hu.json/en.json tartalmát feltölteni
-* carousel-t beüzemelni a kezdőlapon
-* elemek lekérése init-re szűrés nélkül, alapértelmezett sorrendben
-* találati lista layoutot megépíteni
+* adatok mappelése a profiloldalon
+* form validációk!!
+* _beküldéskor cím mappelés_
+* _térkép cím-megjelenítő bekötése_
+* _carousel- slide animation_
+* __elemek lekérése init-re szűrés nélkül, alapértelmezett sorrendben__
+* ~~találati lista layoutot megépíteni~~
 * találati lista lapozását beüzemelni
 * találati lista rendezést beüzemelni
 * találati lista szűrőfeltételeit szelektálni (keres-kínál)
 * keresőfeltételek select-jeiben mik az option-ök?
 * keresőfeltételeket bekötni
+* ~~profiloldalak~~
+* ~~profiloldal~~ - szerkesztő mód
+* __profil-szerkesztés demand képfeltöltés__
+* ~~teljes regisztráció / hidertésfeladás -demand képfeltöltés~~
+* _tosat sablon_
+* _profilbeállítások_
+* _akikkel laknék (találati lista alapján)_
 
-* profiloldalak
-* profiloldal - szerkesztő mód
-* teljes regisztráció / hidertésfeladás
-* tosat sablon
-* profilbeállítások
-* akikkel laknék (találati lista alapján)
-* üzenetküldő
+* _üzenetküldő_

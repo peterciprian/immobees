@@ -46,10 +46,7 @@ export class Profile implements Account {
                 currency: 'Ft',
                 overhead: null
             },
-            pictures: [{
-                url: null,
-                label: ''
-            }],
+            pictures: [],
             floorArea: null,
             roomArea: null,
             innerHeight: null,
