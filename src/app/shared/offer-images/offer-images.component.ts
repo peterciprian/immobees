@@ -44,8 +44,8 @@ export class OfferImagesComponent implements OnInit {
     this.picturesToSave = [];
     if (this.uploadedPictures.length > this.maxUploads) {
       alert(`Túl sok fájlt próbálsz feltölteni, csak ${this.maxUploads} kép töltödik fel.`);
-      this.uploadedPictures.splice(this.maxUploads, this.uploadedPictures.length - this.maxUploads)
-      this.uploadedTitles.splice(this.maxUploads, this.uploadedTitles.length - this.maxUploads)
+      this.uploadedPictures.splice(this.maxUploads, this.uploadedPictures.length - this.maxUploads);
+      this.uploadedTitles.splice(this.maxUploads, this.uploadedTitles.length - this.maxUploads);
     }
     for (let i = 0; i < this.uploadedPictures.length; i++) {
       this.picturesToSave.push({

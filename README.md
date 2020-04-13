@@ -23,6 +23,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * hu.json/en.json tartalmát feltölteni
 * adatok mappelése a profiloldalon
 * form validációk!!
+* cím adatokat szétszedni
 * _beküldéskor cím mappelés_
 * _térkép cím-megjelenítő bekötése_
 * _carousel- slide animation_
@@ -31,6 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * találati lista lapozását beüzemelni
 * találati lista rendezést beüzemelni
 * találati lista szűrőfeltételeit szelektálni (keres-kínál)
+* értékkészleteket ABC-be rendezni
 * keresőfeltételek select-jeiben mik az option-ök?
 * keresőfeltételeket bekötni
 * ~~profiloldalak~~

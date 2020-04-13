@@ -59,12 +59,20 @@
       </div>
     </div>
     <div class="image-container d-flex flex-wrap">
-      <div class="image-block empty" (click)="addImage($event)"></div>
-      <div class="image-block empty" (click)="addImage($event)"></div>
-      <div class="image-block empty" (click)="addImage($event)"></div>
-      <div class="image-block empty" (click)="addImage($event)"></div>
-      <div class="image-block empty" (click)="addImage($event)"></div>
-      <div class="image-block" (click)="addImage($event)"></div>
+      <div *ngFor="let img of accountService.account.subject.pictures; index as index"
+        class="image-preview d-flex flex-column">
+        <img class="image" [src]="img.url">
+        <div class="input-group flex-row">
+          <input type="text" class="label-input" placeholder="Helyiség elnevezése" [(ngModel)]="uploadedTitles[index]"
+            (change)="save()">
+          <button class="delete-button" (click)="delete(img)"><img src="assets/img/trashBin.svg" alt="delete"></button>
+          <button class="to-front-button" (click)="top(img)"><img src="assets/img/doubleUpArrow.svg"
+              alt="to top"></button>
+        </div>
+      </div>
+      <div *ngIf="accountService.account.subject.pictures.length < 6" class="image-preview empty"
+        (click)="addImage($event)">
+      </div>
     </div>
   </div>
   <div class="introduction">

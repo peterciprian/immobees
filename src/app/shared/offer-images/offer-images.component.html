@@ -1,10 +1,11 @@
 <div class="offer-images-container d-flex flex-row justify-content-center">
-  <div class="main-image-section d-flex flex-column" [ngStyle]="{'margin-left':uploadedPictures.length == 0 ? '0' : '-5px'}">
+  <div class="main-image-section d-flex flex-column"
+    [ngStyle]="{'margin-left':uploadedPictures.length == 0 ? '0' : '-5px'}">
     <img *ngIf="accountService.account.subject.pictures[0]"
-    class="image d-flex align-self-center align-items-center justify-content-center mb-4"
-    src="{{accountService.account.subject.pictures[0].url}}">
+      class="image d-flex align-self-center align-items-center justify-content-center mb-4"
+      src="{{accountService.account.subject.pictures[0].url}}">
     <div *ngIf="!accountService.account.subject.pictures[0]"
-    class="image d-flex align-self-center align-items-center justify-content-center mb-4">
+      class="image d-flex align-self-center align-items-center justify-content-center mb-4">
       drag and drop
       <br>
       picture to upload
@@ -19,15 +20,15 @@
       [resultArray]="uploadedPictures" [dnd]="dnd" (hasFile)="fileEvent($event)">
     </app-file-upload>
   </div>
-  <div class="other-images-section d-flex flex-wrap" [ngStyle]="{'margin-right':uploadedPictures.length == 0 ? '0' : '-20px'}">
+  <div class="other-images-section d-flex flex-wrap"
+    [ngStyle]="{'margin-right':uploadedPictures.length == 0 ? '0' : '-20px'}">
     <div *ngFor="let img of accountService.account.subject.pictures; index as index"
       class="image-preview d-flex flex-column">
-      <img class="image" [src]="accountService.account.subject.pictures[index].url">
+      <img class="image" [src]="img.url">
       <div class="input-group flex-row">
         <input type="text" class="label-input" placeholder="Helyiség elnevezése" [(ngModel)]="uploadedTitles[index]"
           (change)="save()">
-        <button class="delete-button" (click)="delete(img)"><img src="assets/img/trashBin.svg"
-            alt="delete"></button>
+        <button class="delete-button" (click)="delete(img)"><img src="assets/img/trashBin.svg" alt="delete"></button>
         <button class="to-front-button" (click)="top(img)"><img src="assets/img/doubleUpArrow.svg"
             alt="to top"></button>
       </div>
