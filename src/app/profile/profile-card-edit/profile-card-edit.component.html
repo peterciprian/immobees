@@ -1,6 +1,6 @@
 <div class="profile-container">
   <div class="profile-card d-flex flex-column justify-content-center">
-    <app-avatar [size]="'220px'" class="mx-auto"></app-avatar>
+    <app-avatar [size]="'220px'" [img]="accountService.account.avatar.url" class="mx-auto"></app-avatar>
     <div class="name-row d-flex flex-row justify-content-center align-items-center">
       <div class="flag-icon mr-2"></div>
       <div class="name">{{accountService.account.name}} ({{accountService.account.birthday | age}})</div>
@@ -70,8 +70,15 @@
               alt="to top"></button>
         </div>
       </div>
-      <div *ngIf="accountService.account.subject.pictures.length < 6" class="image-preview empty"
-        (click)="addImage($event)">
+      <div *ngIf="accountService.account.subject.pictures.length < 6" class="image-preview empty" draggable="true"
+        (drop)="onDrop($event)">
+        <input *ngIf="false" id="uploadFile" class="upload-file form-control" placeholder="Choose File"
+          [(ngModel)]="selectedFileName" disabled="disabled" hidden />
+        <div class="fileUpload">
+          <input type="file" class="upload" accept="image/png, image/jpeg" (change)="changeListener($event)" multiple
+            max-uploads="maxUploads">
+          <div class="label">+</div>
+        </div>
       </div>
     </div>
   </div>

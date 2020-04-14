@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AccountService } from 'src/app/core/services/account.service';
 import { Picture } from 'src/app/core/models/accounts';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-profile-card-edit',
@@ -15,8 +16,14 @@ export class ProfileCardEditComponent implements OnInit {
   public uploadedPictures: Array<string> = [];
   public uploadedTitles: Array<string> = [];
   private picturesToSave: Array<Picture> = [];
+  private maxSize = 2097152;
+  resultArray = [];
+  selectedFileName: string;
+  public hasFile = new BehaviorSubject<any>(false);
 
-  constructor(public accountService: AccountService) { }
+  constructor(public accountService: AccountService) {
+    this.hasFile.subscribe(e => this.save());
+  }
 
 
   ngOnInit() {
@@ -24,10 +31,6 @@ export class ProfileCardEditComponent implements OnInit {
     this.accountService.account.subject.pictures.forEach((img, i) => this.uploadedPictures[i] = img.url);
   }
 
-  fileEvent($event) {
-    this.dnd = !$event;
-    this.save();
-  }
   delete(img) {
     this.uploadedPictures.splice(this.uploadedPictures.findIndex(e => e === img.url), 1);
     this.uploadedTitles.splice(this.uploadedTitles.findIndex(e => e === img.label), 1);
@@ -55,7 +58,52 @@ export class ProfileCardEditComponent implements OnInit {
     }
     this.accountService.account.subject.pictures = this.picturesToSave;
   }
-  addImage(event) {
-    console.log(event);
+
+  writeValue(value: any) {
+  }
+  propagateChange = (_: any) => { };
+  registerOnChange(fn) {
+    this.propagateChange = fn;
+  }
+  registerOnTouched() { }
+
+  changeListener($event): void {
+    this.readThis($event.target.files);
+  }
+  readThis(f: FileList): void {
+    const files = Array.from(f);
+    if (files.length > this.maxUploads) {
+      // TODO elegánsabb megoldásra cserélni!
+      alert(`Túl sok fájlt próbálsz feltölteni, csak ${this.maxUploads} kép töltödik fel.`);
+      files.splice(this.maxUploads, f.length - this.maxUploads);
+    }
+    Object.values(files).forEach((file: File) => {
+      if (file.size > this.maxSize) {
+        // TODO: elegánsabb megoldásra cserélni!
+        alert(`A ${file.name} mérete nagyobb, mint ${this.maxSize / 1024 / 1024}Mb így nem tudod feltölteni.`);
+
+      } else {
+        const myReader: FileReader = new FileReader();
+        myReader.onloadend = (e) => {
+          if (this.maxUploads === 1) {
+            this.propagateChange(myReader.result);
+          } else {
+            this.resultArray.push(myReader.result);
+            this.propagateChange(this.resultArray);
+            this.uploadedPictures = this.resultArray;
+          }
+          this.selectedFileName = file.name;
+          this.hasFile.next(file);
+        },
+          myReader.readAsDataURL(file);
+      }
+    });
+  }
+
+
+  onDrop(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.readThis(e.dataTransfer.files);
   }
 }
