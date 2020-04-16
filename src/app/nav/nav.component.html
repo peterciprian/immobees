@@ -9,20 +9,23 @@
       <div class="profile-avatar">
         <img src="" alt="">
       </div>
-      <div class="profile-label">{{ profile.nickname }}</div>
+      <div class="profile-label">{{(user.displayName) ? user.displayName : 'User'}}</div>
       <div class="profile-notifications"></div>
     </div>
     <div class="menu mx-2">
-      <button *ngIf="!auth.loggedIn" (click)="auth.login()" class="im-orange-bg button-m1">Bejelentkezés</button>
-      <button *ngIf="auth.loggedIn" [matMenuTriggerFor]="profileMenu"
+      <button *ngIf="!authService.userData as user" (click)="authModalService.openDialog('verifyEmail')"
+        class="im-orange-bg button-m1">verifyEmail</button>
+      <button *ngIf="!authService.userData as user" (click)="authModalService.openDialog('signIn')"
+        class="im-orange-bg button-m1">Bejelentkezés</button>
+      <button *ngIf="authService.userData as user" [matMenuTriggerFor]="profileMenu"
         class="im-orange-bg button-m1">{{'NAV.PROFILE' | translate }}</button>
       <mat-menu #profileMenu="matMenu" xPosition="before" yPosition="below">
         <button mat-menu-item [routerLink]="['/profile/favs']">Akikkel laknék</button>
         <button mat-menu-item (click)="viewMyProfile()">Profil megtekintése</button>
-        <button mat-menu-item [routerLink]="['/profile']" >Profil szerkesztése</button>
+        <button mat-menu-item [routerLink]="['/profile']">Profil szerkesztése</button>
         <button mat-menu-item [routerLink]="['/profile/settings']">Beállítások</button>
         <button mat-menu-item [routerLink]="['/messages']">Üzenetek</button>
-        <button (click)="auth.logout()" mat-menu-item>Kijelentkezés</button>
+        <button (click)="authService.SignOut()" mat-menu-item>Kijelentkezés</button>
       </mat-menu>
     </div>
   </div>

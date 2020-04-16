@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "immobees-98dcd"
+  },
+  "targets": {
+    "immobees-98dcd": {
+      "hosting": {
+        "frontend": [
+          "immobees-98dcd"
+        ]
+      }
+    }
   }
 }

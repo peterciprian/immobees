@@ -1,0 +1,44 @@
+.divider {
+  box-sizing: border-box;
+  width: stretch;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  height: 3px;
+  background-color: #d7d7d7;
+}
+
+.title {
+  width: stretch;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  margin: 0 10px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #5a5a5a;
+}
+
+
+.modal-header.mat-dialog-title {
+  position: relative;
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    right: -5px;
+  }
+}
+
+::ng-deep.modal-header {
+  border: none;
+}
+
+::ng-deep.mat-dialog-container {
+  max-width: 732px;
+}

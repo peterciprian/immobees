@@ -15,12 +15,19 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from '@angular/fire';
 
+import { environment } from '../environments/environment';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+import { AuthModalComponent } from './auth/auth-modal/auth-modal.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,7 +39,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavComponent,
     FooterComponent,
     ModalComponent,
-    RegisterComponent
+    AuthModalComponent,
+    RegisterComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,12 +56,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }],
   entryComponents: [
-    ModalComponent
+    ModalComponent,
+    AuthModalComponent
   ],
   bootstrap: [AppComponent]
 })

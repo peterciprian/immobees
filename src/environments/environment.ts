@@ -7,6 +7,15 @@ export const environment = {
   baseApiUrl: '/api/',
   domain: 'immobees-dev.auth0.com',
   client_id: 'CqNt87HuCMBsu8jGK_4wqAZxh6yAowTX',
+  firebase: {
+    apiKey: 'AIzaSyDd6WzkTCZJk_S67jrAmg1ijbrRaW7LK5Q',
+    authDomain: 'immobees-98dcd.firebaseapp.com',
+    databaseURL: 'https://immobees-98dcd.firebaseio.com',
+    projectId: 'immobees-98dcd',
+    storageBucket: 'immobees-98dcd.appspot.com',
+    messagingSenderId: '96801410461',
+    appId: '1:96801410461:web:95e13b81be8d41ef28f374'
+  }
 };
 
 /*

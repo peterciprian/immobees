@@ -1,0 +1,18 @@
+<div class="modal-container">
+  <div mat-dialog-title class="modal-header d-flex flex-row justify-content-center align-items-center">
+    <div class="divider"></div>
+    <div class="title"> {{authModalContenType.value}}</div>
+    <div class="divider"></div>
+    <div class="close" (click)="close()">
+      &times;
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <div class="modal-body">
+      <app-sign-up *ngIf="authModalContenType.value == 'signUp'"></app-sign-up>
+      <app-sign-in *ngIf="authModalContenType.value == 'signIn'"></app-sign-in>
+      <app-verify-email *ngIf="authModalContenType.value == 'verifyEmail'"></app-verify-email>
+      <app-forgot-password *ngIf="authModalContenType.value == 'forgotPassword'"></app-forgot-password>
+    </div>
+  </mat-dialog-content>
+</div>

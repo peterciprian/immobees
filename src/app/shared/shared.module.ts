@@ -7,6 +7,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationModule } from 'ngx-bootstrap';
 import { MatSelectModule } from '@angular/material/select';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { HexagonLargeComponent } from './hexagon_large/hexagon.large.component';
 import { LocaleDatePipe } from './locale-date.pipe';
@@ -87,6 +89,8 @@ const sharedDirectives: any[] = [
     TranslateModule,
     CarouselModule.forRoot(),
     PaginationModule.forRoot(),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   exports: [
     CommonModule,
@@ -105,7 +109,9 @@ const sharedDirectives: any[] = [
     sharedDirectives,
     TranslateModule,
     LocaleDatePipe,
-    AgePipe
+    AgePipe,
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [
     sharedServices
