@@ -2,6 +2,7 @@ import { Account, Avatar, Subject } from './accounts';
 
 export class Profile implements Account {
     constructor() {
+        this.userID = null;
         this.name = '';
         this.introduction = '';
         this.avatar = { url: null };
@@ -87,6 +88,7 @@ export class Profile implements Account {
         this.active = false;
         this.confirmed = false;
     }
+    userID: string;
     name: string;
     introduction: string;
     avatar: Avatar;

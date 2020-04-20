@@ -4,6 +4,7 @@ import { ModalDataSet } from '../core/models/modalDataSet';
 import { ModalDataShareService } from './modal-data-share.service';
 import { Subscription } from 'rxjs';
 import { AccountService } from '../core/services/account.service';
+import { FirebaseFirestoreService } from '../core/services/firebase-firestore.service';
 
 @Component({
   selector: 'app-modal',
@@ -20,6 +21,7 @@ export class ModalComponent implements OnDestroy {
   constructor(
     public modalDataShare: ModalDataShareService,
     public accountService: AccountService,
+    public fireDB: FirebaseFirestoreService,
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.subscriptions.push(
@@ -43,6 +45,7 @@ export class ModalComponent implements OnDestroy {
   }
   save() {
     this.accountService.save();
+    this.fireDB.addAccount(this.accountService.account);
   }
 
   close() {

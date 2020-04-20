@@ -2,6 +2,7 @@ import { Component, OnDestroy, Inject } from '@angular/core';
 import { AuthModalService } from './auth-modal.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { BehaviorSubject } from 'rxjs';
+import { setWeek } from 'ngx-bootstrap/chronos/units/week';
 
 @Component({
   selector: 'app-auth-modal',
@@ -20,5 +21,13 @@ export class AuthModalComponent {
   close() {
     this.dialogRef.close();
   }
-
+  setTitle() {
+    switch (this.data) {
+      case 'signUp': return 'SIGNUP';
+      case 'signIn': return 'SIGNIN';
+      case 'verifyEmail': return 'VERIFYEMAIL';
+      case 'forgotPassword': return 'FORGOTPASSWORD';
+      default: return 'SIGNUP';
+    }
+  }
 }

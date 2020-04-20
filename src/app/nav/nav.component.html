@@ -1,21 +1,19 @@
 <div class="navbar d-flex justify-content-around align-items-center">
-  <div class="nav-tile d-flex flex-row">
+  <div class="nav-tile d-flex flex-row align-items-center">
     <a routerLink="/home">
       <img src="assets/img/logo.png" alt="IMOBEES">
     </a>
   </div>
-  <div class="nav-tile d-flex flex-row">
-    <div *ngIf="auth.userProfile$ | async as profile" class="profile mx-2 d-flex flex-row">
-      <div class="profile-avatar">
-        <img src="" alt="">
+  <div class="nav-tile d-flex flex-row align-items-center">
+    <div *ngIf="authService.userData as user" class="profile mx-2 d-flex flex-row">
+      <div class="profile-avatar mr-2">
+        <img [src]="user.photoURL" alt="">
       </div>
       <div class="profile-label">{{(user.displayName) ? user.displayName : 'User'}}</div>
       <div class="profile-notifications"></div>
     </div>
     <div class="menu mx-2">
-      <button *ngIf="!authService.userData as user" (click)="authModalService.openDialog('verifyEmail')"
-        class="im-orange-bg button-m1">verifyEmail</button>
-      <button *ngIf="!authService.userData as user" (click)="authModalService.openDialog('signIn')"
+      <button *ngIf="!authService.userData" (click)="authModalService.openDialog('signIn')"
         class="im-orange-bg button-m1">Bejelentkezés</button>
       <button *ngIf="authService.userData as user" [matMenuTriggerFor]="profileMenu"
         class="im-orange-bg button-m1">{{'NAV.PROFILE' | translate }}</button>

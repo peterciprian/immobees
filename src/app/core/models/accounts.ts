@@ -112,6 +112,7 @@ export enum condition {
 }
 
 export interface Account {
+    userID: string;
     name: string;
     introduction: string;
     avatar: Avatar;

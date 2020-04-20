@@ -3,7 +3,6 @@ import { auth } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import * as firebase from 'firebase';
 import { AuthModalService } from 'src/app/auth/auth-modal/auth-modal.service';
@@ -14,7 +13,7 @@ import { AuthModalService } from 'src/app/auth/auth-modal/auth-modal.service';
 })
 export class FirebaseAuthService {
 
-  userData: any;
+  userData: User;
 
   constructor(
     public afs: AngularFirestore,
@@ -30,6 +29,7 @@ export class FirebaseAuthService {
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
+        this.userData = null;
         localStorage.setItem('user', null);
         JSON.parse(localStorage.getItem('user'));
       }
@@ -47,6 +47,8 @@ export class FirebaseAuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
+          this.authModalService.closeDialog();
+          console.log(result);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -96,6 +98,8 @@ export class FirebaseAuthService {
       .then((result) => {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
+          this.authModalService.closeDialog();
+          console.log(result);
         });
         this.SetUserData(result.user);
       }).catch((error) => {

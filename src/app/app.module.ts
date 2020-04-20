@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { environment } from '../environments/environment';
 import { MatMenuModule } from '@angular/material/menu';
@@ -57,10 +58,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatMenuModule,
     MatButtonModule,
     MatDialogModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }],
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   entryComponents: [
     ModalComponent,
     AuthModalComponent
