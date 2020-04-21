@@ -1,6 +1,6 @@
 <div class="profile-container">
   <div class="profile-card d-flex flex-column justify-content-center">
-    <app-avatar [size]="'220px'" class="mx-auto"></app-avatar>
+    <app-avatar [size]="'220px'" [img]="viewService.flatMate.avatar.url" class="mx-auto"></app-avatar>
     <div class="name-row d-flex flex-row justify-content-center align-items-center">
       <div class="flag-icon mr-2"></div>
       <div class="name">{{viewService.flatMate.name}} ({{viewService.flatMate.birthday | age}})</div>

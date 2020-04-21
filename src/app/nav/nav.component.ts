@@ -6,6 +6,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { FirebaseAuthService } from '../core/services/firebase-auth.service';
 import { AuthModalService } from '../auth/auth-modal/auth-modal.service';
+import { FirebaseFirestoreService } from '../core/services/firebase-firestore.service';
 
 @Component({
   selector: 'app-nav',
@@ -16,6 +17,7 @@ export class NavComponent {
 
   constructor(
     public authService: FirebaseAuthService,
+    public firestore: FirebaseFirestoreService,
     public auth: AuthService,
     private modalService: ModalService,
     public authModalService: AuthModalService,
@@ -29,9 +31,11 @@ export class NavComponent {
     });
   }
   public viewMyProfile() {
-    this.auth.userProfile$.pipe(first()).subscribe(me => {
-      this.viewService.flatMate = me;
-      this.router.navigate(['/view']);
-    });
+    if (this.authService.userData === undefined) { return; } else {
+      this.firestore.$getMyAccount().pipe(first()).subscribe(me => {
+        this.viewService.flatMate = me;
+        this.router.navigate(['/view']);
+      });
+    }
   }
 }

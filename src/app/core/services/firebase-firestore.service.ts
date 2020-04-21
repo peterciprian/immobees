@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Account, Accounts } from '../models/accounts';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AccountService } from './account.service';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { FirebaseAuthService } from './firebase-auth.service';
@@ -19,7 +18,6 @@ export class FirebaseFirestoreService {
 
   constructor(
     private afs: AngularFirestore,
-    private accountService: AccountService,
     private authService: FirebaseAuthService) {
     this.accountsCollection = afs.collection<Account>('accounts');
     this.$accounts = this.accountsCollection.valueChanges();
@@ -28,18 +26,21 @@ export class FirebaseFirestoreService {
   addAccount(account: Account) {
     const id = this.authService.userData.uid;
     account.userID = id;
+    account.name = this.authService.userData.displayName;
+    account.avatar.url = (account.avatar.url !== '' && account.avatar.url !== undefined && account.avatar.url !== null) ?
+      account.avatar.url : this.authService.userData.photoURL;
     account.createdAt = new Date(Date.now());
-    this.accountsCollection.doc(id).set(account)
+    this.accountsCollection.doc(id).set(JSON.parse(JSON.stringify(account)))
       .catch(error => this.handleError(error))
       .then(data => this.handleData(data));
   }
 
   $getAccount(uid) {
-    return this.accountsCollection.doc(uid).get();
+    this.accountsCollection.doc(uid).get();
   }
 
-  $getMyAccount() {
-    return this.accountsCollection.doc(this.authService.userData.uid).get();
+  $getMyAccount(): Observable<Account> {
+    return this.accountsCollection.doc(this.authService.userData.uid).valueChanges() as Observable<Account>;
   }
 
   updateAccount(uid, account) {
