@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProfileService } from 'src/app/core/services/profile.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { FirebaseFirestoreService } from 'src/app/core/services/firebase-firestore.service';
+import { Account } from 'src/app/core/models/accounts';
 
 @Component({
    selector: 'app-main',
@@ -15,23 +16,12 @@ export class MainComponent implements OnInit {
 
    constructor(
       private http: HttpClient,
-      private profilService: ProfileService,
+      private firestore: FirebaseFirestoreService,
       public auth: AuthService, ) {
-      this.http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
+      this.firestore.$accounts.subscribe(acc => {
          this.highLight = acc.shift();
          this.isLoaded = true;
       });
-      this.profilService.testSearchProfile(JSON.stringify({
-         skip: 1,
-         limit: 2,
-         orderBy: {
-            hasErasmus: 'asc'
-         },
-         criteria: { gender: 'male' }
-      })).subscribe(
-         data => console.log(data),
-         error => console.error(error)
-      );
    }
 
    ngOnInit() {

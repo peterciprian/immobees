@@ -32,12 +32,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * találati lista lapozását beüzemelni
 * találati lista rendezést beüzemelni
 * találati lista szűrőfeltételeit szelektálni (keres-kínál)
-* értékkészleteket ABC-be rendezni
+* ~~értékkészleteket ABC-be rendezni~~
 * keresőfeltételek select-jeiben mik az option-ök?
 * keresőfeltételeket bekötni
 * ~~profiloldalak~~
 * ~~profiloldal~~ - szerkesztő mód
-* __profil-szerkesztés demand képfeltöltés__
+* ~~__profil-szerkesztés demand képfeltöltés__~~
+* __képfeltöltés 1MB-nál nagyobb fájlokra__
 * ~~teljes regisztráció / hidertésfeladás -demand képfeltöltés~~
 * _tosat sablon_
 * _profilbeállítások_

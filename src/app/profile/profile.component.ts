@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ProfileService } from '../core/services/profile.service';
 import { Account } from '../core/models/accounts';
 import { ModalService } from '../modal/modal.service';
 import { Location } from '@angular/common';
+import { FirebaseFirestoreService } from '../core/services/firebase-firestore.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,13 +16,15 @@ export class ProfileComponent {
   public recommendations: Account[];
   constructor(
     private http: HttpClient,
-    public profileService: ProfileService,
+    private firestore: FirebaseFirestoreService,
     private location: Location,
     public modalService: ModalService
   ) {
-    http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
+    this.firestore.$accounts.subscribe(acc => {
       this.recommendations = acc;
-      this.myProfile = acc[3];
+    });
+    this.firestore.$getMyAccount().subscribe(me => {
+      this.myProfile = me;
     });
   }
 

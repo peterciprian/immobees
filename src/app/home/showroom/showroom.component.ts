@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Account } from 'src/app/core/models/accounts';
 import { HttpClient } from '@angular/common/http';
 import { trigger, style, animate, transition, query, stagger } from '@angular/animations';
+import { FirebaseFirestoreService } from 'src/app/core/services/firebase-firestore.service';
 
 @Component({
   selector: 'app-showroom',
@@ -26,8 +27,11 @@ export class ShowroomComponent implements OnInit {
   public accounts: Account[] = [];
   private totalAccounts = 0;
 
-  constructor(private http: HttpClient) {
-    http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
+  constructor(
+    private http: HttpClient,
+    private firestore: FirebaseFirestoreService
+  ) {
+    this.firestore.$accounts.subscribe(acc => {
       this.totalAccounts = acc.length;
       this.everyAccount = acc;
       this.sliceAccounts(0, this.itemsPerSlide);
