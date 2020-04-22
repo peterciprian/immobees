@@ -31,15 +31,8 @@ export class SearchPanelComponent implements OnInit {
   constructor(public queryService: QueryService, private codomain: CodomainsService) { }
 
   ngOnInit() {
-    this.languages = this.codomain.getLanguages().sort((a, b) => a.nativeName.localeCompare(b.nativeName));
-    this.languages.unshift(this.languages.splice(this.languages.findIndex(e => e.code === 'de'), 1)[0]);
-    this.languages.unshift(this.languages.splice(this.languages.findIndex(e => e.code === 'en'), 1)[0]);
-    this.languages.unshift(this.languages.splice(this.languages.findIndex(e => e.code === 'hu'), 1)[0]);
-    this.languages.splice(this.languages.findIndex(e => e.nativeName === ''), 1);
-
-    this.nationalities = this.codomain.getNationalities().sort((a, b) => a.text.localeCompare(b.text));
-    this.nationalities.unshift(this.nationalities.splice(this.nationalities.findIndex(e => e.alpha_3_code === 'HUN'), 1)[0]);
-
+    this.languages = this.codomain.getLanguages();
+    this.nationalities = this.codomain.getNationalities();
     this.schools = Object.keys(school).filter(key => !isNaN(Number(school[key])));
     this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
     this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));

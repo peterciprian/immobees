@@ -17,7 +17,7 @@ export class FirebaseFirestoreService {
   constructor(
     private afs: AngularFirestore,
     private authService: FirebaseAuthService) {
-    this.accountsCollection = afs.collection<Account>('accounts');
+    this.accountsCollection = this.afs.collection<Account>('accounts');
     this.$accounts = this.accountsCollection.valueChanges();
   }
 

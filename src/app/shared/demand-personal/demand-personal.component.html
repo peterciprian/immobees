@@ -44,7 +44,7 @@
           <mat-select [(ngModel)]="accountService.account.nationality" placeholder="Nemzetiség">
             <mat-option>X</mat-option>
             <mat-option *ngFor="let nationality of nationalities" [value]="nationality.value">{{
-              nationality.text
+              nationality.en_long_name
             }}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -177,8 +177,8 @@
 
     </div>
     <div class="text-area d-flex align-self-center mt-3">
-      <textarea [(ngModel)]="accountService.account.introduction" matInput name="ideal-flatmate" id="ideal-flatmate" cols="50" rows="5"
-        placeholder="&#9998; MUTASD BE MAGAD PÁR SZÓBAN..."></textarea>
+      <textarea [(ngModel)]="accountService.account.introduction" matInput name="ideal-flatmate" id="ideal-flatmate"
+        cols="50" rows="5" placeholder="&#9998; MUTASD BE MAGAD PÁR SZÓBAN..."></textarea>
     </div>
   </div>
 </div>

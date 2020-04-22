@@ -50,7 +50,7 @@
         <mat-select placeholder="Nemzetiség">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let nationality of nationalities" [value]="nationality.value">{{
-            nationality.text
+            nationality.en_long_name
           }}</mat-option>
         </mat-select>
       </mat-form-field>
