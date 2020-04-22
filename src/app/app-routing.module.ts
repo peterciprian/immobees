@@ -5,15 +5,16 @@ import { NotFoundComponent } from 'src/app/core/not-found-component/not-found.co
 import { externalUrlProvider } from 'src/app/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './core/services/interceptor.service';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'search', loadChildren: () => import('./search/search.module').then(m => m.SearchModule) },
-  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
-  { path: 'view', loadChildren: () => import('./view/view.module').then(m => m.ViewModule) },
-  { path: 'messages', loadChildren: () => import('./messages/messages.module').then(m => m.MessagesModule) },
+  { path: 'profile', canActivate: [AuthGuard], loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
+  { path: 'view', canActivate: [AuthGuard], loadChildren: () => import('./view/view.module').then(m => m.ViewModule) },
+  { path: 'messages', canActivate: [AuthGuard], loadChildren: () => import('./messages/messages.module').then(m => m.MessagesModule) },
   {
     path: 'externalRedirect',
     resolve: {

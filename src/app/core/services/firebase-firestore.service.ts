@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Account, Accounts } from '../models/accounts';
+import { Account } from '../models/accounts';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { FirebaseAuthService } from './firebase-auth.service';
-import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +43,7 @@ export class FirebaseFirestoreService {
 
   updateAccount(uid, account) {
     account.updatedAt = new Date(Date.now());
-    this.accountsCollection.doc(uid).update(account)
+    this.accountsCollection.doc(uid).set(account, { merge: true })
       .catch(error => this.handleError(error))
       .then(data => this.handleData(data));
     // vagy: this.accountsCollection.doc(uid).set(account, { merge: true });
@@ -53,7 +51,7 @@ export class FirebaseFirestoreService {
 
   updateMyAccount(account) {
     account.updatedAt = new Date(Date.now());
-    this.accountsCollection.doc(this.authService.userData.uid).update(account)
+    this.accountsCollection.doc(this.authService.userData.uid).set(account, { merge: true })
       .catch(error => this.handleError(error))
       .then(data => this.handleData(data));
     // vagy: this.accountsCollection.doc(this.authService.userData.uid).set(account, { merge: true });

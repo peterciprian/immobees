@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { User } from '../models/user';
 import * as firebase from 'firebase';
 import { AuthModalService } from 'src/app/auth/auth-modal/auth-modal.service';
+import { first } from 'rxjs/operators';
 
 
 @Injectable({
@@ -28,10 +29,20 @@ export class FirebaseAuthService {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
+        this.afs.doc(`accounts/${user.uid}`).valueChanges().pipe(first()).subscribe(me => {
+          if (me !== undefined) {
+            localStorage.setItem('user-fr', 'true');
+          } else {
+            localStorage.setItem('user-fr', 'false');
+          }
+        });
+        JSON.parse(localStorage.getItem('user-fr'));
       } else {
         this.userData = null;
         localStorage.setItem('user', null);
+        localStorage.setItem('user-fr', null);
         JSON.parse(localStorage.getItem('user'));
+        JSON.parse(localStorage.getItem('user-fr'));
       }
     });
   }
@@ -39,8 +50,9 @@ export class FirebaseAuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null) ? true : false;
   }
+
   // Sign in with email/password
   SignIn(email, password) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
@@ -57,13 +69,11 @@ export class FirebaseAuthService {
   }
 
   // Sign up with email/password
-  SignUp(email, password) {
+  SignUp(email, password, name) {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign
-        up and returns promise */
+      .then((user) => {
+        this.SetUserData(user);
         this.SendVerificationMail();
-        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message);
       });

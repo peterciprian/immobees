@@ -11,6 +11,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FirebaseAuthService } from './core/services/firebase-auth.service';
+import { AuthModalService } from './auth/auth-modal/auth-modal.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ import { FirebaseAuthService } from './core/services/firebase-auth.service';
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(
     public authService: FirebaseAuthService,
+    private authModal: AuthModalService,
     public router: Router
   ) { }
 
@@ -25,9 +27,11 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.isLoggedIn !== true) {
-      this.router.navigate(['sign-in']);
+      this.authModal.openDialog('signIn');
+      return false;
+    } else {
+      return true;
     }
-    return true;
   }
   canActivateChild(
     next: ActivatedRouteSnapshot,

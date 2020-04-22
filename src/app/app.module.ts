@@ -29,6 +29,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
 import { AuthModalComponent } from './auth/auth-modal/auth-modal.component';
+import { AuthGuard } from './auth.guard';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -62,6 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AngularFireDatabaseModule
   ],
   providers: [
+    AuthGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   entryComponents: [

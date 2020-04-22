@@ -21,14 +21,9 @@ export class ProfileComponent {
     public modalService: ModalService
   ) {
     http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
-      console.log(acc);
       this.recommendations = acc;
       this.myProfile = acc[3];
     });
-    /* profileService.getMyProfile().subscribe(me => {
-      console.log(me);
-      this.myProfile = me;
-    }); */
   }
 
   return() {

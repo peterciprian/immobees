@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../core/services/auth.service';
 import { ModalService } from '../modal/modal.service';
 import { ViewService } from '../core/services/view.service';
 import { first } from 'rxjs/operators';
@@ -18,20 +17,19 @@ export class NavComponent {
   constructor(
     public authService: FirebaseAuthService,
     public firestore: FirebaseFirestoreService,
-    public auth: AuthService,
     private modalService: ModalService,
     public authModalService: AuthModalService,
     private viewService: ViewService,
     private router: Router
   ) {
-    this.auth.isAuthenticated$.subscribe(val => {
-      if (val) {
+    this.authService.afAuth.authState.subscribe(user => {
+      if (user && !JSON.parse(localStorage.getItem('user-fr'))) {
         this.modalService.openDialog('data');
       }
     });
   }
   public viewMyProfile() {
-    if (this.authService.userData === undefined) { return; } else {
+    if (this.authService.userData === undefined) { return; } else if (JSON.parse(localStorage.getItem('user-fr'))) {
       this.firestore.$getMyAccount().pipe(first()).subscribe(me => {
         this.viewService.flatMate = me;
         this.router.navigate(['/view']);

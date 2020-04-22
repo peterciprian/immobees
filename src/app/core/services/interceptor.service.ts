@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Observable, throwError } from 'rxjs';
-import { mergeMap, catchError } from 'rxjs/operators';
+import { mergeMap, catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,23 +20,9 @@ export class InterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    if (
-      req.url.includes('assets') ||
-      req.url.includes('statistics') ||
-      req.url.includes('pets') ||
-      req.url.includes('professions') /* ||
-      req.url.includes('search') */) {
-      return next.handle(req);
-    } else {
-      return this.auth.getTokenSilently$().pipe(
-        mergeMap(token => {
-          const tokenReq = req.clone({
-            setHeaders: { Authorization: `Bearer ${token}` }
-          });
-          return next.handle(tokenReq);
-        }),
-        catchError(err => throwError(err))
-      );
-    }
+    return next.handle(req)/* .pipe(
+      tap(data => console.log(data)),
+      catchError(err => throwError(err))
+    ); */
   }
 }

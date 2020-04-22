@@ -11,7 +11,6 @@ import { ViewService } from './services/view.service';
 import { ModalService } from '../modal/modal.service';
 import { ModalDataShareService } from '../modal/modal-data-share.service';
 import { AccountService } from './services/account.service';
-import { AuthService } from './services/auth.service';
 import { FirebaseAuthService } from './services/firebase-auth.service';
 import { FirebaseFirestoreService } from './services/firebase-firestore.service';
 import { AuthModalService } from '../auth/auth-modal/auth-modal.service';
@@ -38,7 +37,6 @@ const coreServices: any[] = [
       window.open(externalUrl, '_self');
     }
   },
-  AuthService,
   QueryService,
   ViewService,
   ModalService,
