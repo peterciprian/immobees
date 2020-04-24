@@ -25,7 +25,10 @@ export class ModalComponent implements OnDestroy {
     public dialogRef: MatDialogRef<ModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.subscriptions.push(
-      modalDataShare.modalDataSet.subscribe(modalData => this.modalDataSet = modalData),
+      modalDataShare.modalDataSet.subscribe(modalData => {
+        this.modalDataSet = modalData;
+        this.accountService.account.subject.serviceType = modalData.modalType;
+      }),
       modalDataShare.title.subscribe(title => this.title = title)
     );
   }

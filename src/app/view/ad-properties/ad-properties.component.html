@@ -12,7 +12,7 @@
     <div class="image-list d-flex flex-row">
       <div *ngFor="let image of viewService.flatMate.subject.pictures; let index=index" class="image"
         [class.active]="index == activeSlideIndex" (click)="activeSlideIndex = index">
-        <img [src]="image.image">
+        <img [src]="image.url">
       </div>
     </div>
   </div>

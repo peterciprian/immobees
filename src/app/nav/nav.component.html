@@ -20,7 +20,7 @@
       <mat-menu #profileMenu="matMenu" xPosition="before" yPosition="below">
         <button mat-menu-item [routerLink]="['/profile/favs']">Akikkel laknék</button>
         <button mat-menu-item (click)="viewMyProfile()">Profil megtekintése</button>
-        <button mat-menu-item [routerLink]="['/profile']">Profil szerkesztése</button>
+        <button mat-menu-item (click)="editMyProfile()">Profil szerkesztése</button>
         <button mat-menu-item [routerLink]="['/profile/settings']">Beállítások</button>
         <button mat-menu-item [routerLink]="['/messages']">Üzenetek</button>
         <button (click)="authService.SignOut()" mat-menu-item>Kijelentkezés</button>
