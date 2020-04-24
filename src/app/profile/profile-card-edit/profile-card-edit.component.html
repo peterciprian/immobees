@@ -62,6 +62,7 @@
       <div *ngFor="let img of accountService.account.subject.pictures; index as index"
         class="image-preview d-flex flex-column">
         <img class="image" [src]="img.url">
+        {{img.label}}
         <div class="input-group flex-row">
           <input type="text" class="label-input" placeholder="Helyiség elnevezése" [(ngModel)]="uploadedTitles[index]"
             (change)="save()">

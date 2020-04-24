@@ -56,23 +56,23 @@ export class FirebaseAuthService {
   // Sign in with email/password
   SignIn(email, password) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
-      .then((result) => {
+      .then((userCredential) => {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
           this.authModalService.closeDialog();
-          console.log(result);
+          console.log(userCredential);
         });
-        this.SetUserData(result.user);
+        this.SetUserData(userCredential.user);
       }).catch((error) => {
         window.alert(error.message);
       });
   }
 
   // Sign up with email/password
-  SignUp(email, password, name) {
+  SignUp(email, password) {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        this.SetUserData(user);
+      .then((userCredential) => {
+        this.SetUserData(userCredential.user);
         this.SendVerificationMail();
       }).catch((error) => {
         window.alert(error.message);
