@@ -44,8 +44,8 @@ export class ModalComponent implements OnDestroy {
     }
   }
   save() {
-    this.accountService.save();
     this.fireDB.addAccount(this.accountService.account);
+    this.close();
   }
 
   close() {
