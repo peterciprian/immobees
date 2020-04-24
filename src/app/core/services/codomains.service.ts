@@ -47,7 +47,6 @@ export class CodomainsService {
     nats.map(nat => {
       nat.en_long_name = nat.en_long_name.split(',').pop();
     });
-    console.log(nats);
     return nats;
   }
 }

@@ -27,22 +27,12 @@ export class FirebaseAuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
+        localStorage.setItem('user', JSON.stringify(user));
         JSON.parse(localStorage.getItem('user'));
-        this.afs.doc(`accounts/${user.uid}`).valueChanges().pipe(first()).subscribe(me => {
-          if (me !== undefined) {
-            localStorage.setItem('user-fr', 'true');
-          } else {
-            localStorage.setItem('user-fr', 'false');
-          }
-        });
-        JSON.parse(localStorage.getItem('user-fr'));
       } else {
         this.userData = null;
         localStorage.setItem('user', null);
-        localStorage.setItem('user-fr', null);
         JSON.parse(localStorage.getItem('user'));
-        JSON.parse(localStorage.getItem('user-fr'));
       }
     });
   }

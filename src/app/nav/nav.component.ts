@@ -25,13 +25,15 @@ export class NavComponent {
     private router: Router
   ) {
     this.authService.afAuth.authState.subscribe(user => {
-      if (user && !JSON.parse(localStorage.getItem('user-fr'))) {
-        this.modalService.openDialog('data');
+      if (user) {
+        this.firestore.$getAccount(user.uid).pipe(first()).subscribe(account => {
+          if (!account.exists) { this.modalService.openDialog('data'); }
+        });
       }
     });
   }
   public viewMyProfile() {
-    if (this.authService.userData === undefined) { return; } else if (JSON.parse(localStorage.getItem('user-fr'))) {
+    if (this.authService.userData === undefined) { return; } else {
       this.firestore.$getMyAccount().pipe(first()).subscribe(me => {
         this.viewService.flatMate = me;
         this.router.navigate(['/view']);

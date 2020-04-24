@@ -34,7 +34,7 @@ export class FirebaseFirestoreService {
   }
 
   $getAccount(uid) {
-    this.accountsCollection.doc(uid).get();
+    return this.accountsCollection.doc(uid).get();
   }
 
   $getMyAccount(): Observable<Account> {
