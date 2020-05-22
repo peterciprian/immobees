@@ -37,18 +37,18 @@ export class SearchPanelComponent implements OnInit {
     this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
     this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
   }
-  switchRoomType() {
-    this.queryService.homeSearchQueryFields.room =
-      this.queryService.homeSearchQueryFields.room === 0 ? 1 : 0;
+  switchServiceType() {
+    this.queryService.queryFields.serviceType =
+      this.queryService.queryFields.serviceType === 0 ? 1 : 0;
   }
 
-  switchImmoType() {
-    this.queryService.homeSearchQueryFields.immo =
-      this.queryService.homeSearchQueryFields.immo === 0 ? 1 : 0;
+  switchRoomType() {
+    this.queryService.queryFields.roomType =
+      this.queryService.queryFields.roomType === 0 ? 1 : 0;
   }
 
   changeGender(param: number) {
-    this.queryService.homeSearchQueryFields.gender = param;
+    this.queryService.queryFields.gender = param;
   }
 
 }

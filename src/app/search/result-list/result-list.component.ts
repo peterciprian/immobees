@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Account } from 'src/app/core/models/accounts';
+import { Account, Accounts } from 'src/app/core/models/accounts';
 import { Observable } from 'rxjs';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { QueryService } from 'src/app/core/services/query.service';
 
 export interface SortOptions {
   value: string;
@@ -36,15 +36,11 @@ export class ResultListComponent implements OnInit, OnDestroy {
   public length = 0;
   private subscriptions = [];
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(
+    public queryService: QueryService,
+  ) { }
 
-  ngOnInit() {
-    this.subscriptions.push(this.http.get<Account[]>('assets/Account.JSON').subscribe(acc => {
-      this.accounts = acc;
-      this.length = acc.length;
-    }));
-  }
+  ngOnInit() { }
   ngOnDestroy() {
     this.subscriptions.forEach(e => {
       e.unsubscribe();

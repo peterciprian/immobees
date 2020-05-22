@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="result-list-conatiner d-flex flex-row justify-content-around flex-wrap">
-    <div *ngFor="let account of accounts" class="result mx-5">
+    <div *ngFor="let account of queryService.$accounts | async" class="result mx-5">
       <app-immo-card [account]="account"></app-immo-card>
     </div>
     <span>

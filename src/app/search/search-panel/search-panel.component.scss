@@ -116,16 +116,25 @@
   color: #ffffff;
 }
 
-.input-group-option {
-  cursor: pointer;
-}
-
 .input-field {
   padding: 0 .5rem 0 .5rem;
-  width: 40px;
+  width: 53px;
   height: 26px;
   border-radius: 8px;
   border: solid 2px #d7d7d7;
+}
+
+.roomSize .input-field,
+.flatSize .input-field {
+  width: 40px;
+}
+
+.place .input-field {
+  width: 160px;
+}
+
+.age .input-field {
+  width: 65px;
 }
 
 .example-additional-selection {

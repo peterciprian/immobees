@@ -86,7 +86,8 @@ export enum school {
 }
 export enum gender {
     FEMALE,
-    MALE
+    MALE,
+    OTHER
 }
 export enum furnished {
     FULLY,

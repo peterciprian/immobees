@@ -16,20 +16,9 @@
 
   <div class="col-lg-2 col-md-4 col-sm-12">
     <div class="input-group place d-flex flex-row my-1">
-      <mat-form-field [floatLabel]="'never'" class="place-select">
-        <mat-select placeholder="Helyszín" [formControl]="toppings" multiple>
-          <mat-select-trigger>
-            {{ toppings.value ? toppings.value[0] : "" }}
-            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-              (+{{ toppings.value.length - 1 }}
-              {{ toppings.value?.length === 2 ? "további" : "további" }})
-            </span>
-          </mat-select-trigger>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
-          }}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="input-group-label text-l1 align-self-center mr-2">Város</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.location" type="text"
+        class=" input-group-option input-field align-self-center mr-2 place-select" placeholder="Város">
     </div>
   </div>
 
@@ -56,17 +45,16 @@
     <div class="input-group budget d-flex flex-row my-1">
       <div class="input-group-label text-l1 align-self-center mr-2">büdzsé</div>
       <input [(ngModel)]="queryService.homeSearchQueryFields.budget.min" type="number"
-        class="input-group-option input-field align-self-center mr-2" placeholder="min" />
+        class="input-group-option input-field align-self-center mr-2" placeholder="min" min="0" />
       <div class="input-group-label text-l1 align-self-center mr-2">-</div>
       <input [(ngModel)]="queryService.homeSearchQueryFields.budget.max" type="number"
-        class="input-group-option input-field align-self-center mr-2" placeholder="max" />
-
+        class="input-group-option input-field align-self-center mr-2" placeholder="max" min="0" />
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
   </div>
 
   <div class="col-lg-1 search col-md-4 col-sm-12 my-1">
-    <button class="im-orange-bg button-m1" (click)="search(queryService.homeSearchQueryFields)">
+    <button class="im-orange-bg button-m1" (click)="search()">
       keresés
     </button>
   </div>

@@ -5,19 +5,19 @@
       <div class="input-group-label text-l1 align-self-center">szobát</div>
       <div class="separator align-self-center ml-2 mr-auto"></div>
       <div class="input-group-option text-l2 align-self-center mr-2"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 1 }" (click)="switchRoomType()">keresők
+        [ngClass]="{ 'selected': queryService.queryFields.serviceType == 1 }" (click)="switchServiceType()">keresők
       </div>
       <div class="input-group-option text-l2 align-self-center"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.room == 0 }" (click)="switchRoomType()">kínálók
+        [ngClass]="{ 'selected': queryService.queryFields.serviceType == 0 }" (click)="switchServiceType()">kínálók
       </div>
     </div>
 
     <div class="input-group immo d-flex flex-row">
       <div class="input-group-option text-l2 align-self-center mr-auto"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.immo == 0 }" (click)="switchImmoType()">külön szobát
+        [ngClass]="{ 'selected': queryService.queryFields.roomType == 0 }" (click)="switchRoomType()">külön szobát
       </div>
       <div class="input-group-option text-l2 align-self-center"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.immo == 1 }" (click)="switchImmoType()">szobatársat
+        [ngClass]="{ 'selected': queryService.queryFields.roomType == 1 }" (click)="switchRoomType()">szobatársat
       </div>
     </div>
   </div>
@@ -31,15 +31,15 @@
       <div class="input-group-label text-l1 align-self-center">nem</div>
       <div class="separator align-self-center ml-2 mr-auto"></div>
       <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeGender(1)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 1 }">
+        [ngClass]="{ 'selected': queryService.queryFields.gender == 1 }">
         fiú
       </div>
       <div class="input-group-option text-l2 align-self-center mr-2" (click)="changeGender(0)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 0 }">
+        [ngClass]="{ 'selected': queryService.queryFields.gender == 0 }">
         lány
       </div>
       <div class="input-group-option text-l2 align-self-center" (click)="changeGender(2)"
-        [ngClass]="{ 'selected': queryService.homeSearchQueryFields.gender == 2 }">
+        [ngClass]="{ 'selected': queryService.queryFields.gender == 2 }">
         mindegy
       </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="input-group nationality d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
-        <mat-select placeholder="Nemzetiség">
+        <mat-select placeholder="Nemzetiség" [(ngModel)]="queryService.queryFields.nationality">
           <mat-option>X</mat-option>
           <mat-option *ngFor="let nationality of nationalities" [value]="nationality.value">{{
             nationality.en_long_name
@@ -56,46 +56,32 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 0" class="input-group budget d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 0" class="input-group budget d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Büdzsé</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.budget.min" type="number" min="0"
+      <input [(ngModel)]="queryService.queryFields.budget.min" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="min" />
       <div class="input-group-label text-l1 align-self-center mr-2">-</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.budget.max" type="number" min="0"
+      <input [(ngModel)]="queryService.queryFields.budget.max" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="max" />
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
 
-    <div class="input-group age d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 0" class="input-group age d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="age-select">
-        <mat-select placeholder="Életkor">
-          <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
-          }}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="input-group-label text-l1 align-self-center mr-2">Életkor</div>
+      <input [(ngModel)]="queryService.queryFields.age.min" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="min" />
+      <div class="input-group-label text-l1 align-self-center mr-2">-</div>
+      <input [(ngModel)]="queryService.queryFields.age.max" type="number" min="0"
+        class="input-group-option input-field align-self-center mr-2" placeholder="max" />
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 0" class="input-group place d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 0" class="input-group place d-flex flex-row my-1">
       <img src="assets/img/15_helyszin.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="place-select">
-        <mat-select placeholder="Helyszín" multiple>
-          <mat-select-trigger>
-            {{ toppings.value ? toppings.value[0] : "" }}
-            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-              (+{{ toppings.value.length - 1 }}
-              {{ toppings.value?.length === 2 ? "további" : "további" }})
-            </span>
-          </mat-select-trigger>
-          <mat-option>X</mat-option>
-          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
-            topping
-          }}</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="input-group-label text-l1 align-self-center mr-2">Helyszín</div>
+      <input [(ngModel)]="queryService.homeSearchQueryFields.location" type="text"
+        class=" input-group-option input-field align-self-center mr-2 place-select" placeholder="Város">
     </div>
 
     <div class="input-group erasmus d-flex flex-row my-1">
@@ -213,9 +199,9 @@
       </mat-form-field>
     </div>
 
-    <h2 *ngIf="queryService.homeSearchQueryFields.immo == 1" class="search-personal-title">LAKÁS INFORMÁCIÓK</h2>
+    <h2 *ngIf="queryService.queryFields.roomType == 1" class="search-personal-title">LAKÁS INFORMÁCIÓK</h2>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group place d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group place d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="place-select">
         <mat-select placeholder="Helyszín" multiple>
@@ -234,7 +220,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group asd d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
         <mat-select placeholder="asd">
@@ -246,7 +232,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group asd d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="asd-select">
         <mat-select placeholder="asd">
@@ -258,7 +244,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group asd d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group asd d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="asd-select">
         <mat-select placeholder="asd">
@@ -270,7 +256,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group bail d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group bail d-flex flex-row my-1">
       <img src="assets/img/18_kaucio.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="bail-select">
         <mat-select placeholder="Kaució">
@@ -282,7 +268,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group furniture d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group furniture d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="furniture-select">
         <mat-select placeholder="Bútorozottság">
@@ -294,7 +280,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatType d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group flatType d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatType-select">
         <mat-select placeholder="Lakás típusa">
@@ -306,7 +292,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatCondition d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group flatCondition d-flex flex-row my-1">
       <img src="assets/img/21_lakasallapot.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatCondition-select">
         <mat-select placeholder="Lakás állapota">
@@ -318,29 +304,29 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group flatSize d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group flatSize d-flex flex-row my-1">
       <img src="assets/img/22_lakasalapterulet.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Lakás alapt.</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.flatSize.min" type="number" min="0"
+      <input [(ngModel)]="queryService.queryFields.flatSize.min" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="min" />
       <div class="input-group-label text-l1 align-self-center mr-2">-</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.flatSize.max" type="number" min="0"
+      <input [(ngModel)]="queryService.queryFields.flatSize.max" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="max" />
       <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group roomSize d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group roomSize d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Szoba alapt.</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.roomSize.min" type="number" min="0"
+      <input [(ngModel)]="queryService.queryFields.roomSize.min" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="min" />
       <div class="input-group-label text-l1 align-self-center mr-2">-</div>
-      <input [(ngModel)]="queryService.homeSearchQueryFields.roomSize.max" type="number" min="0"
+      <input [(ngModel)]="queryService.queryFields.roomSize.max" type="number" min="0"
         class="input-group-option input-field align-self-center mr-2" placeholder="max" />
       <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group residents d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group residents d-flex flex-row my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="residents-select">
         <mat-select placeholder="Lakók száma">
@@ -352,7 +338,7 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.homeSearchQueryFields.immo == 1" class="input-group floor d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.roomType == 1" class="input-group floor d-flex flex-row my-1">
       <img src="assets/img/25_emelet.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="floor-select">
         <mat-select placeholder="Emelet">
