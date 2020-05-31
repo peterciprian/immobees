@@ -3,7 +3,7 @@ import { QueryService } from 'src/app/core/services/query.service';
 import { FormControl } from '@angular/forms';
 import { CodomainsService } from 'src/app/core/services/codomains.service';
 import { Language, Nationality } from 'src/app/core/models/public';
-import { school } from 'src/app/core/models/accounts';
+import { school, furnished, building, condition } from 'src/app/core/models/accounts';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -25,6 +25,9 @@ export class SearchPanelComponent implements OnInit {
   public languages: Language[];
   public nationalities: Nationality[];
   public schools: string[];
+  public furnished: string[];
+  public flatTypes: string[];
+  public flatConditions: string[];
   public professions: Observable<string[]>;
   public pets: Observable<string[]>;
 
@@ -34,12 +37,28 @@ export class SearchPanelComponent implements OnInit {
     this.languages = this.codomain.getLanguages();
     this.nationalities = this.codomain.getNationalities();
     this.schools = Object.keys(school).filter(key => !isNaN(Number(school[key])));
+    this.furnished = Object.keys(furnished).filter(key => !isNaN(Number(furnished[key])));
+    this.flatTypes = Object.keys(building).filter(key => !isNaN(Number(building[key])));
+    this.flatConditions = Object.keys(condition).filter(key => !isNaN(Number(condition[key])));
     this.pets = this.codomain.getPets().pipe(map(p => p.sort()));
     this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
   }
   switchServiceType() {
-    this.queryService.queryFields.serviceType =
-      this.queryService.queryFields.serviceType === 0 ? 1 : 0;
+    if (this.queryService.queryFields.serviceType === 0) {
+      this.queryService.queryFields.serviceType = 1;
+    } else {
+      this.queryService.queryFields.serviceType = 0;
+      this.queryService.queryFields.furnished = undefined;
+      this.queryService.queryFields.building = undefined;
+      this.queryService.queryFields.condition = undefined;
+      this.queryService.queryFields.flatSize.min = undefined;
+      this.queryService.queryFields.flatSize.max = undefined;
+      this.queryService.queryFields.roomSize.min = undefined;
+      this.queryService.queryFields.roomSize.max = undefined;
+      this.queryService.queryFields.residents = undefined;
+      this.queryService.queryFields.roomMates = undefined;
+      this.queryService.queryFields.floor = undefined;
+    }
   }
 
   switchRoomType() {
@@ -51,4 +70,7 @@ export class SearchPanelComponent implements OnInit {
     this.queryService.queryFields.gender = param;
   }
 
+  filter() {
+    console.log(this.queryService.queryFields);
+  }
 }

@@ -17,12 +17,12 @@ export class FooterComponent implements OnInit {
   constructor(public publicS: PublicService, public modalService: ModalService) { }
 
   ngOnInit() {
-    this.publicS.getStatistics().subscribe(res => {
+    /* this.publicS.getStatistics().subscribe(res => {
       this.totalDemands = res.totalDemands;
       this.totalOffers = res.totalOffers;
     },
       error => { console.error(error); }
-    );
+    ); */
   }
 
 }

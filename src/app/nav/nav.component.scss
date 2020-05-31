@@ -19,6 +19,16 @@
   letter-spacing: 0.48px;
   text-align: center;
   color: #f8fcfc;
+  box-shadow: 0 2px #d7d7d7;
+}
+
+.button-m1:hover {
+  background-color: #f46f44
+}
+
+.button-m1:active {
+  box-shadow: 0 0px #d7d7d7;
+  transform: translateY(2px);
 }
 
 .button-m1:focus {

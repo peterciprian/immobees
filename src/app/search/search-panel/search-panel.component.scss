@@ -133,6 +133,14 @@
   width: 160px;
 }
 
+.profession .input-field {
+  width: 128px;
+}
+
+.bail .input-field {
+  width: 69px;
+}
+
 .age .input-field {
   width: 65px;
 }
@@ -145,6 +153,42 @@
 .input-group .icon {
   height: 50%;
   margin: 8px 8px 0 0;
+}
+
+.filter-button {
+  cursor: pointer;
+  width: auto;
+  min-width: 280px;
+  margin: 0 auto;
+  padding: 0 0 0 9px;
+  height: 36px;
+  border-radius: 17.8px;
+  background-color: #f47c4c;
+  border: none;
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: #f8fcfc;
+  box-shadow: 0 2px #d7d7d7;
+}
+
+.filter-button:hover {
+  background-color: #f46f44
+}
+
+.filter-button:active {
+  box-shadow: 0 0px #d7d7d7;
+  transform: translateY(2px);
+}
+
+.filter-button:focus {
+  outline: none;
 }
 
 // Material select-ek custom formázása
