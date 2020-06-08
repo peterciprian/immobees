@@ -13,15 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./search-panel.component.scss']
 })
 export class SearchPanelComponent implements OnInit {
-  toppings = new FormControl();
-  toppingList: string[] = [
-    'Extra cheese',
-    'Mushroom',
-    'Onion',
-    'Pepperoni',
-    'Sausage',
-    'Tomato'
-  ];
+
   public languages: Language[];
   public nationalities: Nationality[];
   public schools: string[];
@@ -51,12 +43,12 @@ export class SearchPanelComponent implements OnInit {
       this.queryService.queryFields.furnished = undefined;
       this.queryService.queryFields.building = undefined;
       this.queryService.queryFields.condition = undefined;
-      this.queryService.queryFields.flatSize.min = undefined;
-      this.queryService.queryFields.flatSize.max = undefined;
-      this.queryService.queryFields.roomSize.min = undefined;
-      this.queryService.queryFields.roomSize.max = undefined;
-      this.queryService.queryFields.residents = undefined;
-      this.queryService.queryFields.roomMates = undefined;
+      this.queryService.queryFields.flatSize.min = 0;
+      this.queryService.queryFields.flatSize.max = 0;
+      this.queryService.queryFields.roomSize.min = 0;
+      this.queryService.queryFields.roomSize.max = 0;
+      this.queryService.queryFields.residents = 0;
+      this.queryService.queryFields.roomMates = 0;
       this.queryService.queryFields.floor = undefined;
     }
   }
@@ -71,6 +63,6 @@ export class SearchPanelComponent implements OnInit {
   }
 
   filter() {
-    console.log(this.queryService.queryFields);
+    this.queryService.search().subscribe(result => this.queryService.$accounts.next(result));
   }
 }

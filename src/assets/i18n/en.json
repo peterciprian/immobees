@@ -2,22 +2,58 @@
   "NAV": {
     "PROFILE": "Profile"
   },
-  "WELCOME": "Üdvözöljük!",
-  "HUNGARIAN": "Magyar",
-  "ENGLISH": "Angol",
-  "LIFT": "Lift",
-  "WASHINGMACHINE": "Washing machine",
-  "SMOKINGAREA": "Smoking allowed",
-  "BALCONY": "Balcony",
-  "GYM": "Gym",
-  "ACCESSIBLE": "Accessible",
-  "PETSALLOWED": "Pets allowed",
-  "TELEVISION": "TV",
-  "INTERNET": "Internet",
-  "GARAGE": "Garage",
-  "JAKUZZI": "Jacuzzi",
-  "AIRCONDITIONER": "Air conditioner",
-  "PRIVATEBATHROOM": "Private bathroom",
-  "PARKING": "Parking place",
-  "SHORTPERIOD": "Short term"
+  "DETAILS": {
+    "WELCOME": "Üdvözöljük!",
+    "HUNGARIAN": "Magyar",
+    "ENGLISH": "Angol",
+    "LIFT": "Lift",
+    "WASHINGMACHINE": "Washing machine",
+    "SMOKINGAREA": "Smoking allowed",
+    "BALCONY": "Balcony",
+    "GYM": "Gym",
+    "ACCESSIBLE": "Accessible",
+    "PETSALLOWED": "Pets allowed",
+    "TELEVISION": "TV",
+    "INTERNET": "Internet",
+    "GARAGE": "Garage",
+    "JAKUZZI": "Jacuzzi",
+    "AIRCONDITIONER": "Air conditioner",
+    "PRIVATEBATHROOM": "Private bathroom",
+    "PARKING": "Parking place",
+    "SHORTPERIOD": "Short term"
+  },
+  "SERVICETYPE": {
+    "DEMAND": "Demamd",
+    "OFFER": "Offer"
+  },
+  "ROOMTYPE": {
+    "SHARED": "Shared",
+    "PRIVATE": "Private"
+  },
+  "GENDER": {
+    "FEMALE": "Female",
+    "MALE": "Male"
+  },
+  "FURNISHED": {
+    "FULLY": "Fully",
+    "PARTIALLY": "Partially",
+    "MECHANIZED": "Mechanized",
+    "UNFURNISHED": "Unfurnished"
+  },
+  "BUILDING": {
+    "PANEL": "Panel",
+    "BRICK": "Brick",
+    "SLIDING_FRAMEWORK": "Sliding framework"
+  },
+  "CONDITION": {
+    "NEW": "New",
+    "MINT": "Mint",
+    "RENOVATED": "Renovated",
+    "GOOD": "Good",
+    "MEDIUM": "Medium",
+    "NEEDS_RANOVATION": "Needs renovation",
+    "POOR": "Poor",
+    "MODERN": "Modern",
+    "LUXURY": "Luxury"
+  }
 }

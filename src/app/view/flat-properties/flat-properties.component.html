@@ -136,7 +136,8 @@
   </div>
   <div class="showAll-button d-flex flex-row d-flex justify-content-between d-flex align-items-center">
     <div class="line"></div>
-    <div class="button mx-2" (click)="showAll = !showAll">Több részlet</div>
+    <div *ngIf="!showAll" class="button mx-2" (click)="showAll = !showAll">Több részlet</div>
+    <div *ngIf="showAll" class="button mx-2" (click)="showAll = !showAll">Kevesebb részlet</div>
     <div class="line"></div>
   </div>
   <div class="attribute-board d-flex flex-wrap">

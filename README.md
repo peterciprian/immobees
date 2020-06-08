@@ -31,9 +31,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * ~~találati lista layoutot megépíteni~~
 * találati lista lapozását beüzemelni
 * találati lista rendezést beüzemelni
-* találati lista szűrőfeltételeit szelektálni (keres-kínál)
+* ~~találati lista szűrőfeltételeit szelektálni (keres-kínál)~~
 * ~~értékkészleteket ABC-be rendezni~~
-* keresőfeltételek select-jeiben mik az option-ök?
+* ~~keresőfeltételek select-jeiben mik az option-ök?~~
 * keresőfeltételeket bekötni
 * ~~profiloldalak~~
 * ~~profiloldal~~ - szerkesztő mód

@@ -1,8 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Account, Accounts } from 'src/app/core/models/accounts';
-import { Observable } from 'rxjs';
-import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { Component } from '@angular/core';
+import { Account } from 'src/app/core/models/accounts';
 import { QueryService } from 'src/app/core/services/query.service';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 export interface SortOptions {
   value: string;
@@ -14,42 +13,34 @@ export interface SortOptions {
   styleUrls: ['./result-list.component.scss']
 })
 
-export class ResultListComponent implements OnInit, OnDestroy {
+export class ResultListComponent {
 
-  contentArray = new Array(90).fill('');
-  returnedArray: string[];
-  currentPage = 1;
-  sortBy: SortOptions;
-  sortOptions: SortOptions[] = [
-    { value: 'price_asc', viewValue: 'Ár szerint csökkenő' },
-    { value: 'price_desc', viewValue: 'Ár szerint növekvő' },
-    { value: 'date_asc', viewValue: 'Leghamarabb költözhető' },
-    { value: 'date_desc', viewValue: 'Legkésőbb költözhető' },
-    { value: 'abc_asc', viewValue: 'Név szerint növekvő' },
-    { value: 'abc_desc', viewValue: 'Név szerint csökkenő' },
-    { value: 'created_desc', viewValue: 'Legfrissebb' },
-    { value: 'created_desc', viewValue: 'Legrégebbi' }
+  public resultList: Account[];
+  public currentPage = 1;
+  public sortBy: SortOptions;
+  public sortOptions: SortOptions[] = [
+    // { value: 'subject.price.fee_desc', viewValue: 'Legdrágább elöl' },
+    { value: 'subject.price.fee_asc', viewValue: 'Legolcsóbb' },
+    { value: 'updatedAt_asc', viewValue: 'Legfrissebb' },
+    // { value: 'updatedAt_asc', viewValue: 'Legrégebbi elöl' }
+    { value: 'moveIntoAt_asc', viewValue: 'Leghamarabb költözhető' },
+    // { value: 'moveIntoAt_asc', viewValue: 'Legkésőbb költözhető' },
+    { value: 'name_asc', viewValue: 'Név szerint növekvő' },
+    { value: 'name_desc', viewValue: 'Név szerint csökkenő' },
   ];
 
-  public asd: any;
-  public accounts: Account[];
-  public length = 0;
-  private subscriptions = [];
-
-  constructor(
-    public queryService: QueryService,
-  ) { }
-
-  ngOnInit() { }
-  ngOnDestroy() {
-    this.subscriptions.forEach(e => {
-      e.unsubscribe();
+  returnedArray: Account[];
+  constructor(public queryService: QueryService) {
+    this.queryService.$accounts.subscribe(results => {
+      this.resultList = results;
+      this.pageChanged({ itemsPerPage: 10, page: 1 });
     });
   }
+
   pageChanged(event: PageChangedEvent): void {
     const startItem = (event.page - 1) * event.itemsPerPage;
     const endItem = event.page * event.itemsPerPage;
-    this.returnedArray = this.contentArray.slice(startItem, endItem);
+    this.returnedArray = this.resultList.slice(startItem, endItem);
   }
 
 }

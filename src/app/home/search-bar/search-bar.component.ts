@@ -18,6 +18,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   search() {
+    // TODO:
     this.queryService.getQueryResults(this.router.navigate(['../search']));
   }
 

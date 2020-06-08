@@ -2,22 +2,58 @@
   "NAV": {
     "PROFILE": "Profil"
   },
-  "WELCOME": "Üdvözöljük!",
-  "HUNGARIAN": "Magyar",
-  "ENGLISH": "Angol",
-  "LIFT": "Lift",
-  "WASHINGMACHINE": "Mosógép",
-  "SMOKINGAREA": "Dohányzó",
-  "BALCONY": "Erkély",
-  "GYM": "Konditerem",
-  "ACCESSIBLE": "Akadálymentes",
-  "PETSALLOWED": "Állatbarát",
-  "TELEVISION": "TV",
-  "INTERNET": "Internet",
-  "GARAGE": "Garázs",
-  "JAKUZZI": "Jacuzzi",
-  "AIRCONDITIONER": "Légkondi",
-  "PRIVATEBATHROOM": "Saját fürdő",
-  "PARKING": "Parkoló",
-  "SHORTPERIOD": "Rövidtávra is"
+  "DETAILS": {
+    "WELCOME": "Üdvözöljük!",
+    "HUNGARIAN": "Magyar",
+    "ENGLISH": "Angol",
+    "LIFT": "Lift",
+    "WASHINGMACHINE": "Mosógép",
+    "SMOKINGAREA": "Dohányzó",
+    "BALCONY": "Erkély",
+    "GYM": "Konditerem",
+    "ACCESSIBLE": "Akadálymentes",
+    "PETSALLOWED": "Állatbarát",
+    "TELEVISION": "TV",
+    "INTERNET": "Internet",
+    "GARAGE": "Garázs",
+    "JAKUZZI": "Jacuzzi",
+    "AIRCONDITIONER": "Légkondi",
+    "PRIVATEBATHROOM": "Saját fürdő",
+    "PARKING": "Parkoló",
+    "SHORTPERIOD": "Rövidtávra is"
+  },
+  "SERVICETYPE": {
+    "DEMAND": "Keres",
+    "OFFER": "Kínál"
+  },
+  "ROOMTYPE": {
+    "SHARED": "Szobatárs",
+    "PRIVATE": "Külön szoba"
+  },
+  "GENDER": {
+    "FEMALE": "Nő",
+    "MALE": "Férfi"
+  },
+  "FURNISHED": {
+    "FULLY": "Bútorozott",
+    "PARTIALLY": "Részben bútorozott",
+    "MECHANIZED": "Gépesített",
+    "UNFURNISHED": "Bútorozatlan"
+  },
+  "BUILDING": {
+    "PANEL": "Panel",
+    "BRICK": "Tégla",
+    "SLIDING_FRAMEWORK": "Csúszózsalus"
+  },
+  "CONDITION": {
+    "NEW": "Új",
+    "MINT": "Újszerű",
+    "RENOVATED": "Felújított",
+    "GOOD": "Jó",
+    "MEDIUM": "Közepes",
+    "NEEDS_RANOVATION": "Felújítandó",
+    "POOR": "Rossz",
+    "MODERN": "Modern",
+    "LUXURY": "Luxus"
+  }
 }

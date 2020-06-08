@@ -2,17 +2,17 @@
   <div class="result-list-paginator d-flex flex-row justify-content-around align-items-center">
     <div class="sum d-flex flex-row">
       <div class="sum-label">összesen:&nbsp;&nbsp;</div>
-      <div class="sum-value">{{ length }} találat</div>
+      <div class="sum-value">{{ resultList.length }} találat</div>
     </div>
     <div class="paginator">
-      <pagination [boundaryLinks]="true" [directionLinks]="true" [totalItems]="77" [maxSize]="5" [rotate]="true"
-        [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
-        firstText="&laquo;" lastText="&raquo;">
+      <pagination [boundaryLinks]="true" [directionLinks]="true" [totalItems]="resultList.length" [maxSize]="5"
+        [rotate]="true" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;"
+        nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
       </pagination>
     </div>
     <div class="input-group">
       <mat-form-field [floatLabel]="'never'" class="sort-select">
-        <mat-select [(ngModel)]="sortBy" placeholder="Rendzés">
+        <mat-select [(ngModel)]="sortBy" placeholder="Rendzés" (selectionChange)="queryService.sortChanged($event)">
           <mat-option *ngFor="let sort of sortOptions" [value]="sort.value">
             {{sort.viewValue}}
           </mat-option>
@@ -21,27 +21,24 @@
     </div>
   </div>
   <div class="result-list-conatiner d-flex flex-row justify-content-around flex-wrap">
-    <div *ngFor="let account of queryService.$accounts | async" class="result mx-5">
+    <div *ngFor="let account of returnedArray" class="result mx-5">
       <app-immo-card [account]="account"></app-immo-card>
     </div>
-    <span>
-      {{asd}}
-    </span>
   </div>
   <div class="result-list-paginator d-flex flex-row justify-content-around">
     <div class="sum d-flex flex-row">
       <div class="sum-label">összesen:&nbsp;&nbsp;</div>
-      <div class="sum-value">{{ length }} találat</div>
+      <div class="sum-value">{{ resultList.length }} találat</div>
     </div>
     <div class="paginator">
-      <pagination [boundaryLinks]="true" [directionLinks]="true" [totalItems]="77" [maxSize]="5" [rotate]="true"
-        [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
-        firstText="&laquo;" lastText="&raquo;">
+      <pagination [boundaryLinks]="true" [directionLinks]="true" [totalItems]="resultList.length" [maxSize]="5"
+        [rotate]="true" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;"
+        nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
       </pagination>
     </div>
     <div class="input-group">
       <mat-form-field [floatLabel]="'never'" class="sort-select">
-        <mat-select [(ngModel)]="sortBy" placeholder="Rendzés">
+        <mat-select [(ngModel)]="sortBy" placeholder="Rendzés" (selectionChange)="queryService.sortChanged($event)">
           <mat-option *ngFor="let sort of sortOptions" [value]="sort.value">
             {{sort.viewValue}}
           </mat-option>
