@@ -9,10 +9,10 @@
   </div>
   <div class="types d-flex flex-row mb-2">
     <img src="assets/img/26_szoba.svg" class="icon mr-2">
-    <div class="serviceType">{{viewService.flatMate.subject.serviceType}} - </div>
-    <div class="roomType">{{viewService.flatMate.subject.roomType}}</div>
+    <div class="serviceType">{{'SERVICETYPE.' + viewService.flatMate.subject.serviceType | translate}} - </div>
+    <div class="roomType">{{'ROOMTYPE.' + viewService.flatMate.subject.roomType | translate}}</div>
   </div>
-  <div class="attribute flatArea d-flex flex-row">
+  <div *ngIf="viewService.flatMate.subject.floorArea"> class="attribute flatArea d-flex flex-row">
     <div class="icon mr-2">
       <img src="">
     </div>
@@ -23,8 +23,8 @@
       {{viewService.flatMate.subject.floorArea}} m<sup>2</sup>
     </div>
   </div>
-  <div class="divider"></div>
-  <div class="attribute roomArea d-flex flex-row">
+  <div *ngIf="viewService.flatMate.subject.floorArea" class="divider"></div>
+  <div *ngIf="viewService.flatMate.subject.roomArea" class="attribute roomArea d-flex flex-row">
     <div class="icon mr-2">
       <img src="">
     </div>
@@ -35,8 +35,8 @@
       {{viewService.flatMate.subject.roomArea}} m<sup>2</sup>
     </div>
   </div>
-  <div class="divider"></div>
-  <div class="attribute moveIntoAt d-flex flex-row">
+  <div *ngIf="viewService.flatMate.subject.roomArea" class="divider"></div>
+  <div *ngIf="viewService.flatMate.moveIntoAt" class="attribute moveIntoAt d-flex flex-row">
     <div class="icon mr-2">
       <img src="">
     </div>
@@ -47,8 +47,8 @@
       {{viewService.flatMate.moveIntoAt | localeDate}}
     </div>
   </div>
-  <div class="divider"></div>
-  <div class="attribute gender d-flex flex-row">
+  <div *ngIf="viewService.flatMate.moveIntoAt" class="divider"></div>
+  <div *ngIf="viewService.flatMate.gender" class="attribute gender d-flex flex-row">
     <div class="icon mr-2">
       <img src="">
     </div>
@@ -56,12 +56,12 @@
       akit várok
     </div>
     <div class="value ml-auto">
-      {{viewService.flatMate.gender}}
+      {{'GENDER.' + viewService.flatMate.gender | translate}}
     </div>
   </div>
-  <div class="divider"></div>
+  <div *ngIf="viewService.flatMate.gender" class="divider"></div>
   <div *ngIf="showAll" class="hide-container">
-    <div class="attribute caution d-flex flex-row">
+    <div *ngIf="viewService.flatMate.subject.price.caution" class="attribute caution d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -72,8 +72,8 @@
         {{viewService.flatMate.subject.price.caution}} {{viewService.flatMate.subject.price.currency}}
       </div>
     </div>
-    <div class="divider"></div>
-    <div class="attribute furnished d-flex flex-row">
+    <div *ngIf="viewService.flatMate.subject.price.caution" class="divider"></div>
+    <div *ngIf="viewService.flatMate.subject.furnished" class="attribute furnished d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -81,11 +81,11 @@
         bútorozottság
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.furnished}}
+        {{'FURNISHED.' + viewService.flatMate.subject.furnished | translate}}
       </div>
     </div>
-    <div class="divider"></div>
-    <div class="attribute buildingType d-flex flex-row">
+    <div *ngIf="viewService.flatMate.subject.furnished" class="divider"></div>
+    <div *ngIf="viewService.flatMate.subject.building" class="attribute buildingType d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -93,11 +93,11 @@
         lakás típusa
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.building}}
+        {{'BUILDING.' + viewService.flatMate.subject.building | translate}}
       </div>
     </div>
-    <div class="divider"></div>
-    <div class="attribute condition d-flex flex-row">
+    <div *ngIf="viewService.flatMate.subject.building" class="divider"></div>
+    <div *ngIf="viewService.flatMate.subject.condition" class="attribute condition d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -105,11 +105,11 @@
         lakás állapota
       </div>
       <div class="value ml-auto">
-        {{viewService.flatMate.subject.condition}}
+        {{'CONDITION.' + viewService.flatMate.subject.condition | translate}}
       </div>
     </div>
-    <div class="divider"></div>
-    <div class="attribute residents d-flex flex-row">
+    <div *ngIf="viewService.flatMate.subject.condition" class="divider"></div>
+    <div *ngIf="viewService.flatMate.subject.residents" class="attribute residents d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -120,8 +120,8 @@
         {{viewService.flatMate.subject.residents}}
       </div>
     </div>
-    <div class="divider"></div>
-    <div class="attribute floor d-flex flex-row">
+    <div *ngIf="viewService.flatMate.subject.residents" class="divider"></div>
+    <div *ngIf="viewService.flatMate.subject.floors" class="attribute floor d-flex flex-row">
       <div class="icon mr-2">
         <img src="">
       </div>
@@ -132,7 +132,7 @@
         {{viewService.flatMate.subject.floors}}
       </div>
     </div>
-    <div class="divider"></div>
+    <div *ngIf="viewService.flatMate.subject.floors" class="divider"></div>
   </div>
   <div class="showAll-button d-flex flex-row d-flex justify-content-between d-flex align-items-center">
     <div class="line"></div>
@@ -145,91 +145,91 @@
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.lift">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Lift</div>
+      <div class="label">{{'DETAILS.LIFT' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.petsAllowed">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Állatbarát</div>
+      <div class="label">{{'DETAILS.PETSALLOWED' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.washingMachine">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Mosógép</div>
+      <div class="label">{{'DETAILS.WASHINGMACHINE' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.television">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">TV</div>
+      <div class="label">{{'DETAILS.TELEVISION' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.smokingArea">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Dohányzó</div>
+      <div class="label">{{'DETAILS.SMOKINGAREA' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.internet">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Internet</div>
+      <div class="label">{{'DETAILS.INTERNET' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.balcony">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Erkély</div>
+      <div class="label">{{'DETAILS.BALCONY' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.garage">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Garázs</div>
+      <div class="label">{{'DETAILS.GARAGE' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.gym">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Konditerem</div>
+      <div class="label">{{'DETAILS.GYM' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.jakuzzi">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Jakuzzi</div>
+      <div class="label">{{'DETAILS.JAKUZZI' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.accessible">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Akadálymentes</div>
+      <div class="label">{{'DETAILS.ACCESSIBLE' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.airConditioner">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Légkondi</div>
+      <div class="label">{{'DETAILS.AIRCONDITIONER' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.privateBathroom">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Saját fürdő</div>
+      <div class="label">{{'DETAILS.PRIVATEBATHROOM' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.parking">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Parkoló</div>
+      <div class="label">{{'DETAILS.PARKING' | translate}}</div>
     </div>
     <div class="attribute-set d-flex flex-row align-items-center mr-auto">
       <div class="checkbox mr-2" [class.checked]="viewService.flatMate.subject.details.shortPeriod">
         <img src="assets/img/checkmark.svg">
       </div>
-      <div class="label">Rövid távra is</div>
+      <div class="label">{{'DETAILS.SHORTPERIOD' | translate}}</div>
     </div>
   </div>
   <div class="divider"></div>

@@ -12,12 +12,12 @@
     </div>
     <div class="location mx-auto">{{account.subject.address.display}}</div>
     <div class="props d-flex flex-row">
-      <div class="immotype mx-auto">{{account.subject.roomType}}</div>
+      <div class="immotype text-uppercase mx-auto">{{'ROOMTYPE.' + account.subject.roomType | translate}}</div>
       <div class="moving-date m-auto">{{account.moveIntoAt | date: 'yyyy.MM.dd.'}}</div>
     </div>
     <div class="bottom-divider d-flex flex-row">
       <div class="bottom-side-divider mr-auto"></div>
-      <div class="roomtype">{{account.subject.serviceType}}</div>
+      <div class="roomtype">{{'SERVICETYPE.' + account.subject.serviceType | translate}}</div>
       <div class="bottom-side-divider ml-auto"></div>
     </div>
     <div class="price">{{account.subject.price.fee*1000}} {{account.subject.price.currency}}</div>

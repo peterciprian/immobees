@@ -11,7 +11,7 @@
   border: solid 3px #d7d7d7;
 
   &.room {
-    width: 179px;
+    width: 200px;
   }
 
   &.place {
@@ -19,7 +19,7 @@
   }
 
   &.gender {
-    width: 200px;
+    width: 210px;
   }
 
   &.budget {
@@ -28,6 +28,7 @@
 }
 
 .input-group-option {
+  padding: 0 .5rem;
   cursor: pointer;
 }
 

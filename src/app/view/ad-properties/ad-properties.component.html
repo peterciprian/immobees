@@ -26,7 +26,8 @@
       </div>
       <div class="types d-flex flex-row align-items-center">
         <div class="icon mr-2"></div>
-        <div class="label">{{viewService.flatMate.subject.serviceType}} - {{viewService.flatMate.subject.roomType}}
+        <div class="label">{{'SERVICETYPE.' + viewService.flatMate.subject.serviceType | translate}} -
+          {{'ROOMTYPE.' + viewService.flatMate.subject.roomType | translate}}
         </div>
       </div>
     </div>
@@ -35,75 +36,75 @@
     <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Nem</div>
-      <div class="value ml-auto">{{viewService.flatMate.gender}}</div>
+      <div class="value ml-auto">{{'GENDER.' + viewService.flatMate.gender | translate}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.subject.address.city" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Város</div>
       <div class="value ml-auto text-capitalize">{{viewService.flatMate.subject.address.city}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.nationality" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Nemzetiség</div>
-      <div class="value ml-auto">{{viewService.flatMate.nationality}}</div>
+      <div class="value ml-auto">{{languages[viewService.flatMate.nationality.toLowerCase()].nativeName}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.moveIntoAt" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Költözés időpontja</div>
       <div class="value ml-auto">{{viewService.flatMate.moveIntoAt | localeDate}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.birthday" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Életkor</div>
       <div class="value ml-auto">{{viewService.flatMate.birthday | age}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.children" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Gyerek</div>
       <div class="value ml-auto">{{viewService.flatMate.children}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.hasErasmus" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Erasmus</div>
       <div class="value ml-auto">{{viewService.flatMate.hasErasmus}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.pets" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">kisállat</div>
       <div class="value ml-auto">{{viewService.flatMate.pets}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.spokenLanguages" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label mr-auto">Beszélt nyelvek</div>
       <div *ngFor="let lang of viewService.flatMate.spokenLanguages" class="value mr-1">{{lang}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.smoking" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Dohányzás</div>
       <div class="value ml-auto">{{viewService.flatMate.smoking}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.school" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Iskola</div>
       <div class="value ml-auto text-uppercase">{{viewService.flatMate.school}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.leaveOnWeekends" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Hétvégén hazautazik</div>
       <div class="value ml-auto">{{viewService.flatMate.leaveOnWeekends}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.profession" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Foglalkozás</div>
       <div class="value ml-auto">{{viewService.flatMate.profession}}</div>
     </div>
-    <div class="prop-box d-flex flex-row align-items-center">
+    <div *ngIf="viewService.flatMate.personality" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Személyiség</div>
       <div class="value ml-auto">{{viewService.flatMate.personality}}</div>
     </div>
   </div>
-  <div class="ad-properties-description d-flex flex-column">
+  <div *ngIf="viewService.flatMate.subject.client.description" class="ad-properties-description d-flex flex-column">
     <div class="title">Az ideális lakótársról</div>
     <div class="description">{{viewService.flatMate.subject.client.description}}</div>
   </div>

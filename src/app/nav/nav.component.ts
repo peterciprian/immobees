@@ -36,7 +36,7 @@ export class NavComponent {
     if (this.authService.userData === undefined) { return; } else {
       this.firestore.$getMyAccount().pipe(first()).subscribe(me => {
         this.viewService.flatMate = me;
-        this.router.navigate(['/view']);
+        this.router.navigateByUrl(`/view?uid=${me.userID}`);
       },
         error => { console.error(error); });
     }

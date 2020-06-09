@@ -12,16 +12,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## TODO
 * ~~backend kéréseket feltérképezni~~
-* __Firebase-backend__
-  * kapcsolat
-  * auth / roles
-  * db 
+* ~~__Firebase-backend__~~
+  * ~~kapcsolat~~
+  * ~~auth /~~ roles
+  * ~~db~~ 
 * _hatszög-ikont megcsinálni méretezhetőre_
 * _ikonokat gyűjteni, beilleszteni_
+* __AUTH modal megjelenését felépíteni__
 * főoldali linkeket beilleszteni
 * _footerben a számlálókat bekötni_
 * hu.json/en.json tartalmát feltölteni
 * adatok mappelése a profiloldalon
+* true-false mappelés
 * form validációk!!
 * cím adatokat szétszedni
 * _beküldéskor cím mappelés_
@@ -29,19 +31,22 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * _carousel- slide animation_
 * __elemek lekérése init-re szűrés nélkül, alapértelmezett sorrendben__
 * ~~találati lista layoutot megépíteni~~
-* találati lista lapozását beüzemelni
-* találati lista rendezést beüzemelni
+* ~~találati lista lapozását beüzemelni~~
+* ~~találati lista rendezést beüzemelni~~
 * ~~találati lista szűrőfeltételeit szelektálni (keres-kínál)~~
 * ~~értékkészleteket ABC-be rendezni~~
 * ~~keresőfeltételek select-jeiben mik az option-ök?~~
-* keresőfeltételeket bekötni
+* keresőfeltételeket bekötni **
 * ~~profiloldalak~~
 * ~~profiloldal~~ - szerkesztő mód
 * ~~__profil-szerkesztés demand képfeltöltés__~~
 * __képfeltöltés 1MB-nál nagyobb fájlokra__
 * ~~teljes regisztráció / hidertésfeladás -demand képfeltöltés~~
 * _tosat sablon_
+* ad-properties-card roomtype-választó reszponzivitás
+* result-list fejléc reszponzivitás
 * _profilbeállítások_
 * _akikkel laknék (találati lista alapján)_
 
 * _üzenetküldő_
+* ~~__view-nél url paraméterben id__~~

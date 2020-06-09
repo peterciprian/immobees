@@ -16,6 +16,6 @@ export class HighLightComponent {
 
   view(account) {
     this.viewService.flatMate = account;
-    this.router.navigate(['/view']);
+    this.router.navigateByUrl(`/view?uid=${account.userID}`);
   }
 }

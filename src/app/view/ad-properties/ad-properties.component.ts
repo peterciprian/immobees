@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ViewService } from 'src/app/core/services/view.service';
+import languages from 'src/app/core/models/languages';
 
 @Component({
   selector: 'app-ad-properties',
   templateUrl: './ad-properties.component.html',
   styleUrls: ['./ad-properties.component.scss']
 })
-export class AdPropertiesComponent implements OnInit {
+export class AdPropertiesComponent {
 
   activeSlideIndex = 0;
   slides = [
@@ -18,10 +19,9 @@ export class AdPropertiesComponent implements OnInit {
     { image: 'assets/img/room.png' }
   ];
   scrollHistory = [0, 0];
+  languages = languages;
   constructor(public viewService: ViewService) { }
 
-  ngOnInit() {
-  }
   change(event) {
     this.scrollHistory.push(event);
     this.scrollHistory.shift();
