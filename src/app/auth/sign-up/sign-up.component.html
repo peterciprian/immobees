@@ -2,34 +2,34 @@
   <div class="displayTableCell">
 
     <div class="authBlock">
-      <h3>Sign Up</h3>
-      <!-- 
+      <h3>{{'AUTH.SIGNUP' | translate}}</h3>
+      <!--
       <div class="formGroup">
         <input type="displayName" class="formControl" placeholder="Név" #displayName required>
       </div> -->
 
       <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email" #userEmail required>
+        <input type="email" class="formControl" placeholder="{{'AUTH.EMAIL' | translate}}" #userEmail required>
       </div>
 
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Jelszó" #userPwd required>
+        <input type="password" class="formControl" placeholder="{{'AUTH.PASSWORD' | translate}}" #userPwd required>
       </div>
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up"
+        <input type="button" class="btn btnPrimary" value="{{'AUTH.SIGNUP' | translate}}"
           (click)="authService.SignUp(userEmail.value, userPwd.value)">
       </div>
 
       <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
+        <span class="or"><span class="orInner">{{'AUTH.OR' | translate}}</span></span>
       </div>
 
       <!-- Continue with Google -->
       <div class="formGroup">
         <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
-          Continue with Google
+          {{'AUTH.CONTINUE_GOOGLE' | translate}}
         </button>
       </div>
 
@@ -43,8 +43,11 @@
     </div>
  -->
       <div class="redirectToLogin">
-        <span>Already have an account? <span class="redirect" (click)="authModalService.openDialog('signIn')">Log
-            In</span></span>
+        <span>{{'AUTH.HAVE_ACCOUNT' | translate}}
+          <span class="redirect" (click)="authModalService.openDialog('signIn')">
+            {{'AUTH.SIGNIN' | translate}}
+          </span>
+        </span>
       </div>
     </div>
 

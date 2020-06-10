@@ -2,26 +2,29 @@
   <div class="displayTableCell">
 
     <div class="authBlock">
-      <h3>Thank You for Registering</h3>
+      <h3>{{'AUTH.TY_REGISTERING' | translate}}</h3>
 
       <div class="formGroup" *ngIf="authService.userData as user">
-        <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
-        <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        <p class="text-center">{{'AUTH.CONFIRM_SENT' | translate}}<strong>{{user.email}}</strong>.</p>
+        <p class="text-center">{{'AUTH.CHECK_EMAIL' | translate}}</p>
       </div>
 
       <!-- Calling SendVerificationMail() method using authService Api -->
       <div class="formGroup">
         <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
           <i class="fas fa-redo-alt"></i>
-          Resend Verification Email
+          {{'AUTH.RESEND_VERIFICATION' | translate}}
         </button>
       </div>
 
     </div>
 
     <div class="redirectToLogin">
-      <span>Go back to?<span class="redirect" (click)="authModalService.openDialog('signIn')"> Sign
-          in</span></span>
+      <span>{{'AUTH.GO_BACK_TO' | translate}}
+        <span class="redirect" (click)="authModalService.openDialog('signIn')">
+          {{'AUTH.TO_LOGIN' | translate}}
+        </span>
+      </span>
     </div>
 
   </div>

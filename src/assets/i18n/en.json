@@ -55,5 +55,40 @@
     "POOR": "Poor",
     "MODERN": "Modern",
     "LUXURY": "Luxury"
+  },
+  "AUTH": {
+    "RESET_PASSWORD": "Reset Password",
+    "RESET_PASSWORD_DESCRIPTION": "Please enter your email address to request a password reset.",
+    "GO_BACK": "Go back",
+    "GO_BACK_TO": "Go back to",
+    "TO_LOGIN": "Login",
+    "LOGIN": "Log In",
+    "SIGNIN": "Sign In",
+    "EMAIL": "Email",
+    "EMAIL_A": "Email address",
+    "PASSWORD": "Password",
+    "OR": "or",
+    "GOOGLE_LOGIN": "Log in with Google",
+    "CONTINUE_GOOGLE": "Continue with Google",
+    "FORGOTPASSWORD": "Forgot password",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "NO_ACCOUNT": "Don't have account?",
+    "HAVE_ACCOUNT": "Already have an account?",
+    "SIGNUP": "Sign Up",
+    "VERIFYEMAIL": "Email megerősítés",
+    "TY_REGISTERING": "Thank You for Registering",
+    "CONFIRM_SENT": "We have sent a confirmation email to ",
+    "CHECK_EMAIL": "Please check your email and click on the link to verfiy your email address.",
+    "RESEND_VERIFICATION": "Resend Verification Email"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "All rights reserved",
+    "TOTAL_OFFERS": "Users are looking for flatmate",
+    "TOTAL_DEMANDS": "Users are looking for room",
+    "TWITTER_FOLLOW": "Follow us on Twitteren",
+    "FACEBOOK_FOLLOW": "Follow us on Facebookon"
+  },
+  "MISC": {
+    "BACK": "Back"
   }
 }

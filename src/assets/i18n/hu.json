@@ -55,5 +55,40 @@
     "POOR": "Rossz",
     "MODERN": "Modern",
     "LUXURY": "Luxus"
+  },
+  "AUTH": {
+    "RESET_PASSWORD": "Jelszó helyreállítás",
+    "RESET_PASSWORD_DESCRIPTION": "Add meg e-mail címedet a jelszó helyreállításához.",
+    "GO_BACK": "Vissza",
+    "GO_BACK_TO": "Vissza a",
+    "TO_LOGIN": "bejelentkezéshez",
+    "LOGIN": "Bejelentkezés",
+    "SIGNIN": "Jelentkezz be",
+    "EMAIL": "Email",
+    "EMAIL_A": "Email cím",
+    "PASSWORD": "Jelszó",
+    "OR": "vagy",
+    "GOOGLE_LOGIN": "Google bejelentkezés",
+    "CONTINUE_GOOGLE": "Google bejelentkezés",
+    "FORGOTPASSWORD": "Elfelejtett jelszó",
+    "FORGOT_PASSWORD": "Elfelejtettem a jelszavam",
+    "NO_ACCOUNT": "Nincs még fiókod?",
+    "HAVE_ACCOUNT": "Van már fiókod?",
+    "SIGNUP": "Regisztráció",
+    "VERIFYEMAIL": "Email megerősítés",
+    "TY_REGISTERING": "Köszönjük, hogy Regisztráltál!",
+    "CONFIRM_SENT": "Megerősítő emailt küldtünk ide: ",
+    "CHECK_EMAIL": "Kérjük figyeld a postafiókod és a linkre kattintva erősítdsd meg email címedet.",
+    "RESEND_VERIFICATION": "Megerősítő email újraküldése"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Minden jog fenntartva",
+    "TOTAL_OFFERS": "Felhasználó keresi a lakótársát",
+    "TOTAL_DEMANDS": "Felhasználó keres albérlőtársat",
+    "TWITTER_FOLLOW": "Kövess minket Twitteren",
+    "FACEBOOK_FOLLOW": "Kövess minket Facebookon"
+  },
+  "MISC": {
+    "BACK": "Vissza"
   }
 }

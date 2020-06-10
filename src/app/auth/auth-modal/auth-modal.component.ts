@@ -24,7 +24,7 @@ export class AuthModalComponent {
   setTitle() {
     switch (this.data) {
       case 'signUp': return 'SIGNUP';
-      case 'signIn': return 'SIGNIN';
+      case 'signIn': return 'LOGIN';
       case 'verifyEmail': return 'VERIFYEMAIL';
       case 'forgotPassword': return 'FORGOTPASSWORD';
       default: return 'SIGNUP';

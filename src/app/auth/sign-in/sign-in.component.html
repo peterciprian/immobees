@@ -2,42 +2,42 @@
   <div class="displayTableCell">
 
     <div class="authBlock">
-      <h3>Sign In</h3>
+      <h3>{{'AUTH.LOGIN' | translate}}</h3>
       <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Email" #userName required>
+        <input type="text" class="formControl" placeholder="{{'AUTH.EMAIL' | translate}}" #userName required>
       </div>
 
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
+        <input type="password" class="formControl" placeholder="{{'AUTH.PASSWORD' | translate}}" #userPassword required>
       </div>
 
       <!-- Calling SignIn Api from AuthService -->
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Log in"
+        <input type="button" class="btn btnPrimary" value="{{'AUTH.LOGIN' | translate}}"
           (click)="authService.SignIn(userName.value, userPassword.value)">
       </div>
 
       <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
+        <span class="or"><span class="orInner">{{'AUTH.OR' | translate}}</span></span>
       </div>
 
       <!-- Calling GoogleAuth Api from AuthService -->
       <div class="formGroup">
         <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
-          Log in with Google
+          {{'AUTH.GOOGLE_LOGIN' | translate}}
         </button>
       </div>
 
       <div class="forgotPassword">
-        <span (click)="authModalService.openDialog('forgotPassword')">Forgot Password?</span>
+        <span (click)="authModalService.openDialog('forgotPassword')">{{'AUTH.FORGOT_PASSWORD' | translate}}</span>
       </div>
     </div>
 
     <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" (click)="authModalService.openDialog('signUp')">
-          Sign
-          Up</span></span>
+      <span>{{'AUTH.NO_ACCOUNT' | translate}}
+        <span class="redirect" (click)="authModalService.openDialog('signUp')">{{'AUTH.SIGNUP' | translate}}</span>
+        </span>
     </div>
 
   </div>
