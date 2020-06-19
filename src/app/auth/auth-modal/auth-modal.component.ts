@@ -21,7 +21,7 @@ export class AuthModalComponent {
   close() {
     this.dialogRef.close();
   }
-  setTitle() {
+  setTitle(): string {
     switch (this.data) {
       case 'signUp': return 'SIGNUP';
       case 'signIn': return 'LOGIN';
