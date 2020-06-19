@@ -1,18 +1,18 @@
 <div class="personal-container d-flex flex-column">
   <div class="head-roomtype d-flex flex-row align-items-center justify-content-center">
-    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5"
-    (click)="switchRoomtype('PRIVATE')">
+    <div class="roomtype private d-flex flex-column align-items-end mt-auto mr-5" (click)="switchRoomtype('PRIVATE')">
       <div class="image mx-auto mb-3">
         <img src="assets/img/single.png">
       </div>
-      <div class="button" [ngClass]="{ 'selected': accountService.account.subject.roomType === 'PRIVATE' }">külön szoba</div>
+      <div class="button" [ngClass]="{ 'selected': accountService.account.subject.roomType === 'PRIVATE' }">külön szoba
+      </div>
     </div>
-    <div class="roomtype shared d-flex flex-column align-items-end"
-    (click)="switchRoomtype('SHARED')">
+    <div class="roomtype shared d-flex flex-column align-items-end" (click)="switchRoomtype('SHARED')">
       <div class="image mb-3">
         <img src="assets/img/shared.png">
       </div>
-      <div class="button" [ngClass]="{ 'selected': accountService.account.subject.roomType === 'SHARED' }">szobatárs</div>
+      <div class="button" [ngClass]="{ 'selected': accountService.account.subject.roomType === 'SHARED' }">szobatárs
+      </div>
     </div>
   </div>
   <div class="body-personal d-flex flex-column mt-3">
@@ -22,150 +22,153 @@
       <div class="input-group place d-flex flex-row my-1">
         <img src="assets/img/15_helyszin.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="place-select">
-          <input matInput type="text" placeholder="Helyszín" [(ngModel)]="accountService.account.subject.address.display">
-          <button mat-button *ngIf="accountService.account.subject.address.display" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <input matInput type="text" placeholder="Helyszín"
+            [(ngModel)]="accountService.account.subject.address.display">
+          <button mat-button *ngIf="accountService.account.subject.address.display" matSuffix mat-icon-button
+            aria-label="Clear" (click)="value=''">
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
       </div>
 
-    <div class="input-group roomPrice d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center mr-2">Szobaár</div>
-      <input [(ngModel)]="accountService.account.subject.price.fee" type="number" min="0"
-        class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="ár" />
-      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
-    </div>
+      <div class="input-group roomPrice d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center mr-2">Szobaár</div>
+        <input [(ngModel)]="accountService.account.subject.price.fee" type="number" min="0"
+          class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="ár" />
+        <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+      </div>
 
 
-    <div class="input-group buildingType d-flex flex-row my-1">
-      <img src="assets/img/07_iskola.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="building-select">
-        <mat-select [(ngModel)]="accountService.account.subject.building" placeholder="Lakás típusa">
-          <mat-option>X</mat-option>
-          <mat-option *ngFor="let building of buildingType" [value]="building">{{
+      <div class="input-group buildingType d-flex flex-row my-1">
+        <img src="assets/img/07_iskola.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="building-select">
+          <mat-select [(ngModel)]="accountService.account.subject.building" placeholder="Lakás típusa">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let building of buildingType" [value]="building">{{
             building
           }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="input-group costs d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center mr-2">Rezsi</div>
-      <input [(ngModel)]="accountService.account.subject.price.overhead" type="number" min="0"
-        class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="ár" />
-      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
-    </div>
+      <div class="input-group costs d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center mr-2">Rezsi</div>
+        <input [(ngModel)]="accountService.account.subject.price.overhead" type="number" min="0"
+          class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="ár" />
+        <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+      </div>
 
-    <div class="input-group buildingCondition d-flex flex-row my-1">
-      <img src="assets/img/07_iskola.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="building-condition-select">
-        <mat-select [(ngModel)]="accountService.account.subject.condition" placeholder="Lakás állapota">
-          <mat-option>X</mat-option>
-          <mat-option *ngFor="let condition of buildingCondition" [value]="condition">{{
+      <div class="input-group buildingCondition d-flex flex-row my-1">
+        <img src="assets/img/07_iskola.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="building-condition-select">
+          <mat-select [(ngModel)]="accountService.account.subject.condition" placeholder="Lakás állapota">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let condition of buildingCondition" [value]="condition">{{
             condition
           }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="input-group av_date d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="av_date">
-        <input [(ngModel)]="accountService.account.moveIntoAt" matInput [matDatepicker]="av_date" placeholder="Költözhető">
-        <mat-datepicker-toggle matSuffix [for]="av_date"></mat-datepicker-toggle>
-        <mat-datepicker #av_date></mat-datepicker>
-      </mat-form-field>
-    </div>
+      <div class="input-group av_date d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="av_date">
+          <input [(ngModel)]="accountService.account.moveIntoAt" matInput [matDatepicker]="av_date"
+            placeholder="Költözhető">
+          <mat-datepicker-toggle matSuffix [for]="av_date"></mat-datepicker-toggle>
+          <mat-datepicker #av_date></mat-datepicker>
+        </mat-form-field>
+      </div>
 
-    <div class="input-group roomPrice d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center">Lakás alapterülete</div>
-      <input [(ngModel)]="accountService.account.subject.floorArea" type="number" min="0"
-        class="input-group-option input-field align-self-center ml-auto mr-1" />
-      <div class="input-group-label text-l1 align-self-center mr-1">m<sup>2</sup></div>
-    </div>
+      <div class="input-group roomPrice d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center">Lakás alapterülete</div>
+        <input [(ngModel)]="accountService.account.subject.floorArea" type="number" min="0"
+          class="input-group-option input-field align-self-center ml-auto mr-1" />
+        <div class="input-group-label text-l1 align-self-center mr-1">m<sup>2</sup></div>
+      </div>
 
-    <div class="input-group furnished d-flex flex-row my-1">
-      <img src="assets/img/07_iskola.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="furnished-select">
-        <mat-select [(ngModel)]="accountService.account.subject.furnished" placeholder="Bútorozottság">
-          <mat-option>X</mat-option>
-          <mat-option *ngFor="let furnish of furnished" [value]="furnish">{{
+      <div class="input-group furnished d-flex flex-row my-1">
+        <img src="assets/img/07_iskola.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="furnished-select">
+          <mat-select [(ngModel)]="accountService.account.subject.furnished" placeholder="Bútorozottság">
+            <mat-option>X</mat-option>
+            <mat-option *ngFor="let furnish of furnished" [value]="furnish">{{
             furnish
           }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="input-group roomPrice d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center">Szoba alapterülete</div>
-      <input [(ngModel)]="accountService.account.subject.roomArea" type="number" min="0"
-        class="input-group-option input-field align-self-center ml-auto mr-1" />
-      <div class="input-group-label text-l1 align-self-center mr-1">m<sup>2</sup></div>
-    </div>
+      <div class="input-group roomPrice d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center">Szoba alapterülete</div>
+        <input [(ngModel)]="accountService.account.subject.roomArea" type="number" min="0"
+          class="input-group-option input-field align-self-center ml-auto mr-1" />
+        <div class="input-group-label text-l1 align-self-center mr-1">m<sup>2</sup></div>
+      </div>
 
-    <div class="input-group floor d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center mr-2">Emelet</div>
-      <input [(ngModel)]="accountService.account.subject.floors" type="number" min="0" max="20"
-        class="input-group-option input-field align-self-center ml-auto mr-2" />
-    </div>
+      <div class="input-group floor d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center mr-2">Emelet</div>
+        <input [(ngModel)]="accountService.account.subject.floors" type="number" min="0" max="20"
+          class="input-group-option input-field align-self-center ml-auto mr-2" />
+      </div>
 
-    <div class="input-group gender d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="gender-select">
-        <mat-select [(ngModel)]="accountService.account.subject.client.gender" placeholder="Akit várok">
-          <mat-option [value]="'female'">Nő</mat-option>
-          <mat-option [value]="'male'">Férfi</mat-option>
-          <mat-option [value]="'other'">Más</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+      <div class="input-group gender d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="gender-select">
+          <mat-select [(ngModel)]="accountService.account.subject.client.gender" placeholder="Akit várok">
+            <mat-option [value]="'female'">Nő</mat-option>
+            <mat-option [value]="'male'">Férfi</mat-option>
+            <mat-option [value]="'other'">Más</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="input-group height d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center mr-2">Belmagasság</div>
-      <input [(ngModel)]="accountService.account.subject.innerHeight" type="number" min="0" max ="10" step="0.1"
-        class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="m" />
-      <div class="input-group-label text-l1 align-self-center mr-1">m</div>
-    </div>
+      <div class="input-group height d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center mr-2">Belmagasság</div>
+        <input [(ngModel)]="accountService.account.subject.innerHeight" type="number" min="0" max="10" step="0.1"
+          class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="m" />
+        <div class="input-group-label text-l1 align-self-center mr-1">m</div>
+      </div>
 
-    <div class="input-group residents d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center mr-2">Lakók száma</div>
-      <input [(ngModel)]="accountService.account.subject.residents" type="number" min="0" max ="10"
-        class="input-group-option input-field align-self-center ml-auto mr-1" />
-      <div class="input-group-label text-l1 align-self-center mr-1">lakó</div>
-    </div>
+      <div class="input-group residents d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center mr-2">Lakók száma</div>
+        <input [(ngModel)]="accountService.account.subject.residents" type="number" min="0" max="10"
+          class="input-group-option input-field align-self-center ml-auto mr-1" />
+        <div class="input-group-label text-l1 align-self-center mr-1">lakó</div>
+      </div>
 
-    <div class="input-group parking d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="erasmus">
-        <mat-select placeholder="Parkolás">
-          <mat-option [value]="'no'">Nincs</mat-option>
-          <mat-option [value]="'inSite'">Telken belül</mat-option>
-          <mat-option [value]="'forRent'">Bérelhető</mat-option>
-          <mat-option [value]="'free'">Utcán ingyenes</mat-option>
-          <mat-option [value]="'pay'">Utcán fizetős</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+      <div class="input-group parking d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <mat-form-field [floatLabel]="'never'" class="parking">
+          <mat-select placeholder="Parkolás">
+            <mat-option [value]="'no'">Nincs</mat-option>
+            <mat-option [value]="'inSite'">Telken belül</mat-option>
+            <mat-option [value]="'forRent'">Bérelhető</mat-option>
+            <mat-option [value]="'free'">Utcán ingyenes</mat-option>
+            <mat-option [value]="'pay'">Utcán fizetős</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="input-group caution d-flex flex-row my-1">
-      <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <div class="input-group-label text-l1 align-self-center mr-2">Kaució</div>
-      <input [(ngModel)]="accountService.account.subject.price.caution" type="number" min="0"
-        class="input-group-option input-field align-self-center ml-auto mr-1" />
-      <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
-    </div>
-    <app-flat-extras></app-flat-extras>
+      <div class="input-group caution d-flex flex-row my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label text-l1 align-self-center mr-2">Kaució</div>
+        <input [(ngModel)]="accountService.account.subject.price.caution" type="number" min="0"
+          class="input-group-option input-field align-self-center ml-auto mr-1" />
+        <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
+      </div>
+      <app-flat-extras></app-flat-extras>
     </div>
     <div class="text-area d-flex align-self-center mt-3">
-      <textarea [(ngModel)]="accountService.account.subject.description" matInput name="about-room" id="about-room" cols="50" rows="5"
-        placeholder="&#9998; ÍRJ A LAKÁSRÓL/SZOBÁRÓL PÁR SZÓT..."></textarea>
+      <textarea [(ngModel)]="accountService.account.subject.description" matInput name="about-room" id="about-room"
+        cols="50" rows="5" placeholder="&#9998; ÍRJ A LAKÁSRÓL/SZOBÁRÓL PÁR SZÓT..."></textarea>
     </div>
   </div>
 </div>

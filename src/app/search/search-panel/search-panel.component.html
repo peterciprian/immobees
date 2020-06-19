@@ -26,7 +26,7 @@
 
     <h2 class="search-personal-title">SZEMÉLYES INFORMÁCIÓK</h2>
 
-    <div class="input-group gender d-flex flex-row my-1">
+    <div class="input-group gender d-flex flex-row align-items-center my-1">
       <img src="assets/img/gender.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center">nem</div>
       <div class="separator align-self-center ml-2 mr-auto"></div>
@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    <div class="input-group nationality d-flex flex-row my-1">
+    <div class="input-group nationality d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="nationality-select">
         <mat-select placeholder="Nemzetiség" name="nationality" [(ngModel)]="queryService.queryFields.nationality">
@@ -56,7 +56,8 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 0" class="input-group budget d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 0"
+      class="input-group budget d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Büdzsé</div>
       <input name="budgetMin" [(ngModel)]="queryService.queryFields.budget.min" type="number" min="0"
@@ -67,7 +68,8 @@
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 0" class="input-group age d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 0"
+      class="input-group age d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Életkor</div>
       <input name="ageMin" [(ngModel)]="queryService.queryFields.age.min" type="number" min="0"
@@ -77,24 +79,24 @@
         class="input-group-option input-field align-self-center mr-2" placeholder="max" />
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 0" class="input-group place d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 0"
+      class="input-group place d-flex flex-row align-items-center my-1">
       <img src="assets/img/15_helyszin.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Helyszín</div>
       <input name="location" [(ngModel)]="queryService.queryFields.location" type="text"
         class=" input-group-option input-field align-self-center mr-2 place-select" placeholder="Város">
     </div>
 
-    <div class="input-group erasmus d-flex flex-row my-1">
+    <div class="input-group erasmus d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="erasmus-select">
-        <mat-select placeholder="Erasmus" name="erasmus" [(ngModel)]="queryService.queryFields.erasmus">
-          <mat-option [value]="true">igen</mat-option>
-          <mat-option [value]="false">nem</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="text-l1 mr-auto">Erasmus</div>
+      <div class="checkbox mr-2" [class.checked]="queryService.queryFields.erasmus"
+        (click)="switchAttribute('erasmus')">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
 
-    <div class="input-group language d-flex flex-row my-1">
+    <div class="input-group language d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="language-select">
         <mat-select placeholder="Beszélt nyelvek" name="languages" multiple
@@ -110,7 +112,7 @@
       </mat-form-field>
     </div>
 
-    <div class="input-group school d-flex flex-row my-1">
+    <div class="input-group school d-flex flex-row align-items-center my-1">
       <img src="assets/img/07_iskola.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="school-select">
         <mat-select placeholder="Iskola" name="school" [(ngModel)]="queryService.queryFields.school">
@@ -122,7 +124,7 @@
       </mat-form-field>
     </div>
 
-    <div class="input-group profession d-flex flex-row my-1">
+    <div class="input-group profession d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Foglalkozás</div>
       <input name="profession" [(ngModel)]="queryService.queryFields.profession" type="text"
@@ -136,17 +138,16 @@
       </mat-form-field> -->
     </div>
 
-    <div class="input-group children d-flex flex-row my-1">
+    <div class="input-group children d-flex flex-row align-items-center my-1">
       <img src="assets/img/09_gyermek.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="children-select">
-        <mat-select placeholder="Gyerek" name="children" [(ngModel)]="queryService.queryFields.children">
-          <mat-option [value]="true">van</mat-option>
-          <mat-option [value]="false">nincs</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="text-l1 mr-auto">Gyerek</div>
+      <div class="checkbox mr-2" [class.checked]="queryService.queryFields.children"
+        (click)="switchAttribute('children')">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
 
-    <div class="input-group pet d-flex flex-row my-1">
+    <div class="input-group pet d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="pet-select">
         <mat-select placeholder="Kisállat" name="pets" [(ngModel)]="queryService.queryFields.pets">
@@ -158,28 +159,25 @@
       </mat-form-field>
     </div>
 
-    <div class="input-group smoking d-flex flex-row my-1">
+    <div class="input-group smoking d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="smoking-select">
-        <mat-select placeholder="Dohányzás" name="smoking" [(ngModel)]="queryService.queryFields.smoking">
-          <mat-option [value]="true">igen</mat-option>
-          <mat-option [value]="false">nem</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="text-l1 mr-auto">Dohányzás</div>
+      <div class="checkbox mr-2" [class.checked]="queryService.queryFields.smoking"
+        (click)="switchAttribute('smoking')">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
 
-    <div class="input-group goesHome d-flex flex-row my-1">
+    <div class="input-group goesHome d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
-      <mat-form-field [floatLabel]="'never'" class="leaveOnWeekends-select">
-        <mat-select placeholder="Hétvégén hazautazik" name="leaveOnWeekends"
-          [(ngModel)]="queryService.queryFields.leaveOnWeekends">
-          <mat-option [value]="true">igen</mat-option>
-          <mat-option [value]="false">nem</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="text-l1 mr-auto">Hétvégén hazautazik</div>
+      <div class="checkbox mr-2" [class.checked]="queryService.queryFields.leaveOnWeekends"
+        (click)="switchAttribute('leaveOnWeekends')">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
 
-    <div class="input-group personality d-flex flex-row my-1">
+    <div class="input-group personality d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="personality-select">
         <mat-select placeholder="Személyiség" name="personality" [(ngModel)]="queryService.queryFields.personality"
@@ -192,14 +190,16 @@
 
     <h2 *ngIf="queryService.queryFields.serviceType == 1" class="search-personal-title">LAKÁS INFORMÁCIÓK</h2>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group place d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group place d-flex flex-row align-items-center my-1">
       <img src="assets/img/15_helyszin.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Helyszín</div>
       <input name="location2" [(ngModel)]="queryService.queryFields.location" type="text"
         class=" input-group-option input-field align-self-center mr-2 place-select" placeholder="Város">
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group budget d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group budget d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Büdzsé</div>
       <input name="budgetMin" [(ngModel)]="queryService.queryFields.budget.min" type="number" min="0"
@@ -210,7 +210,8 @@
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group bail d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group bail d-flex flex-row align-items-center my-1">
       <img src="assets/img/18_kaucio.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Kaució legfeljebb</div>
       <input name="bail" [(ngModel)]="queryService.queryFields.bail" type="number" min="0"
@@ -218,7 +219,8 @@
       <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group age d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group age d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Életkor</div>
       <input name="ageMin" [(ngModel)]="queryService.queryFields.age.min" type="number" min="0"
@@ -228,7 +230,8 @@
         class="input-group-option input-field align-self-center mr-2" placeholder="max" />
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group furniture d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group furniture d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="furniture-select">
         <mat-select name="furnished" placeholder="Bútorozottság" [(ngModel)]="queryService.queryFields.furnished">
@@ -240,7 +243,8 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group flatType d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group flatType d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatType-select">
         <mat-select name="building" placeholder="Lakás típusa" [(ngModel)]="queryService.queryFields.building">
@@ -252,7 +256,8 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group flatCondition d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group flatCondition d-flex flex-row align-items-center my-1">
       <img src="assets/img/21_lakasallapot.svg" class="icon">
       <mat-form-field [floatLabel]="'never'" class="flatCondition-select">
         <mat-select name="condition" placeholder="Lakás állapota" [(ngModel)]="queryService.queryFields.condition">
@@ -264,7 +269,8 @@
       </mat-form-field>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group flatSize d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group flatSize d-flex flex-row align-items-center my-1">
       <img src="assets/img/22_lakasalapterulet.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Lakás alapt.</div>
       <input name="flatSizeMin" [(ngModel)]="queryService.queryFields.flatSize.min" type="number" min="0"
@@ -275,7 +281,8 @@
       <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group roomSize d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group roomSize d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-2">Szoba alapt.</div>
       <input name="roomSizeMin" [(ngModel)]="queryService.queryFields.roomSize.min" type="number" min="0"
@@ -286,21 +293,24 @@
       <div class="input-group-label text-l1 align-self-center mr-1 text-lowercase">m<sup>2</sup></div>
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group residents d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group residents d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-auto">Lakók száma max.</div>
       <input name="residents" [(ngModel)]="queryService.queryFields.residents" type="number" min="0"
         class=" input-group-option input-field align-self-center mr-2 residents-input">
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group roommates d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group roommates d-flex flex-row align-items-center my-1">
       <img src="assets/img/03_nemzetiseg.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-auto">Szobatársak száma max.</div>
       <input name="roomMates" [(ngModel)]="queryService.queryFields.roomMates" type="number" min="0"
         class=" input-group-option input-field align-self-center mr-2 roomMates-input">
     </div>
 
-    <div *ngIf="queryService.queryFields.serviceType == 1" class="input-group floor d-flex flex-row my-1">
+    <div *ngIf="queryService.queryFields.serviceType == 1"
+      class="input-group floor d-flex flex-row align-items-center my-1">
       <img src="assets/img/25_emelet.svg" class="icon">
       <div class="input-group-label text-l1 align-self-center mr-auto">Emelet</div>
       <input name="floor" [(ngModel)]="queryService.queryFields.floor" type="number" min="0"

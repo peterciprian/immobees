@@ -60,6 +60,29 @@
   &.immo {
     padding: 0;
   }
+
+  .checkbox {
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #f47c4c;
+
+    img {
+      display: none;
+    }
+
+    &.checked {
+      border: none;
+      background-color: #f47c4c;
+
+      img {
+        display: unset;
+        height: 24px;
+        margin-left: 3px;
+        margin-top: -3px;
+      }
+    }
+  }
 }
 
 .input-group-option {
@@ -92,19 +115,23 @@
   font-size: 0.75em;
 }
 
-.input-group .icon {
-  height: 50%;
-  margin: 8px 8px 0 0;
+.input-group {
+  .icon {
+    height: 50%;
+    margin: 0 8px 0 0;
+  }
 }
 
 
 // Material select-ek custom formázása
 .input-group mat-form-field {
-  top: -13px;
+  top: -10px;
   width: 87%;
+  height: 100%;
   margin: 0 5px 0 auto;
 }
 
+.label,
 ::ng-deep.mat-select-value .mat-select-value-text {
   font-family: Roboto;
   font-size: 13px;

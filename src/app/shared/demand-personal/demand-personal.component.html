@@ -19,7 +19,7 @@
     <div class="title align-self-center justify-content-center my-2">SZEMÉLYES INFORMÁCIÓK</div>
     <div class="wrap-container d-flex flex-wrap">
 
-      <div class="input-group gender d-flex flex-row my-1">
+      <div class="input-group gender d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="gender-select">
           <mat-select placeholder="Nem" [(ngModel)]="accountService.account.gender">
@@ -30,7 +30,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group budget d-flex flex-row my-1">
+      <div class="input-group budget d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <div class="input-group-label text-l1 align-self-center mr-2">Ár</div>
         <input [(ngModel)]="accountService.account.subject.price.fee" type="number" min="0"
@@ -38,7 +38,7 @@
         <div class="input-group-label text-l1 align-self-center mr-1">e Ft</div>
       </div>
 
-      <div class="input-group nationality d-flex flex-row my-1">
+      <div class="input-group nationality d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="nationality-select">
           <mat-select [(ngModel)]="accountService.account.nationality" placeholder="Nemzetiség">
@@ -50,7 +50,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group av_date d-flex flex-row my-1">
+      <div class="input-group av_date d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="av_date">
           <input [(ngModel)]="accountService.account.moveIntoAt" matInput [matDatepicker]="av_date"
@@ -60,7 +60,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group birthDate d-flex flex-row my-1">
+      <div class="input-group birthDate d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="birthDate">
           <input [(ngModel)]="accountService.account.birthday" matInput [matDatepicker]="birthDate"
@@ -70,27 +70,25 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group erasmus d-flex flex-row my-1">
+      <div class="input-group erasmus d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="erasmus">
-          <mat-select [(ngModel)]="accountService.account.hasErasmus" placeholder="Erasmus">
-            <mat-option [value]="false">Nem</mat-option>
-            <mat-option [value]="true">Igen</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="label mr-auto">Erasmus</div>
+        <div class="checkbox mr-2" [class.checked]="accountService.account.hasErasmus"
+          (click)="switchAttribute('hasErasmus')">
+          <img src="assets/img/checkmark.svg">
+        </div>
       </div>
 
-      <div class="input-group hasChild d-flex flex-row my-1">
+      <div class="input-group hasChild d-flex flex-row align-items-center my-1">
         <img src="assets/img/09_gyermek.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="hasChild">
-          <mat-select [(ngModel)]="accountService.account.children" placeholder="Gyerek">
-            <mat-option [value]="false">Nincs</mat-option>
-            <mat-option [value]="true">Van</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="label mr-auto">Gyerek</div>
+        <div class="checkbox mr-2" [class.checked]="accountService.account.children"
+          (click)="switchAttribute('children')">
+          <img src="assets/img/checkmark.svg">
+        </div>
       </div>
 
-      <div class="input-group language d-flex flex-row my-1">
+      <div class="input-group language d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="language-select">
           <mat-select [(ngModel)]="accountService.account.spokenLanguages" placeholder="Beszélt nyelvek" multiple>
@@ -109,7 +107,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group pet d-flex flex-row my-1">
+      <div class="input-group pet d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="pet-select">
           <mat-select [(ngModel)]="accountService.account.pets" placeholder="Kisállat">
@@ -121,7 +119,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group school d-flex flex-row my-1">
+      <div class="input-group school d-flex flex-row align-items-center my-1">
         <img src="assets/img/07_iskola.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="school-select">
           <mat-select [(ngModel)]="accountService.account.school" placeholder="Iskola">
@@ -133,17 +131,16 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group smoking d-flex flex-row my-1">
+      <div class="input-group smoking d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="smoking-select">
-          <mat-select [(ngModel)]="accountService.account.smoking" placeholder="Dohányzás">
-            <mat-option [value]="true">Dohányzik</mat-option>
-            <mat-option [value]="false">Nem dohányzik</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="label mr-auto">Dohányzik</div>
+        <div class="checkbox mr-2" [class.checked]="accountService.account.smoking"
+          (click)="switchAttribute('smoking')">
+          <img src="assets/img/checkmark.svg">
+        </div>
       </div>
 
-      <div class="input-group profession d-flex flex-row my-1">
+      <div class="input-group profession d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="profession-select">
           <mat-select [(ngModel)]="accountService.account.profession" placeholder="Foglalkozás">
@@ -155,17 +152,16 @@
         </mat-form-field>
       </div>
 
-      <div class="input-group goesHome d-flex flex-row my-1">
+      <div class="input-group goesHome d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="goesHome-select">
-          <mat-select [(ngModel)]="accountService.account.leaveOnWeekends" placeholder="Hétvégén hazautazik">
-            <mat-option [value]="true">Általában hazautazik</mat-option>
-            <mat-option [value]="false">Általában otthon marad</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="label mr-auto">Hétvégén hazautazik</div>
+        <div class="checkbox mr-2" [class.checked]="accountService.account.leaveOnWeekends"
+          (click)="switchAttribute('leaveOnWeekends')">
+          <img src="assets/img/checkmark.svg">
+        </div>
       </div>
 
-      <div class="input-group personality d-flex flex-row my-1">
+      <div class="input-group personality d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="personality-select">
           <mat-select [(ngModel)]="accountService.account.personality" placeholder="Személyiség">

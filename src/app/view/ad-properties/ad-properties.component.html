@@ -58,15 +58,19 @@
       <div class="label">Életkor</div>
       <div class="value ml-auto">{{viewService.flatMate.birthday | age}}</div>
     </div>
-    <div *ngIf="viewService.flatMate.children" class="prop-box d-flex flex-row align-items-center">
+    <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Gyerek</div>
-      <div class="value ml-auto">{{viewService.flatMate.children}}</div>
+      <div class="checkbox ml-auto" [class.checked]="viewService.flatMate.children">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
-    <div *ngIf="viewService.flatMate.hasErasmus" class="prop-box d-flex flex-row align-items-center">
+    <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Erasmus</div>
-      <div class="value ml-auto">{{viewService.flatMate.hasErasmus}}</div>
+      <div class="checkbox ml-auto" [class.checked]="viewService.flatMate.hasErasmus">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
     <div *ngIf="viewService.flatMate.pets" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
@@ -78,20 +82,24 @@
       <div class="label mr-auto">Beszélt nyelvek</div>
       <div *ngFor="let lang of viewService.flatMate.spokenLanguages" class="value mr-1">{{lang}}</div>
     </div>
-    <div *ngIf="viewService.flatMate.smoking" class="prop-box d-flex flex-row align-items-center">
+    <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Dohányzás</div>
-      <div class="value ml-auto">{{viewService.flatMate.smoking}}</div>
+      <div class="checkbox ml-auto" [class.checked]="viewService.flatMate.smoking">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
     <div *ngIf="viewService.flatMate.school" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Iskola</div>
       <div class="value ml-auto text-uppercase">{{viewService.flatMate.school}}</div>
     </div>
-    <div *ngIf="viewService.flatMate.leaveOnWeekends" class="prop-box d-flex flex-row align-items-center">
+    <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Hétvégén hazautazik</div>
-      <div class="value ml-auto">{{viewService.flatMate.leaveOnWeekends}}</div>
+      <div class="checkbox ml-auto" [class.checked]="viewService.flatMate.leaveOnWeekends">
+        <img src="assets/img/checkmark.svg">
+      </div>
     </div>
     <div *ngIf="viewService.flatMate.profession" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>

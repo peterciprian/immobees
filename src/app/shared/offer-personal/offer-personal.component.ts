@@ -35,4 +35,7 @@ export class OfferPersonalComponent implements OnInit {
     this.professions = this.codomain.getProfessions().pipe(map(p => p.sort()));
   }
 
+  switchAttribute(attribute: string) {
+    this.accountService.account[attribute] = !this.accountService.account[attribute];
+  }
 }

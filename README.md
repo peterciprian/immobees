@@ -18,12 +18,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * ~~db~~ 
 * _hatszög-ikont megcsinálni méretezhetőre_
 * _ikonokat gyűjteni, beilleszteni_
-* __AUTH modal megjelenését felépíteni__
+* ~~__AUTH modal megjelenését felépíteni__~~
 * főoldali linkeket beilleszteni
 * _footerben a számlálókat bekötni_
 * hu.json/en.json tartalmát feltölteni - fordítások **
 * adatok mappelése a profiloldalon **
-* true-false mappelés - checkbox-ra cserélni
+* ~~true-false mappelés - checkbox-ra cserélni~~
 * form validációk!!
 * cím adatokat szétszedni
 * _beküldéskor cím mappelés_

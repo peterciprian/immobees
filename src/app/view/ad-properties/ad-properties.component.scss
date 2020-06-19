@@ -173,6 +173,29 @@
         text-align: right;
       }
 
+      .checkbox {
+        border-radius: 12px;
+        width: 24px;
+        height: 24px;
+        border: 2px solid #f47c4c;
+
+        img {
+          display: none;
+        }
+
+        &.checked {
+          border: none;
+          background-color: #f47c4c;
+
+          img {
+            display: unset;
+            height: 24px;
+            margin-left: 3px;
+            margin-top: -3px;
+          }
+        }
+      }
+
     }
 
   }

@@ -48,4 +48,7 @@ export class DemandPersonalComponent implements OnInit {
     this.accountService.account.subject.roomType = roomtype;
   }
 
+  switchAttribute(attribute: string) {
+    this.accountService.account[attribute] = !this.accountService.account[attribute];
+  }
 }

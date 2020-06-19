@@ -65,4 +65,8 @@ export class SearchPanelComponent implements OnInit {
   filter() {
     this.queryService.search().subscribe(result => this.queryService.$accounts.next(result));
   }
+
+  switchAttribute(attribute: string) {
+    this.queryService.queryFields[attribute] = !this.queryService.queryFields[attribute];
+  }
 }
