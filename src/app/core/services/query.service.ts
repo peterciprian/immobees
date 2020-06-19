@@ -73,7 +73,9 @@ export class QueryService {
 
   search(): Observable<Account[]> {
     return this.afs.collection<Account>('accounts', ref => {
-      let query = ref.where('subject.serviceType', '==', serviceType[this.queryFields.serviceType]);
+      let query = ref.where('actie', '==', true);
+      query = ref.where('confirmed', '==', true);
+      query = ref.where('subject.serviceType', '==', serviceType[this.queryFields.serviceType]);
       query = query.where('subject.roomType', '==', roomType[this.queryFields.roomType]);
       if (this.queryFields.gender !== gender.OTHER) {
         query = query.where('gender', '==', gender[this.queryFields.gender]);
