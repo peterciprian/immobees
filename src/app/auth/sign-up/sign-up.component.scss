@@ -1,0 +1,78 @@
+.description,
+.redirect {
+  text-transform: uppercase;
+  opacity: 0.8;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-align: center;
+  color: rgba(90, 90, 90, 0.4);
+}
+
+.redirect {
+  cursor: pointer;
+}
+
+.inputField {
+  text-transform: uppercase;
+  height: 42px;
+  width: 100%;
+  border-radius: 20.8px;
+  border: solid 3px #d7d7d7;
+  background-color: #d7d7d7;
+  padding: 15px;
+  opacity: 0.6;
+  font-family: Roboto;
+  font-size: 13.5px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  text-align: left;
+  color: rgba(90, 90, 90, 0.25);
+}
+
+.registerButton {
+  cursor: pointer;
+  width: auto;
+  min-width: 280px;
+  margin: 0 auto;
+  padding: 0 0 0 9px;
+  height: 36px;
+  border-radius: 17.8px;
+  background-color: #f47c4c;
+  border: none;
+  box-shadow: 0 2px #d7d7d7;
+
+  input,
+  button {
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-align: center;
+    color: #f8fcfc;
+  }
+}
+
+.registerButton:hover {
+  background-color: #f46f44
+}
+
+.registerButton:active {
+  box-shadow: 0 0px #d7d7d7;
+  transform: translateY(2px);
+}
+
+.registerButton:focus {
+  outline: none;
+}

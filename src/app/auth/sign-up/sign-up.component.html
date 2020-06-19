@@ -1,32 +1,32 @@
 <div class="displayTable">
   <div class="displayTableCell">
-
     <div class="authBlock">
-      <h3>{{'AUTH.SIGNUP' | translate}}</h3>
       <!--
       <div class="formGroup">
         <input type="displayName" class="formControl" placeholder="Név" #displayName required>
       </div> -->
 
-      <div class="formGroup">
-        <input type="email" class="formControl" placeholder="{{'AUTH.EMAIL' | translate}}" #userEmail required>
+      <div class="formGroup my-4">
+        <input type="email" class="formControl inputField" placeholder="{{'AUTH.EMAIL' | translate}}" #userEmail
+          required>
       </div>
 
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="{{'AUTH.PASSWORD' | translate}}" #userPwd required>
+        <input type="password" class="formControl inputField" placeholder="{{'AUTH.PASSWORD' | translate}}" #userPwd
+          required>
       </div>
 
-      <div class="formGroup">
+      <div class="formGroup registerButton d-flex justify-content-sm-center mt-4">
         <input type="button" class="btn btnPrimary" value="{{'AUTH.SIGNUP' | translate}}"
           (click)="authService.SignUp(userEmail.value, userPwd.value)">
       </div>
 
-      <div class="formGroup">
+      <div class="formGroup description my-2">
         <span class="or"><span class="orInner">{{'AUTH.OR' | translate}}</span></span>
       </div>
 
       <!-- Continue with Google -->
-      <div class="formGroup">
+      <div class="formGroup registerButton mb-4 d-flex justify-content-sm-center">
         <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
           {{'AUTH.CONTINUE_GOOGLE' | translate}}
@@ -42,7 +42,7 @@
       </div>
     </div>
  -->
-      <div class="redirectToLogin">
+      <div class="redirectToLogin redirect">
         <span>{{'AUTH.HAVE_ACCOUNT' | translate}}
           <span class="redirect" (click)="authModalService.openDialog('signIn')">
             {{'AUTH.SIGNIN' | translate}}

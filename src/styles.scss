@@ -3,6 +3,16 @@
 html,
 body {
   height: 100%;
+
+  input:focus {
+    outline: none;
+  }
+
+  .btn.focus,
+  .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 body {
