@@ -29,7 +29,7 @@ export class NavComponent {
   ) {
     this.authService.afAuth.authState.subscribe(user => {
       if (user) {
-        this.firestore.$getAccount(user.uid).pipe(first()).subscribe(account => {
+        this.firestore.$getAccount(user.uid).subscribe(account => {
           this.$hasAccount.next(account.exists);
         });
       }
