@@ -97,7 +97,7 @@
               </g>
             </g>
           </svg>
-          {{fs.timestampToDate(account.moveIntoAt) | localeDate}}
+          {{fs.timestampToDate(account.moveIntoAt) | date: 'yyyy.MM.dd.'}}
         </div>
         <div class="ml-auto budget">{{account.subject.price.fee*1000}} {{account.subject.price.currency}}</div>
         <div class="arrow" (click)="view(account)">
