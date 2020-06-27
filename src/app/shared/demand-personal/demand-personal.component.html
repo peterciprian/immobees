@@ -19,6 +19,13 @@
     <div class="title align-self-center justify-content-center my-2">SZEMÉLYES INFORMÁCIÓK</div>
     <div class="wrap-container d-flex flex-wrap">
 
+      <div class="input-group profession d-flex flex-row align-items-center my-1">
+        <img src="assets/img/03_nemzetiseg.svg" class="icon">
+        <div class="input-group-label label text-l1 align-self-center mr-2">Név</div>
+        <input [(ngModel)]="accountService.account.name" type="text"
+          class="input-group-option input-field name align-self-center ml-auto mr-1" placeholder="név" />
+      </div>
+
       <div class="input-group gender d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="gender-select">
@@ -142,14 +149,9 @@
 
       <div class="input-group profession d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="profession-select">
-          <mat-select [(ngModel)]="accountService.account.profession" placeholder="Foglalkozás">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let profession of (professions | async)" [value]="profession">{{
-              profession
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="input-group-label label text-l1 align-self-center mr-2">Foglalkozás</div>
+        <input [(ngModel)]="accountService.account.profession" type="text"
+          class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="foglalkozás" />
       </div>
 
       <div class="input-group goesHome d-flex flex-row align-items-center my-1">

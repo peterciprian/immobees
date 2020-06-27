@@ -7,6 +7,7 @@ import { FirebaseAuthService } from '../core/services/firebase-auth.service';
 import { AuthModalService } from '../auth/auth-modal/auth-modal.service';
 import { FirebaseFirestoreService } from '../core/services/firebase-firestore.service';
 import { AccountService } from '../core/services/account.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -14,6 +15,8 @@ import { AccountService } from '../core/services/account.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+
+  public $hasAccount = new BehaviorSubject<boolean>(false);
 
   constructor(
     public authService: FirebaseAuthService,
@@ -27,9 +30,12 @@ export class NavComponent {
     this.authService.afAuth.authState.subscribe(user => {
       if (user) {
         this.firestore.$getAccount(user.uid).pipe(first()).subscribe(account => {
-          if (!account.exists) { this.modalService.openDialog('data'); }
+          this.$hasAccount.next(account.exists);
         });
       }
+    });
+    this.$hasAccount.subscribe(val => {
+      if (!val) { this.modalService.openDialog('data'); }
     });
   }
   public viewMyProfile() {

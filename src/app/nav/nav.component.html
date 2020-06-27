@@ -18,11 +18,11 @@
       <button *ngIf="authService.userData as user" [matMenuTriggerFor]="profileMenu"
         class="im-orange-bg button-m1">{{'NAV.PROFILE' | translate }}</button>
       <mat-menu #profileMenu="matMenu" xPosition="before" yPosition="below">
-        <button mat-menu-item [routerLink]="['/profile/favs']">Akikkel laknék</button>
-        <button mat-menu-item (click)="viewMyProfile()">Profil megtekintése</button>
-        <button mat-menu-item (click)="editMyProfile()">Profil szerkesztése</button>
-        <button mat-menu-item [routerLink]="['/profile/settings']">Beállítások</button>
-        <button mat-menu-item [routerLink]="['/messages']">Üzenetek</button>
+        <button *ngIf="$hasAccount | async" mat-menu-item [routerLink]="['/profile/favs']">Akikkel laknék</button>
+        <button *ngIf="$hasAccount | async" mat-menu-item (click)="viewMyProfile()">Profil megtekintése</button>
+        <button *ngIf="$hasAccount | async" mat-menu-item (click)="editMyProfile()">Profil szerkesztése</button>
+        <button *ngIf="$hasAccount | async" mat-menu-item [routerLink]="['/profile/settings']">Beállítások</button>
+        <button *ngIf="$hasAccount | async" mat-menu-item [routerLink]="['/messages']">Üzenetek</button>
         <button (click)="authService.SignOut()" mat-menu-item>Kijelentkezés</button>
       </mat-menu>
     </div>
