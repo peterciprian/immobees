@@ -110,8 +110,7 @@ export class ProfileCardEditComponent implements OnInit {
   }
 
   saveProfile() {
-    console.log(this.accountService.account);
-    this.fireDB.addAccount(Object.assign({}, this.accountService.account));
+    this.fireDB.updateMyAccount(Object.assign({}, this.accountService.account));
   }
 
 }

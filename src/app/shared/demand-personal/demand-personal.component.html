@@ -107,7 +107,7 @@
               </span>
             </mat-select-trigger>
             <mat-option>X</mat-option>
-            <mat-option *ngFor="let language of languages" [value]="language.name">{{
+            <mat-option *ngFor="let language of languages" [value]="language.code">{{
               language.nativeName
             }}</mat-option>
           </mat-select>

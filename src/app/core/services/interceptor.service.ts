@@ -5,7 +5,6 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { AuthService } from './auth.service';
 import { Observable, throwError } from 'rxjs';
 import { mergeMap, catchError, tap } from 'rxjs/operators';
 
@@ -14,7 +13,7 @@ import { mergeMap, catchError, tap } from 'rxjs/operators';
 })
 export class InterceptorService implements HttpInterceptor {
 
-  constructor(private auth: AuthService) { }
+  constructor() { }
 
   intercept(
     req: HttpRequest<any>,

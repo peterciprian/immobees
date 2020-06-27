@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../core/services/profile.service';
 import { CodomainsService } from '../core/services/codomains.service';
 
 @Component({
