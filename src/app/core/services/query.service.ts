@@ -92,7 +92,6 @@ export class QueryService {
           query = query.where('subject.furnished', '==', furnished[this.queryFields.furnished]);
         }
       }
-      console.log(query);
       return query;
     }).valueChanges();
   }

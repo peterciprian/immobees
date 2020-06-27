@@ -37,8 +37,6 @@ export class ViewComponent implements OnInit {
       this.firestore.$accounts.pipe(first()).subscribe(acc => {
         this.viewService.flatMate = acc.find(a => a.userID === this.uid);
       });
-    } else {
-      console.log(this.viewService.flatMate);
     }
   }
   return() {

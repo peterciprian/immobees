@@ -17,10 +17,25 @@
     text-transform: uppercase;
     color: #f8fcfc;
     margin-top: 30px;
+    margin-bottom: 2px;
     padding-top: 13px;
     width: 231px;
     height: 42px;
     border-radius: 21px;
     background-color: #f47c4c;
+    box-shadow: 0 2px #d7d7d7;
+  }
+
+  .button:hover {
+    background-color: #f46f44
+  }
+
+  .button:active {
+    box-shadow: 0 0px #d7d7d7;
+    transform: translateY(2px);
+  }
+
+  .button:focus {
+    outline: none
   }
 }

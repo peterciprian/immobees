@@ -32,7 +32,8 @@
   },
   "GENDER": {
     "FEMALE": "Female",
-    "MALE": "Male"
+    "MALE": "Male",
+    "OTHER": "Other"
   },
   "FURNISHED": {
     "FULLY": "Fully",
@@ -43,7 +44,7 @@
   "BUILDING": {
     "PANEL": "Panel",
     "BRICK": "Brick",
-    "SLIDING_FRAMEWORK": "Sliding framework"
+    "SLIDING_FORMWORK": "Sliding framework"
   },
   "CONDITION": {
     "NEW": "New",
@@ -89,6 +90,7 @@
     "FACEBOOK_FOLLOW": "Follow us on Facebookon"
   },
   "MISC": {
-    "BACK": "Back"
+    "BACK": "Back",
+    "SAVE": "Save"
   }
 }

@@ -14,7 +14,7 @@ export class FlatExtrasComponent implements OnInit {
   constructor(
     public accountService: AccountService) {
     Object.keys(this.accountService.account.subject.details).forEach(k => {
-      this.extraList.push(k.toUpperCase());
+      this.extraList.push(k);
     });
   }
 

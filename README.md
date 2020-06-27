@@ -18,13 +18,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
   * ~~db~~ 
 * _hatszög-ikont megcsinálni méretezhetőre_
 * _ikonokat gyűjteni, beilleszteni_
+* __Név megadása regisztrációkor__
+* facebook, instagram elérhetőségek megadása
+* gombok megjelenése mindenhol egységes legyen
+* __Nem működő funkciók eltűntetése__
 * ~~__AUTH modal megjelenését felépíteni__~~
 * főoldali linkeket beilleszteni
 * _footerben a számlálókat bekötni_
 * hu.json/en.json tartalmát feltölteni - fordítások **
-* adatok mappelése a profiloldalon **
+* ~~adatok mappelése a profiloldalon~~
 * ~~true-false mappelés - checkbox-ra cserélni~~
-* form validációk!!
 * cím adatokat szétszedni
 * _beküldéskor cím mappelés_
 * _térkép cím-megjelenítő bekötése_
@@ -45,7 +48,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * _tosat sablon_
 * ad-properties-card roomtype-választó reszponzivitás
 * result-list fejléc reszponzivitás
-* _profilbeállítások_
+* __profilbeállítások__
+* _laknék vele funkció_
 * _akikkel laknék (találati lista alapján)_
 
 * _üzenetküldő_

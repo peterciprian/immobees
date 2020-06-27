@@ -45,9 +45,9 @@
         <mat-form-field [floatLabel]="'never'" class="building-select">
           <mat-select [(ngModel)]="accountService.account.subject.building" placeholder="Lakás típusa">
             <mat-option>X</mat-option>
-            <mat-option *ngFor="let building of buildingType" [value]="building">{{
-            building
-          }}</mat-option>
+            <mat-option *ngFor="let building of buildingType" [value]="building">
+              {{ 'BUILDING.' + building | translate }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -65,9 +65,9 @@
         <mat-form-field [floatLabel]="'never'" class="building-condition-select">
           <mat-select [(ngModel)]="accountService.account.subject.condition" placeholder="Lakás állapota">
             <mat-option>X</mat-option>
-            <mat-option *ngFor="let condition of buildingCondition" [value]="condition">{{
-            condition
-          }}</mat-option>
+            <mat-option *ngFor="let condition of buildingCondition" [value]="condition">
+              {{ 'CONDITION.' + condition | translate }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -95,9 +95,9 @@
         <mat-form-field [floatLabel]="'never'" class="furnished-select">
           <mat-select [(ngModel)]="accountService.account.subject.furnished" placeholder="Bútorozottság">
             <mat-option>X</mat-option>
-            <mat-option *ngFor="let furnish of furnished" [value]="furnish">{{
-            furnish
-          }}</mat-option>
+            <mat-option *ngFor="let furnish of furnished" [value]="furnish">
+              {{'FURNISHED.' + furnish | translate }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -121,9 +121,9 @@
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="gender-select">
           <mat-select [(ngModel)]="accountService.account.subject.client.gender" placeholder="Akit várok">
-            <mat-option [value]="'female'">Nő</mat-option>
-            <mat-option [value]="'male'">Férfi</mat-option>
-            <mat-option [value]="'other'">Más</mat-option>
+            <mat-option [value]="'FEMALE'">{{'GENDER.FEMALE' | translate}}</mat-option>
+            <mat-option [value]="'MALE'">{{'GENDER.MALE' | translate}}</mat-option>
+            <mat-option [value]="'OTHER'">{{'GENDER.OTHER' | translate}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -148,11 +148,11 @@
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="parking">
           <mat-select placeholder="Parkolás">
-            <mat-option [value]="'no'">Nincs</mat-option>
-            <mat-option [value]="'inSite'">Telken belül</mat-option>
-            <mat-option [value]="'forRent'">Bérelhető</mat-option>
-            <mat-option [value]="'free'">Utcán ingyenes</mat-option>
-            <mat-option [value]="'pay'">Utcán fizetős</mat-option>
+            <mat-option [value]="'NO'">Nincs</mat-option>
+            <mat-option [value]="'INSITE'">Telken belül</mat-option>
+            <mat-option [value]="'FORRENT'">Bérelhető</mat-option>
+            <mat-option [value]="'FREE'">Utcán ingyenes</mat-option>
+            <mat-option [value]="'PAY'">Utcán fizetős</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

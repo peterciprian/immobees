@@ -263,3 +263,38 @@ app-avatar {
     text-align: justify;
   }
 }
+
+.save-button {
+  position: relative;
+  width: 100%;
+  height: 42px;
+  border-radius: 21px;
+  background-color: #f47c4c;
+  padding-top: 13px;
+  margin-bottom: 2px;
+  font-family: Roboto;
+  font-size: 13.5px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 2px #d7d7d7;
+}
+
+.save-button:hover {
+  background-color: #f46f44
+}
+
+.save-button:active {
+  box-shadow: 0 0px #d7d7d7;
+  transform: translateY(2px);
+}
+
+.save-button:focus {
+  outline: none
+}

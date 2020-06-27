@@ -12,7 +12,7 @@
     <div class="serviceType">{{'SERVICETYPE.' + viewService.flatMate.subject.serviceType | translate}} - </div>
     <div class="roomType">{{'ROOMTYPE.' + viewService.flatMate.subject.roomType | translate}}</div>
   </div>
-  <div *ngIf="viewService.flatMate.subject.floorArea"> class="attribute flatArea d-flex flex-row">
+  <div *ngIf="viewService.flatMate.subject.floorArea" class="attribute flatArea d-flex flex-row">
     <div class="icon mr-2">
       <img src="">
     </div>
@@ -44,7 +44,7 @@
       költözhető
     </div>
     <div class="value ml-auto">
-      {{viewService.flatMate.moveIntoAt | localeDate}}
+      {{fs.timestampToDate(viewService.flatMate.moveIntoAt) | localeDate}}
     </div>
   </div>
   <div *ngIf="viewService.flatMate.moveIntoAt" class="divider"></div>
@@ -235,6 +235,6 @@
   <div class="divider"></div>
   <div class="price d-flex flex-column justify-content-center">
     <div class="main-price">{{viewService.flatMate.subject.price.fee*1000}} Ft/szoba</div>
-    <div class="overhead">+ rezsi: {{viewService.flatMate.subject.price.caution*1000}} Ft/fő</div>
+    <div class="overhead">+ rezsi: {{viewService.flatMate.subject.price.overhead*1000}} Ft/fő</div>
   </div>
 </div>

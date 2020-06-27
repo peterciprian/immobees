@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AccountService } from 'src/app/core/services/account.service';
 import { Picture } from 'src/app/core/models/accounts';
 import { BehaviorSubject } from 'rxjs';
+import { FirebaseFirestoreService } from 'src/app/core/services/firebase-firestore.service';
 
 @Component({
   selector: 'app-profile-card-edit',
@@ -21,7 +22,9 @@ export class ProfileCardEditComponent implements OnInit {
   selectedFileName: string;
   public hasFile = new BehaviorSubject<any>(false);
 
-  constructor(public accountService: AccountService) {
+  constructor(
+    public accountService: AccountService,
+    public fireDB: FirebaseFirestoreService) {
     this.hasFile.subscribe(e => this.save());
   }
 
@@ -100,10 +103,15 @@ export class ProfileCardEditComponent implements OnInit {
     });
   }
 
-
   onDrop(e) {
     e.preventDefault();
     e.stopPropagation();
     this.readThis(e.dataTransfer.files);
   }
+
+  saveProfile() {
+    console.log(this.accountService.account);
+    this.fireDB.addAccount(Object.assign({}, this.accountService.account));
+  }
+
 }

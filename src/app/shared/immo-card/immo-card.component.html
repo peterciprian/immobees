@@ -3,7 +3,7 @@
     <app-avatar [size]="'170px'" [img]="account.avatar.url"></app-avatar>
   </div>
   <div class="immo-card d-flex flex-column" (click)="view(account)">
-    <div class="name">{{account.name}} ({{account.birthday | age}})</div>
+    <div class="name">{{account.name}} ({{fs.timestampToDate(account.birthday) | age}})</div>
     <div class="top-divider d-flex flex-row">
       <div class="top-side-divider mr-auto"></div>
       <div *ngFor="let lang of account.spokenLanguages" class="nationality mx-auto">{{lang}}</div>
@@ -13,7 +13,9 @@
     <div class="location mx-auto">{{account.subject.address.display}}</div>
     <div class="props d-flex flex-row">
       <div class="immotype text-uppercase mx-auto">{{'ROOMTYPE.' + account.subject.roomType | translate}}</div>
-      <div class="moving-date m-auto">{{account.moveIntoAt | date: 'yyyy.MM.dd.'}}</div>
+      <div class="moving-date m-auto">
+        {{fs.timestampToDate(account.moveIntoAt) | date: 'yyyy.MM.dd.'}}
+      </div>
     </div>
     <div class="bottom-divider d-flex flex-row">
       <div class="bottom-side-divider mr-auto"></div>

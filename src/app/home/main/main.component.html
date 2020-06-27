@@ -7,8 +7,13 @@
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit odit
         voluptates, incidunt architecto facere dolor culpa.
       </div>
-      <div class="register-button d-flex align-items-center justify-content-center mt-3" (click)="authModalService.openDialog('signUp')">
+      <div *ngIf="!this.authService.isLoggedIn"
+        class="register-button d-flex align-items-center justify-content-center mt-3" (click)="register()">
         Regisztráció
+      </div>
+      <div *ngIf="this.authService.isLoggedIn"
+        class="register-button d-flex align-items-center justify-content-center mt-3" (click)="register()">
+        Teljes regisztráció
       </div>
     </div>
     <div *ngIf="isLoaded && mobile" class=" d-flex main-highlight col-lg-6 col-md-12 pt-5">

@@ -126,7 +126,7 @@ export interface Account {
     qualification: string;
     hasErasmus: boolean;
     spokenLanguages: string[];
-    moveIntoAt: string;
+    moveIntoAt: Date;
     school: string;
     profession: string;
     children: boolean;
@@ -175,7 +175,7 @@ export interface Client {
     nationality?: string;
     qualification?: string;
     hasErasmus?: boolean;
-    moveIntoAt?: string;
+    moveIntoAt?: Date;
     description?: string;
 }
 

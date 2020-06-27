@@ -7,23 +7,18 @@
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
         <mat-form-field [floatLabel]="'never'" class="age-select">
           <mat-select [(ngModel)]="accountService.account.gender" placeholder="Nem">
-            <mat-option [value]="'female'">Nő</mat-option>
-            <mat-option [value]="'male'">Férfi</mat-option>
-            <mat-option [value]="'other'">Más</mat-option>
+            <mat-option [value]="'FEMALE'">Nő</mat-option>
+            <mat-option [value]="'MALE'">Férfi</mat-option>
+            <mat-option [value]="'OTHER'">Más</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
       <div class="input-group profession d-flex flex-row align-items-center my-1">
         <img src="assets/img/03_nemzetiseg.svg" class="icon">
-        <mat-form-field [floatLabel]="'never'" class="profession-select">
-          <mat-select [(ngModel)]="accountService.account.profession" placeholder="Foglalkozás">
-            <mat-option>X</mat-option>
-            <mat-option *ngFor="let profession of (professions | async)" [value]="profession">{{
-              profession
-            }}</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="input-group-label label text-l1 align-self-center mr-2">Foglalkozás</div>
+        <input [(ngModel)]="accountService.account.profession" type="text"
+          class="input-group-option input-field align-self-center ml-auto mr-1" placeholder="foglalkozás" />
       </div>
 
       <div class="input-group nationality d-flex flex-row align-items-center my-1">

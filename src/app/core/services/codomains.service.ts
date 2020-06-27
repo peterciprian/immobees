@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import * as languages from '../models/languages';
@@ -20,6 +20,32 @@ export class CodomainsService {
   }
 
   getPets(): Observable<string[]> {
+    const pets = [
+      'kígyó',
+      'tengerimalac',
+      'vadászgörény',
+      'pók / madárpók',
+      'kaméleon',
+      'csincsilla',
+      'papagáj',
+      'degu',
+      'törpenyúl',
+      'tarajos gőte',
+      'egér',
+      'mókus',
+      'díszhal',
+      'törpelamac',
+      'leguán',
+      'macska',
+      'hörcsög',
+      'gekkó',
+      'sün',
+      'pinty',
+      'szakállas agáma',
+      'kutya',
+      'teknős',
+      'egyéb'];
+    return of(pets);
     const headers = new HttpHeaders();
     return this.http.get<string[]>(`${environment.baseApiUrl}/pets`, { headers });
   }

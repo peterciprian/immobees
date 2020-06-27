@@ -3,7 +3,8 @@
     <app-avatar [size]="'220px'" [img]="accountService.account.avatar.url" class="mx-auto"></app-avatar>
     <div class="name-row d-flex flex-row justify-content-center align-items-center">
       <div class="flag-icon mr-2"></div>
-      <div class="name">{{accountService.account.name}} ({{accountService.account.birthday | age}})</div>
+      <div class="name">{{accountService.account.name}}
+        ({{fireDB.timestampToDate(accountService.account.birthday) | age}})</div>
     </div>
     <div class="divider"></div>
     <div class="icon-line d-flex flex-row justify-content-around">
@@ -87,5 +88,8 @@
     <div class="title">BEMUTATKOZÁS</div>
     <textarea class="text" [(ngModel)]="accountService.account.introduction" matInput cols="50" rows="5">
       {{accountService.account.introduction}}</textarea>
+  </div>
+  <div class="save-menu my-3">
+    <div class="save-button" (click)="saveProfile()">{{'MISC.SAVE' | translate}}</div>
   </div>
 </div>

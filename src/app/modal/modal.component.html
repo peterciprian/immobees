@@ -29,13 +29,15 @@
   <div *ngIf="modalDataSet.modalType === 'DEMAND' || modalDataSet.modalType === 'OFFER'"
     class="action-buttons d-flex flex-row justify-content-center mb-3">
     <div class="button button-previous mr-3" (click)="back()">vissza</div>
-    <div *ngIf="(currentPage !== 3 && modalDataSet.modalType === 'DEMAND') || (currentPage !== 5 && modalDataSet.modalType === 'OFFER')"
+    <div
+      *ngIf="(currentPage !== 3 && modalDataSet.modalType === 'DEMAND') || (currentPage !== 5 && modalDataSet.modalType === 'OFFER')"
       class="button button-next" (click)="next()"> tovább</div>
-    <div *ngIf="(currentPage === 3 && modalDataSet.modalType === 'DEMAND') || (currentPage === 5 && modalDataSet.modalType === 'OFFER')"
-      class="button button-save" (click)="save()">mentés</div>
+    <div
+      *ngIf="(currentPage === 3 && modalDataSet.modalType === 'DEMAND') || (currentPage === 5 && modalDataSet.modalType === 'OFFER')"
+      class="button button-save" (click)="save()">{{'MISC.SAVE' | translate}}</div>
   </div>
 
-  <pagination *ngIf="modalDataSet.stepperItems>1" [boundaryLinks]="false" [directionLinks]="false" [itemsPerPage]="1" [totalItems]="modalDataSet.stepperItems" [rotate]="true"
-    [(ngModel)]="currentPage">
+  <pagination *ngIf="modalDataSet.stepperItems>1" [boundaryLinks]="false" [directionLinks]="false" [itemsPerPage]="1"
+    [totalItems]="modalDataSet.stepperItems" [rotate]="true" [(ngModel)]="currentPage">
   </pagination>
 </mat-dialog-actions>

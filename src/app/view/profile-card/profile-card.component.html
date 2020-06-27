@@ -3,7 +3,8 @@
     <app-avatar [size]="'220px'" [img]="viewService.flatMate.avatar.url" class="mx-auto"></app-avatar>
     <div class="name-row d-flex flex-row justify-content-center align-items-center">
       <div class="flag-icon mr-2"></div>
-      <div class="name">{{viewService.flatMate.name}} ({{viewService.flatMate.birthday | age}})</div>
+      <div class="name">{{viewService.flatMate.name}} ({{fs.timestampToDate(viewService.flatMate.birthday) | age}})
+      </div>
     </div>
     <div class="divider"></div>
     <div class="icon-line d-flex flex-row justify-content-around">

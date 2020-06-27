@@ -6,7 +6,7 @@
     <div class="highlight-card-content">
       <div class="highlight-card-header d-flex flex-column">
         <div class="d-flex flex-row mb-2">
-          <div class="name">{{account.name}} ({{account.birthday | age}})</div>
+          <div class="name">{{account.name}} ({{fs.timestampToDate(account.birthday) | age}})</div>
           <div class="location ml-auto">
             <svg viewBox="0 0 384 512">
               <path fill="currentColor"
@@ -97,7 +97,7 @@
               </g>
             </g>
           </svg>
-          {{account.moveIntoAt | localeDate}}
+          {{fs.timestampToDate(account.moveIntoAt) | localeDate}}
         </div>
         <div class="ml-auto budget">{{account.subject.price.fee*1000}} {{account.subject.price.currency}}</div>
         <div class="arrow" (click)="view(account)">

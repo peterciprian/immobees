@@ -4,6 +4,8 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { FirebaseAuthService } from './firebase-auth.service';
+import { cloneDeep } from 'lodash-es';
+import { firestore } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +30,7 @@ export class FirebaseFirestoreService {
     account.avatar.url = (account.avatar.url !== '' && account.avatar.url !== undefined && account.avatar.url !== null) ?
       account.avatar.url : this.authService.userData.photoURL;
     account.createdAt = new Date(Date.now());
-    this.accountsCollection.doc(id).set(JSON.parse(JSON.stringify(account)))
+    this.accountsCollection.doc(id).set(cloneDeep(account))
       .catch(error => this.handleError(error))
       .then(data => this.handleData(data));
   }
@@ -78,5 +80,16 @@ export class FirebaseFirestoreService {
   }
   handleError(error) {
     console.error(error);
+  }
+
+  timestampToDate(timestamp): Date {
+    if (timestamp instanceof firestore.Timestamp) {
+      return timestamp.toDate();
+    } else {
+      return timestamp;
+    }
+  }
+  private isValidDate(date) {
+    return date && Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date);
   }
 }

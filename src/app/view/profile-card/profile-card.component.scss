@@ -121,6 +121,21 @@ app-avatar {
     text-align: center;
     color: #ffffff;
   }
+
+  box-shadow: 0 2px #d7d7d7;
+}
+
+.action-button:hover {
+  background-color: #f46f44
+}
+
+.action-button:active {
+  box-shadow: 0 0px #d7d7d7;
+  transform: translateY(2px);
+}
+
+.action-button:focus {
+  outline: none
 }
 
 .introduction {

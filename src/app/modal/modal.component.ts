@@ -39,6 +39,7 @@ export class ModalComponent implements OnDestroy {
       this.currentPage++;
     }
   }
+
   back() {
     if (this.currentPage > 1) {
       this.currentPage--;
@@ -46,8 +47,9 @@ export class ModalComponent implements OnDestroy {
       this.modalDataShare.modalDataSet.next({ stepperItems: 0, modalType: 'REGISTER' });
     }
   }
+
   save() {
-    this.fireDB.addAccount(this.accountService.account);
+    this.fireDB.addAccount(Object.assign({}, this.accountService.account));
     this.close();
   }
 

@@ -1,7 +1,7 @@
 <div class="card-container d-flex flex-row">
   <app-avatar [size]="'110px'" [img]="flatMate.avatar.url" class="mr-3"></app-avatar>
   <div class="card-container-body d-flex flex-column">
-    <div class="name">{{flatMate.name}} ({{flatMate.birthday | age}})</div>
+    <div class="name">{{flatMate.name}} ({{fs.timestampToDate(flatMate.birthday) | age}})</div>
     <div class="icon-line d-flex flex-row flex-wrap">
       <div *ngFor="let lang of flatMate.spokenLanguages" class="iconset d-flex flex-row">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.36 163.81">

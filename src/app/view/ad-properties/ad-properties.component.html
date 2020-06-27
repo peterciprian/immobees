@@ -36,7 +36,9 @@
     <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Nem</div>
-      <div class="value ml-auto">{{'GENDER.' + viewService.flatMate.gender | translate}}</div>
+      <div class="value ml-auto">
+        {{'GENDER.' + viewService.flatMate.gender | translate}}
+      </div>
     </div>
     <div *ngIf="viewService.flatMate.subject.address.city" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
@@ -51,12 +53,12 @@
     <div *ngIf="viewService.flatMate.moveIntoAt" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Költözés időpontja</div>
-      <div class="value ml-auto">{{viewService.flatMate.moveIntoAt | localeDate}}</div>
+      <div class="value ml-auto">{{fs.timestampToDate(viewService.flatMate.moveIntoAt) | localeDate}}</div>
     </div>
     <div *ngIf="viewService.flatMate.birthday" class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>
       <div class="label">Életkor</div>
-      <div class="value ml-auto">{{viewService.flatMate.birthday | age}}</div>
+      <div class="value ml-auto">{{fs.timestampToDate(viewService.flatMate.birthday) | age}}</div>
     </div>
     <div class="prop-box d-flex flex-row align-items-center">
       <div class="icon mr-2"></div>

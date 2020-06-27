@@ -32,7 +32,8 @@
   },
   "GENDER": {
     "FEMALE": "Nő",
-    "MALE": "Férfi"
+    "MALE": "Férfi",
+    "OTHER": "Más"
   },
   "FURNISHED": {
     "FULLY": "Bútorozott",
@@ -43,7 +44,7 @@
   "BUILDING": {
     "PANEL": "Panel",
     "BRICK": "Tégla",
-    "SLIDING_FRAMEWORK": "Csúszózsalus"
+    "SLIDING_FORMWORK": "Csúszózsalus"
   },
   "CONDITION": {
     "NEW": "Új",
@@ -89,6 +90,7 @@
     "FACEBOOK_FOLLOW": "Kövess minket Facebookon"
   },
   "MISC": {
-    "BACK": "Vissza"
+    "BACK": "Vissza",
+    "SAVE": "Mentés"
   }
 }

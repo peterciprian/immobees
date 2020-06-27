@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewService } from 'src/app/core/services/view.service';
 import languages from 'src/app/core/models/languages';
+import { FirebaseFirestoreService } from 'src/app/core/services/firebase-firestore.service';
 
 @Component({
   selector: 'app-ad-properties',
@@ -20,7 +21,7 @@ export class AdPropertiesComponent {
   ];
   scrollHistory = [0, 0];
   languages = languages;
-  constructor(public viewService: ViewService) { }
+  constructor(public viewService: ViewService, public fs: FirebaseFirestoreService) { }
 
   change(event) {
     this.scrollHistory.push(event);
@@ -28,7 +29,7 @@ export class AdPropertiesComponent {
     const container = document.querySelector('.image-list');
     if (event === 0) {
       container.scrollLeft = 0;
-    } else if (event === this.slides.length - 1) {
+    } else if (event === this.viewService.flatMate.subject.pictures.length - 1) {
       container.scrollLeft = event * 150;
     } else {
       if (this.scrollHistory[0] > this.scrollHistory[1]) {

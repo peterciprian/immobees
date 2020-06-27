@@ -15,7 +15,7 @@ export class Profile implements Account {
         this.qualification = '';
         this.hasErasmus = null;
         this.spokenLanguages = [];
-        this.moveIntoAt = '';
+        this.moveIntoAt = new Date();
         this.school = '';
         this.profession = '';
         this.children = null;
@@ -56,7 +56,7 @@ export class Profile implements Account {
                 nationality: '',
                 qualification: '',
                 hasErasmus: null,
-                moveIntoAt: '',
+                moveIntoAt: new Date(),
                 description: ''
             },
             furnished: '',
@@ -101,7 +101,7 @@ export class Profile implements Account {
     qualification: string;
     hasErasmus: boolean;
     spokenLanguages: string[];
-    moveIntoAt: string;
+    moveIntoAt: Date;
     school: string;
     profession: string;
     children: boolean;

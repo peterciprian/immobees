@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { User } from '../models/user';
 import * as firebase from 'firebase';
 import { AuthModalService } from 'src/app/auth/auth-modal/auth-modal.service';
-import { first } from 'rxjs/operators';
 
 
 @Injectable({
@@ -50,7 +49,6 @@ export class FirebaseAuthService {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
           this.authModalService.closeDialog();
-          console.log(userCredential);
         });
         this.SetUserData(userCredential.user);
       }).catch((error) => {
@@ -99,7 +97,6 @@ export class FirebaseAuthService {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
           this.authModalService.closeDialog();
-          console.log(result);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
